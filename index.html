@@ -6,6 +6,47 @@
 
   <title>NEIRO.WAY — HR с душой дизайнера</title>
 
+  <!-- SEO / соцсети -->
+  <meta name="description" content="NEIRO.WAY — HR с душой дизайнера. HR-решения, AI-инструменты, сайты, гайды, презентации и визуальные материалы для понятных внутренних коммуникаций." />
+  <meta name="keywords" content="HR дизайн, HR коммуникации, внутренние коммуникации, онбординг, HR гайды, Tilda, AI автоматизация, нейрофото, презентации, Canva шаблоны" />
+  <meta name="author" content="Марина Голяева" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#e4edf2" />
+  <link rel="canonical" href="https://prostoay-bot.github.io/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:site_name" content="NEIRO.WAY" />
+  <meta property="og:title" content="NEIRO.WAY — HR с душой дизайнера" />
+  <meta property="og:description" content="HR-решения, AI-инструменты и дизайн-материалы, которые помогают объяснять, вовлекать и вызывать доверие." />
+  <meta property="og:url" content="https://prostoay-bot.github.io/" />
+  <meta property="og:image" content="https://prostoay-bot.github.io/marina-photo.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NEIRO.WAY — HR с душой дизайнера" />
+  <meta name="twitter:description" content="HR, AI и дизайн для понятных внутренних коммуникаций, сайтов, гайдов и презентаций." />
+  <meta name="twitter:image" content="https://prostoay-bot.github.io/marina-photo.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Марина Голяева",
+    "brand": "NEIRO.WAY",
+    "jobTitle": "HR-эксперт и digital/design специалист",
+    "description": "HR с душой дизайнера: внутренние коммуникации, онбординг, HR-гайды, сайты, AI-инструменты и визуальные материалы.",
+    "url": "https://prostoay-bot.github.io/",
+    "image": "https://prostoay-bot.github.io/marina-photo.png",
+    "telephone": "+79257032577",
+    "sameAs": [
+      "https://t.me/Marina_x6",
+      "https://www.instagram.com/neiro.way",
+      "https://pin.it/3vPSZ2FBX",
+      "https://max.ru/u/f9LHodD0cOLIr_lYl5w15E3qcAONoGJO6smF7oKU7mBUeeGDVIyLzMbrK94"
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Marck+Script&family=Caveat:wght@500;600;700&family=Playfair+Display:wght@500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
@@ -1355,7 +1396,7 @@
       }
 
       .about-fly-photo{
-        display:none !important;
+        pointer-events:none;
       }
     }
 
@@ -3848,6 +3889,288 @@
         overflow: hidden;
       }
     }
+
+
+    /* =========================
+       MOBILE ABOUT — сохраняем фишку перехода фото
+       Центральное фото снова ведёт себя как карточка, а боковые остаются рядом
+    ========================= */
+    @media (max-width: 620px){
+      .about-section{
+        padding: 88px 0 92px !important;
+        overflow: hidden;
+      }
+
+      .about-small-title{
+        position: relative;
+        z-index: 12;
+        margin-bottom: 10px !important;
+      }
+
+      .about-collage{
+        position: relative !important;
+        display: block !important;
+        min-height: 690px !important;
+        padding-top: 78px !important;
+        overflow: visible !important;
+      }
+
+      .about-script{
+        position: absolute !important;
+        top: 10px !important;
+        left: 6px !important;
+        right: auto !important;
+        z-index: 14 !important;
+        font-size: clamp(36px, 11vw, 48px) !important;
+        line-height: .92 !important;
+        transform: rotate(-8deg) !important;
+        opacity: 1 !important;
+        filter: none !important;
+        pointer-events: none;
+      }
+
+      .about-card{
+        position: absolute !important;
+        display: block !important;
+        padding: 10px 10px 34px !important;
+        border-radius: 22px !important;
+        opacity: 0 !important;
+        filter: blur(8px) !important;
+        transition: opacity .8s ease, filter .8s ease, transform .85s cubic-bezier(.2,1,.22,1) !important;
+      }
+
+      .about-card--center{
+        width: min(270px, 72vw) !important;
+        height: 382px !important;
+        left: 50% !important;
+        top: 112px !important;
+        right: auto !important;
+        z-index: 8 !important;
+        transform: translate(-50%, 46px) rotate(-1deg) scale(.94) !important;
+      }
+
+      .about-card--left{
+        width: min(166px, 43vw) !important;
+        height: 246px !important;
+        left: 2px !important;
+        top: 456px !important;
+        right: auto !important;
+        z-index: 7 !important;
+        transform: translate(-28px, 28px) rotate(-9deg) scale(.94) !important;
+      }
+
+      .about-card--right{
+        width: min(166px, 43vw) !important;
+        height: 246px !important;
+        right: 2px !important;
+        left: auto !important;
+        top: 456px !important;
+        z-index: 7 !important;
+        transform: translate(28px, 28px) rotate(8deg) scale(.94) !important;
+      }
+
+      .about-card__media{
+        border-radius: 14px !important;
+      }
+
+      .about-card img{
+        object-fit: cover !important;
+      }
+
+      .about-section.is-visible .about-card{
+        opacity: 1 !important;
+        filter: blur(0) !important;
+      }
+
+      .about-section.is-visible .about-card--center{
+        transform: translate(-50%, 0) rotate(-1deg) scale(1) !important;
+      }
+
+      .about-section.is-visible .about-card--left{
+        transform: translate(0, 0) rotate(-7deg) scale(1) !important;
+      }
+
+      .about-section.is-visible .about-card--right{
+        transform: translate(0, 0) rotate(7deg) scale(1) !important;
+      }
+
+      .about-fly-photo{
+        z-index: 30 !important;
+        border-radius: 26px !important;
+        padding: 10px !important;
+        display: none;
+      }
+
+      .about-fly-photo img{
+        border-radius: 18px !important;
+      }
+
+      .about-stat{
+        display: none !important;
+      }
+
+      .about-copy{
+        margin-top: 22px !important;
+        position: relative;
+        z-index: 10;
+      }
+    }
+
+
+    /* =========================
+       FINAL MOBILE POLISH — iPhone / SEO-ready release
+       Сохраняем анимацию перехода фото + 3 карточки видны
+    ========================= */
+    @media (max-width: 620px){
+      .about-section{
+        padding: 112px 0 98px !important;
+        scroll-margin-top: 96px;
+        overflow: hidden !important;
+      }
+
+      .about-small-title{
+        position: relative !important;
+        z-index: 16 !important;
+        margin-bottom: 0 !important;
+      }
+
+      .about-collage{
+        position: relative !important;
+        display: block !important;
+        min-height: 800px !important;
+        padding-top: 112px !important;
+        overflow: visible !important;
+      }
+
+      .about-script{
+        position: absolute !important;
+        top: 34px !important;
+        left: 4px !important;
+        right: auto !important;
+        max-width: 320px !important;
+        z-index: 15 !important;
+        font-size: clamp(34px, 10.5vw, 45px) !important;
+        line-height: .92 !important;
+        transform: rotate(-7deg) !important;
+        opacity: 1 !important;
+        filter: none !important;
+        pointer-events: none;
+      }
+
+      .about-card{
+        position: absolute !important;
+        display: block !important;
+        padding: 10px 10px 32px !important;
+        border-radius: 22px !important;
+        opacity: 0 !important;
+        filter: blur(8px) !important;
+        transition: opacity .8s ease, filter .8s ease, transform .85s cubic-bezier(.2,1,.22,1) !important;
+      }
+
+      .about-card--center{
+        width: min(292px, 76vw) !important;
+        height: 392px !important;
+        left: 50% !important;
+        top: 132px !important;
+        right: auto !important;
+        z-index: 9 !important;
+        transform: translate(-50%, 48px) rotate(-1deg) scale(.94) !important;
+      }
+
+      .about-card--left{
+        width: min(174px, calc((100vw - 62px) / 2)) !important;
+        height: 252px !important;
+        left: 6px !important;
+        top: 548px !important;
+        right: auto !important;
+        z-index: 8 !important;
+        transform: translate(-24px, 24px) rotate(-7deg) scale(.94) !important;
+      }
+
+      .about-card--right{
+        width: min(174px, calc((100vw - 62px) / 2)) !important;
+        height: 252px !important;
+        right: 6px !important;
+        left: auto !important;
+        top: 548px !important;
+        z-index: 8 !important;
+        transform: translate(24px, 24px) rotate(7deg) scale(.94) !important;
+      }
+
+      .about-card__media{
+        border-radius: 14px !important;
+      }
+
+      .about-card img{
+        object-fit: cover !important;
+        transform: none !important;
+      }
+
+      .about-card--center img{ object-position: center top !important; }
+      .about-card--left img{ object-position: center top !important; }
+      .about-card--right img{ object-position: center 18% !important; }
+
+      .about-section.is-visible .about-card{
+        opacity: 1 !important;
+        filter: blur(0) !important;
+      }
+
+      .about-section.is-visible .about-card--center{
+        transform: translate(-50%, 0) rotate(-1deg) scale(1) !important;
+      }
+
+      .about-section.is-visible .about-card--left{
+        transform: translate(0, 0) rotate(-5deg) scale(1) !important;
+      }
+
+      .about-section.is-visible .about-card--right{
+        transform: translate(0, 0) rotate(5deg) scale(1) !important;
+      }
+
+      .about-copy{
+        margin-top: 26px !important;
+        position: relative !important;
+        z-index: 12 !important;
+      }
+
+      .about-stat{
+        display: none !important;
+      }
+
+      .paper-pin,
+      .binder-real{
+        display: none !important;
+      }
+
+      .contact-left h2{
+        max-width: 100% !important;
+        font-size: clamp(36px, 9.6vw, 43px) !important;
+        line-height: 1.04 !important;
+        letter-spacing: -1.1px !important;
+      }
+
+      .contact-left h2 br{
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 380px){
+      .about-collage{
+        min-height: 760px !important;
+      }
+
+      .about-card--center{
+        width: min(272px, 76vw) !important;
+        height: 370px !important;
+      }
+
+      .about-card--left,
+      .about-card--right{
+        top: 520px !important;
+        height: 232px !important;
+      }
+    }
+
 </style>
 </head>
 
@@ -4545,8 +4868,7 @@
         !aboutSection ||
         !aboutFlyPhoto ||
         !heroPhotoFrame ||
-        !aboutCenterMedia ||
-        window.innerWidth <= 768
+        !aboutCenterMedia
       ) {
         return;
       }
