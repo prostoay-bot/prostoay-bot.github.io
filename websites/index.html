@@ -71,13 +71,12 @@ h3{font-family:var(--serif);font-weight:600;font-size:clamp(27px,2.2vw,38px);lin
 @media(max-width:960px){.site-hero,.route,.case-large{grid-template-columns:1fr}.deck{min-height:660px}.deck-card{position:relative;left:auto!important;right:auto!important;top:auto!important;width:100%;height:auto;transform:none!important;margin:0 0 16px}.deck:hover .deck-card{transform:none!important}.case-grid,.route-steps{grid-template-columns:1fr}.case-image{min-height:300px}}
 
 
+
 /* =========================================================
-   WEBSITES FINAL HERO FIX — 2-line title and readable deck
+   WEBSITES REAL PHOTOS FIX — correct images and readable deck
    ========================================================= */
 
-.site-hero h1 br{
-  display:block;
-}
+.site-hero h1 br{ display:block; }
 
 .deck{
   min-height:560px !important;
@@ -91,6 +90,7 @@ h3{font-family:var(--serif);font-weight:600;font-size:clamp(27px,2.2vw,38px);lin
 
 .deck-card img{
   height:210px !important;
+  object-fit:cover !important;
 }
 
 .deck-card.one{
@@ -114,27 +114,31 @@ h3{font-family:var(--serif);font-weight:600;font-size:clamp(27px,2.2vw,38px);lin
   z-index:4 !important;
 }
 
-.deck:hover .deck-card.one{
-  transform:translateX(-16px) translateY(18px) rotate(-13deg) !important;
+.deck:hover .deck-card.one{ transform:translateX(-16px) translateY(18px) rotate(-13deg) !important; }
+.deck:hover .deck-card.two{ transform:translateY(-12px) rotate(-1deg) !important; }
+.deck:hover .deck-card.three{ transform:translateX(16px) translateY(20px) rotate(13deg) !important; }
+
+.case-image img,
+.case-card img{
+  object-fit:cover !important;
 }
 
-.deck:hover .deck-card.two{
-  transform:translateY(-12px) rotate(-1deg) !important;
+.btn{
+  transition:transform .24s ease, box-shadow .24s ease, filter .24s ease, border-color .24s ease !important;
 }
 
-.deck:hover .deck-card.three{
-  transform:translateX(16px) translateY(20px) rotate(13deg) !important;
+.btn:hover{
+  transform:translateY(-3px) !important;
+  filter:saturate(1.04) brightness(1.01);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.86),
+    0 18px 34px rgba(20,59,52,.13) !important;
+  border-color:rgba(20,59,52,.12) !important;
 }
 
 @media(max-width:1100px){
-  .site-hero{
-    grid-template-columns:1fr !important;
-  }
-
-  .deck{
-    min-height:520px !important;
-  }
-
+  .site-hero{ grid-template-columns:1fr !important; }
+  .deck{ min-height:520px !important; }
   .deck-card.one{left:5% !important;top:96px !important}
   .deck-card.two{left:35% !important;top:48px !important}
   .deck-card.three{right:5% !important;top:126px !important}
@@ -168,23 +172,7 @@ h3{font-family:var(--serif);font-weight:600;font-size:clamp(27px,2.2vw,38px);lin
     transform:none !important;
   }
 
-  .deck-card img{
-    height:220px !important;
-  }
-}
-
-
-/* GLOBAL BUTTON HOVER FIX */
-.btn{
-  transition:transform .24s ease, box-shadow .24s ease, filter .24s ease, border-color .24s ease !important;
-}
-.btn:hover{
-  transform:translateY(-3px) !important;
-  filter:saturate(1.04) brightness(1.01);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.86),
-    0 18px 34px rgba(20,59,52,.13) !important;
-  border-color:rgba(20,59,52,.12) !important;
+  .deck-card img{ height:220px !important; }
 }
 
 </style>
@@ -193,14 +181,14 @@ h3{font-family:var(--serif);font-weight:600;font-size:clamp(27px,2.2vw,38px);lin
   <div class="page-top">
     <div class="container back-row">
       <a class="back-btn" href="/">← на главную</a>
-      <a class="back-btn" href="/#services">← к услугам</a>
+      <a class="back-btn" href="/index.html#services">← к услугам</a>
     </div>
   </div>
 
   <main>
-    <section class="page-hero"><div class="container site-hero"><div><div class="label">сайты и лендинги</div><h1>Сайты, где структура<br>и визуал работают вместе</h1><p class="lead">Создаю сайты, где структура, текст и визуал помогают человеку быстро понять предложение, почувствовать доверие и сделать следующий шаг: оставить заявку, записаться, купить или связаться.</p><div class="btns"><a class="btn" href="#cases">посмотреть проекты</a><a class="btn butter" href="https://t.me/Marina_x6" target="_blank" rel="noopener">обсудить сайт</a></div></div><div class="deck" aria-label="Колода проектов"><article class="deck-card one"><img src="/faneraplit.png" data-fallback="/projects-sites.png" alt="Превью проекта ФанераПлит"><div class="dc-body"><small>интернет-магазин</small><strong>ФанераПлит</strong><p>Каталог, SEO-база, блог и визуальная доработка.</p></div></article><article class="deck-card two"><img src="/legend-site.png" data-fallback="/projects-design.png" alt="Превью проекта ЖК Легенда"><div class="dc-body"><small>лендинг</small><strong>ЖК «Легенда»</strong><p>Премиальная подача и путь к заявке.</p></div></article><article class="deck-card three"><img src="/istina-vnutri.png" data-fallback="/projects-comms.png" alt="Превью проекта Истина внутри"><div class="dc-body"><small>онлайн-школа</small><strong>Истина внутри</strong><p>Мягкая атмосфера и продажа курса.</p></div></article></div></div></section>
+    <section class="page-hero"><div class="container site-hero"><div><div class="label">сайты и лендинги</div><h1>Сайты, где структура<br>и визуал работают вместе</h1><p class="lead">Создаю сайты, где структура, текст и визуал помогают человеку быстро понять предложение, почувствовать доверие и сделать следующий шаг: оставить заявку, записаться, купить или связаться.</p><div class="btns"><a class="btn" href="#cases">посмотреть проекты</a><a class="btn butter" href="https://t.me/Marina_x6" target="_blank" rel="noopener">обсудить сайт</a></div></div><div class="deck" aria-label="Колода проектов"><article class="deck-card one"><img src="/faneraplit-case.jpeg" alt="Превью проекта ФанераПлит"><div class="dc-body"><small>интернет-магазин</small><strong>ФанераПлит</strong><p>Каталог, SEO-база, блог и визуальная доработка.</p></div></article><article class="deck-card two"><img src="/legend-case.jpeg" alt="Превью проекта ЖК Легенда"><div class="dc-body"><small>лендинг</small><strong>ЖК «Легенда»</strong><p>Премиальная подача и путь к заявке.</p></div></article><article class="deck-card three"><img src="/istina-case.jpeg" alt="Превью проекта Истина внутри"><div class="dc-body"><small>онлайн-школа</small><strong>Истина внутри</strong><p>Мягкая атмосфера и продажа курса.</p></div></article></div></div></section>
     <section class="section"><div class="container route"><div class="route-card"><div class="label">что я делаю</div><h2>Собираю сайт как понятный маршрут для клиента</h2><p class="lead">Сайт — это не просто красивые блоки. Это путь: от первого впечатления до действия. Я помогаю выстроить этот путь через структуру, тексты, визуальную подачу, адаптив и базовую подготовку к запуску.</p></div><div class="route-steps"><article class="route-step"><small>01</small><h3>Структура</h3><p>Продумываю логику страницы: что человек видит сначала и какой блок ведёт его дальше.</p></article><article class="route-step"><small>02</small><h3>Тексты и смыслы</h3><p>Помогаю сформулировать оффер, преимущества, доверие и призывы к действию.</p></article><article class="route-step"><small>03</small><h3>Визуальная система</h3><p>Цвет, типографика, карточки, кнопки, акценты и общий ритм сайта.</p></article><article class="route-step"><small>04</small><h3>Сборка и запуск</h3><p>Tilda или код, адаптив, базовые SEO-настройки, формы и технические элементы.</p></article></div></div></section>
-    <section class="section" id="cases"><div class="container"><div class="label">проекты</div><h2>Разные задачи — разная подача</h2><article class="case-large"><div class="case-image"><img src="/faneraplit.png" data-fallback="/projects-sites.png" alt="ФанераПлит — интернет-магазин строительных материалов"></div><div class="case-text"><h3>ФанераПлит</h3><p><strong>Многостраничный интернет-магазин с каталогом и SEO-базой.</strong></p><p>Для проекта нужно было разработать и развить сайт строительных материалов: фанера, OSB, ДСП, ДВП и другие категории. Главная задача — сделать каталог понятным для покупателя, усилить доверие к бренду и подготовить основу для продвижения.</p><p>Я структурировала категории и карточки товаров, улучшила визуальную подачу, подготовила изображения и нейровидео, настроила SEO-базу, аналитику, блог и обязательные сервисные страницы.</p><p><strong>Результат:</strong> сайт стал не просто витриной товаров, а основой для заявок, контента и дальнейшего развития бренда.</p><div class="tags"><span>интернет-магазин</span><span>каталог</span><span>SEO</span><span>блог</span><span>аналитика</span></div></div></article><div class="case-grid"><article class="case-card"><img src="/legend-site.png" data-fallback="/projects-design.png" alt="ЖК Легенда — лендинг жилого комплекса"><h3>ЖК «Легенда»</h3><p><strong>Премиальный лендинг для жилого комплекса на этапе открытия продаж.</strong></p><p>Задача — презентовать проект, показать ценность комплекса и привести пользователя к заявке на консультацию или подбор квартиры. Я выстроила визуальную концепцию, типографику, карточки преимуществ, блоки с планировками, микроанимации и адаптивную сборку на Tilda.</p><div class="tags"><span>недвижимость</span><span>премиум</span><span>Tilda</span><span>заявки</span><span>UI</span></div></article><article class="case-card"><img src="/istina-vnutri.png" data-fallback="/projects-comms.png" alt="Истина внутри — лендинг онлайн-школы"><h3>Истина внутри</h3><p><strong>Лендинг для онлайн-школы и продажи курса.</strong></p><p>Нужно было создать страницу, которая помогает человеку спокойно разобраться в программе, почувствовать доверие и перейти к записи. Я спроектировала структуру, визуальную концепцию, стиль кнопок и карточек, собрала материалы и адаптивный лендинг на Tilda.</p><div class="tags"><span>онлайн-школа</span><span>курс</span><span>мягкая подача</span><span>конверсия</span><span>адаптив</span></div></article></div></div></section>
+    <section class="section" id="cases"><div class="container"><div class="label">проекты</div><h2>Разные задачи — разная подача</h2><article class="case-large"><div class="case-image"><img src="/faneraplit-case.jpeg" alt="ФанераПлит — интернет-магазин строительных материалов"></div><div class="case-text"><h3>ФанераПлит</h3><p><strong>Многостраничный интернет-магазин с каталогом и SEO-базой.</strong></p><p>Для проекта нужно было разработать и развить сайт строительных материалов: фанера, OSB, ДСП, ДВП и другие категории. Главная задача — сделать каталог понятным для покупателя, усилить доверие к бренду и подготовить основу для продвижения.</p><p>Я структурировала категории и карточки товаров, улучшила визуальную подачу, подготовила изображения и нейровидео, настроила SEO-базу, аналитику, блог и обязательные сервисные страницы.</p><p><strong>Результат:</strong> сайт стал не просто витриной товаров, а основой для заявок, контента и дальнейшего развития бренда.</p><div class="tags"><span>интернет-магазин</span><span>каталог</span><span>SEO</span><span>блог</span><span>аналитика</span></div></div></article><div class="case-grid"><article class="case-card"><img src="/legend-case.jpeg" alt="ЖК Легенда — лендинг жилого комплекса"><h3>ЖК «Легенда»</h3><p><strong>Премиальный лендинг для жилого комплекса на этапе открытия продаж.</strong></p><p>Задача — презентовать проект, показать ценность комплекса и привести пользователя к заявке на консультацию или подбор квартиры. Я выстроила визуальную концепцию, типографику, карточки преимуществ, блоки с планировками, микроанимации и адаптивную сборку на Tilda.</p><div class="tags"><span>недвижимость</span><span>премиум</span><span>Tilda</span><span>заявки</span><span>UI</span></div></article><article class="case-card"><img src="/istina-case.jpeg" alt="Истина внутри — лендинг онлайн-школы"><h3>Истина внутри</h3><p><strong>Лендинг для онлайн-школы и продажи курса.</strong></p><p>Нужно было создать страницу, которая помогает человеку спокойно разобраться в программе, почувствовать доверие и перейти к записи. Я спроектировала структуру, визуальную концепцию, стиль кнопок и карточек, собрала материалы и адаптивный лендинг на Tilda.</p><div class="tags"><span>онлайн-школа</span><span>курс</span><span>мягкая подача</span><span>конверсия</span><span>адаптив</span></div></article></div></div></section>
     <section class="section"><div class="container"><div class="label">как проходит работа</div><h2>Сначала смыслы, потом визуал и сборка</h2><div class="process-grid"><article class="process-card"><small>01</small><h3>Знакомство</h3><p>Обсуждаем задачу: лендинг, сайт-визитка, каталог, редизайн или отдельная страница услуги.</p></article><article class="process-card"><small>02</small><h3>Условия</h3><p>Фиксируем объём, сроки, стоимость, этапы и порядок оплаты. После предоплаты я бронирую время под проект.</p></article><article class="process-card"><small>03</small><h3>Структура</h3><p>Собираю маршрут страницы: какие блоки нужны и как вести пользователя к заявке, записи или покупке.</p></article><article class="process-card"><small>04</small><h3>Тексты</h3><p>Помогаю сформулировать оффер, преимущества, блоки доверия и призывы к действию.</p></article><article class="process-card"><small>05</small><h3>Концепция</h3><p>Разрабатываю стиль: цвет, типографику, карточки, кнопки, акценты и общий ритм страницы.</p></article><article class="process-card"><small>06</small><h3>Сборка</h3><p>Переношу структуру и дизайн в Tilda или в код, настраиваю блоки, формы, анимации и адаптив.</p></article><article class="process-card"><small>07</small><h3>Запуск</h3><p>Проверяю сайт на разных экранах, вношу финальные правки и готовлю проект к публикации.</p></article></div></div></section>
   </main>
   <section class="footer-mini"><div class="container"><div class="footer-box"><div class="label">есть похожая задача?</div><h2>Сайт должен не просто выглядеть красиво, а помогать человеку принять решение</h2><p>Напишите, какой сайт или страницу хочется собрать: лендинг, каталог, страницу услуги или портфолио. Я помогу выстроить структуру, текст и визуальную подачу так, чтобы всё работало на доверие и понятный следующий шаг.</p><div class="footer-actions"><a class="btn" href="https://t.me/Marina_x6" target="_blank" rel="noopener">написать</a><a class="btn butter" href="/">на главную</a></div></div></div></section>

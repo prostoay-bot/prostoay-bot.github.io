@@ -77,7 +77,6 @@ h3{font-family:var(--serif);font-weight:600;font-size:clamp(27px,2.2vw,38px);lin
 
 /* =========================================================
    HR-GUIDES ABSOLUTE NO-OVERLAP FIX
-   Текст на карточках больше не перекрывается вообще.
    ========================================================= */
 
 .folder{
@@ -89,9 +88,7 @@ h3{font-family:var(--serif);font-weight:600;font-size:clamp(27px,2.2vw,38px);lin
   overflow:hidden !important;
 }
 
-.folder-tab{
-  display:none !important;
-}
+.folder-tab{ display:none !important; }
 
 .doc,
 .doc.one,
@@ -111,23 +108,10 @@ h3{font-family:var(--serif);font-weight:600;font-size:clamp(27px,2.2vw,38px);lin
   box-shadow:0 18px 40px rgba(20,59,52,.08) !important;
 }
 
-.doc.one{
-  transform:rotate(-2.4deg) !important;
-}
-
-.doc.two{
-  transform:rotate(1.8deg) translateY(8px) !important;
-  background:rgba(246,239,226,.78) !important;
-}
-
-.doc.three{
-  transform:rotate(-1.4deg) translateY(-4px) !important;
-  background:rgba(245,220,228,.58) !important;
-}
-
-.doc.four{
-  transform:rotate(1.2deg) translateY(6px) !important;
-}
+.doc.one{ transform:rotate(-2.4deg) !important; }
+.doc.two{ transform:rotate(1.8deg) translateY(8px) !important; background:rgba(246,239,226,.78) !important; }
+.doc.three{ transform:rotate(-1.4deg) translateY(-4px) !important; background:rgba(245,220,228,.58) !important; }
+.doc.four{ transform:rotate(1.2deg) translateY(6px) !important; }
 
 .doc small,
 .doc strong,
@@ -143,27 +127,14 @@ h3{font-family:var(--serif);font-weight:600;font-size:clamp(27px,2.2vw,38px);lin
   line-height:1.42 !important;
 }
 
-.folder:hover .doc.one{
-  transform:translateY(-5px) rotate(-2.4deg) !important;
-}
+.folder:hover .doc.one{ transform:translateY(-5px) rotate(-2.4deg) !important; }
+.folder:hover .doc.two{ transform:translateY(3px) rotate(1.8deg) !important; }
+.folder:hover .doc.three{ transform:translateY(-8px) rotate(-1.4deg) !important; }
+.folder:hover .doc.four{ transform:translateY(1px) rotate(1.2deg) !important; }
 
-.folder:hover .doc.two{
-  transform:translateY(3px) rotate(1.8deg) !important;
-}
-
-.folder:hover .doc.three{
-  transform:translateY(-8px) rotate(-1.4deg) !important;
-}
-
-.folder:hover .doc.four{
-  transform:translateY(1px) rotate(1.2deg) !important;
-}
-
-/* Кнопки на страницах: эффект при наведении заметный, но аккуратный */
 .btn{
   transition:transform .24s ease, box-shadow .24s ease, filter .24s ease, border-color .24s ease !important;
 }
-
 .btn:hover{
   transform:translateY(-3px) !important;
   filter:saturate(1.04) brightness(1.01);
@@ -204,7 +175,7 @@ h3{font-family:var(--serif);font-weight:600;font-size:clamp(27px,2.2vw,38px);lin
   <div class="page-top">
     <div class="container back-row">
       <a class="back-btn" href="/">← на главную</a>
-      <a class="back-btn" href="/#services">← к услугам</a>
+      <a class="back-btn" href="/index.html#services">← к услугам</a>
     </div>
   </div>
 
