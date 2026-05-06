@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://prostoay-bot.github.io/sitemap.xml
