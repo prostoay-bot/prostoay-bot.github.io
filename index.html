@@ -15,12 +15,12 @@
   <meta property="og:title" content="NEIRO.WAY — HR с душой дизайнера" />
   <meta property="og:description" content="Сайты, HR-решения, AI-инструменты и дизайн-материалы, которые помогают объяснять, вовлекать и вызывать доверие." />
   <meta property="og:url" content="https://prostoay-bot.github.io/" />
-  <meta property="og:image" content="https://prostoay-bot.github.io/projects-sites.png" />
+  <meta property="og:image" content="https://prostoay-bot.github.io/projects-sites.webp" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="NEIRO.WAY — HR с душой дизайнера" />
   <meta name="twitter:description" content="HR, AI и дизайн-решения для понятных внутренних коммуникаций, онбординга, сайтов и визуальных материалов." />
-  <meta name="twitter:image" content="https://prostoay-bot.github.io/projects-sites.png" />
+  <meta name="twitter:image" content="https://prostoay-bot.github.io/projects-sites.webp" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -4087,73 +4087,65 @@ section{scroll-margin-top:96px}
 
 
 
+
 /* =========================================================
-   MAIN REAL FINAL FIX — useful buttons/subtitle/footer hover
+   MAIN SAFE MOBILE + BUTTON HOVER FIX
    ========================================================= */
 
-.useful-subtitle{
-  max-width:650px !important;
-  text-wrap:balance;
-}
-
-.useful-subtitle br{
-  display:block !important;
-}
+.useful-subtitle{max-width:650px!important;text-wrap:balance}
+.useful-subtitle br{display:block!important}
 
 .tag-button{
-  min-width:210px !important;
-  min-height:58px !important;
-  padding:0 30px !important;
-  border-radius:999px !important;
-  background:linear-gradient(180deg, rgba(246,226,190,.98), rgba(238,207,155,.94)) !important;
-  border:1px solid rgba(176,126,74,.28) !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.82),
-    0 12px 26px rgba(20,59,52,.08) !important;
-  font-family:"Marck Script", cursive !important;
-  font-size:25px !important;
-  font-weight:400 !important;
-  letter-spacing:0 !important;
-  color:#143b34 !important;
+  min-width:210px!important;
+  min-height:58px!important;
+  padding:0 30px!important;
+  border-radius:999px!important;
+  background:linear-gradient(180deg,rgba(246,226,190,.98),rgba(238,207,155,.94))!important;
+  border:1px solid rgba(176,126,74,.28)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.82),0 12px 26px rgba(20,59,52,.08)!important;
+  font-family:"Marck Script",cursive!important;
+  font-size:25px!important;
+  font-weight:400!important;
+  letter-spacing:0!important;
+  color:#143b34!important;
 }
+.tag-button::after{content:none!important}
+.tag-button:hover{transform:translateY(-3px)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 20px 38px rgba(20,59,52,.14)!important;filter:saturate(1.06)}
 
-.tag-button::after{
-  content:none !important;
-}
-
-.tag-button:hover{
-  transform:translateY(-2px) !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.88),
-    0 18px 34px rgba(20,59,52,.12) !important;
-  filter:saturate(1.03);
-}
-
-.social-grid a{
-  transition:transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease !important;
-}
-
-.social-grid a:hover{
-  transform:translateY(-3px) !important;
-  border-color:rgba(20,59,52,.22) !important;
-  background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(246,250,248,.74)) !important;
-  box-shadow:0 14px 30px rgba(20,59,52,.10) !important;
-}
-
-@media(max-width:980px){
-  .useful-subtitle{ max-width:560px !important; }
-  .tag-button{
-    width:100% !important;
-    min-height:56px !important;
-    font-size:24px !important;
-  }
-}
+.service-card__back a,.social-grid a,.btn,.back-btn,.tag-button{transition:transform .24s ease,box-shadow .24s ease,filter .24s ease,background .24s ease,border-color .24s ease!important}
+.service-card__back a:hover,.social-grid a:hover,.btn:hover,.back-btn:hover{transform:translateY(-4px)!important;box-shadow:0 18px 34px rgba(20,59,52,.13)!important;filter:saturate(1.04)}
 
 @media(max-width:768px){
-  .useful-subtitle{
-    max-width:360px !important;
-    font-size:24px !important;
-    line-height:1.25 !important;
+  .useful-subtitle{max-width:360px!important;font-size:24px!important;line-height:1.25!important}
+  .tag-button{width:100%!important;min-height:56px!important;font-size:24px!important}
+
+  /* Канцелярские декоративные элементы не должны перекрывать текст */
+  .pin,.clip,.paperclip,.binder,.pushpin,.card-pin,
+  .about-pin,.note-pin,.decor-pin,.stationery-pin,
+  [class*="pin-"],[class*="clip-"],[class*="paperclip"]{
+    pointer-events:none!important;
+    opacity:.32!important;
+    z-index:0!important;
+  }
+
+  /* Если декоративные скрепки стоят внутри карточек — уводим к краю */
+  .note-card .pin,.note-card .clip,
+  .story-card .pin,.story-card .clip,
+  .about-card .pin,.about-card .clip{
+    transform:translate(-16px,-16px) scale(.72)!important;
+  }
+
+  .about-copy,.contact-card,.service-card,.useful-tag,.note-card,.story-card{
+    position:relative!important;
+    z-index:5!important;
+  }
+
+  .about-copy h2,.about-copy p,
+  .contact-card h2,.contact-card p,
+  .note-card h3,.note-card p,
+  .story-card h3,.story-card p{
+    position:relative!important;
+    z-index:6!important;
   }
 }
 
@@ -4433,7 +4425,7 @@ section{scroll-margin-top:96px}
             <div class="service-card__face service-card__back">
               <h3>Дизайн</h3>
               <p>Презентации, обложки, гайды, шаблоны и digital-материалы, где визуал помогает понять смысл, а не просто украшает страницу.</p>
-              <a href="#contacts">обсудить</a>
+              <a href="designs/">подробнее</a>
             </div>
           </div>
         </article>

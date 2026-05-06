@@ -72,107 +72,64 @@ h3{font-family:var(--serif);font-weight:600;font-size:clamp(27px,2.2vw,38px);lin
 
 
 
+
 /* =========================================================
-   WEBSITES REAL PHOTOS FIX — correct images and readable deck
+   WEBSITES STRICT PHOTO FIX — correct cases, full visible previews
    ========================================================= */
 
-.site-hero h1 br{ display:block; }
+.site-hero h1 br{display:block}
 
 .deck{
-  min-height:560px !important;
-  overflow:hidden !important;
+  min-height:560px!important;
+  overflow:hidden!important;
 }
 
 .deck-card{
-  width:min(310px, 50%) !important;
-  height:390px !important;
+  width:min(310px,50%)!important;
+  height:390px!important;
 }
 
 .deck-card img{
-  height:210px !important;
-  object-fit:cover !important;
+  height:210px!important;
+  object-fit:contain!important;
+  padding:10px!important;
+  background:rgba(255,255,255,.70)!important;
 }
-
-.deck-card.one{
-  left:4% !important;
-  top:92px !important;
-  transform:rotate(-10deg) !important;
-  z-index:2 !important;
-}
-
-.deck-card.two{
-  left:35% !important;
-  top:42px !important;
-  transform:rotate(1deg) !important;
-  z-index:3 !important;
-}
-
-.deck-card.three{
-  right:3% !important;
-  top:116px !important;
-  transform:rotate(10deg) !important;
-  z-index:4 !important;
-}
-
-.deck:hover .deck-card.one{ transform:translateX(-16px) translateY(18px) rotate(-13deg) !important; }
-.deck:hover .deck-card.two{ transform:translateY(-12px) rotate(-1deg) !important; }
-.deck:hover .deck-card.three{ transform:translateX(16px) translateY(20px) rotate(13deg) !important; }
 
 .case-image img,
 .case-card img{
-  object-fit:cover !important;
+  object-fit:contain!important;
+  padding:12px!important;
+  background:rgba(255,255,255,.68)!important;
 }
 
-.btn{
-  transition:transform .24s ease, box-shadow .24s ease, filter .24s ease, border-color .24s ease !important;
-}
+.case-image{min-height:420px!important}
+.case-card img{height:300px!important}
 
-.btn:hover{
-  transform:translateY(-3px) !important;
-  filter:saturate(1.04) brightness(1.01);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.86),
-    0 18px 34px rgba(20,59,52,.13) !important;
-  border-color:rgba(20,59,52,.12) !important;
-}
+.deck-card.one{left:4%!important;top:92px!important;transform:rotate(-10deg)!important;z-index:2!important}
+.deck-card.two{left:35%!important;top:42px!important;transform:rotate(1deg)!important;z-index:3!important}
+.deck-card.three{right:3%!important;top:116px!important;transform:rotate(10deg)!important;z-index:4!important}
 
-@media(max-width:1100px){
-  .site-hero{ grid-template-columns:1fr !important; }
-  .deck{ min-height:520px !important; }
-  .deck-card.one{left:5% !important;top:96px !important}
-  .deck-card.two{left:35% !important;top:48px !important}
-  .deck-card.three{right:5% !important;top:126px !important}
-}
+.btn{transition:transform .24s ease,box-shadow .24s ease,filter .24s ease!important}
+.btn:hover{transform:translateY(-4px)!important;filter:saturate(1.06) brightness(1.015);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 20px 38px rgba(20,59,52,.14)!important}
 
 @media(max-width:960px){
-  .deck{
-    min-height:auto !important;
-    display:grid !important;
-    grid-template-columns:1fr !important;
-    gap:16px !important;
-    padding:22px !important;
-  }
+  .deck{min-height:auto!important;display:grid!important;grid-template-columns:1fr!important;gap:16px!important;padding:22px!important}
+  .deck-card,.deck-card.one,.deck-card.two,.deck-card.three{position:relative!important;inset:auto!important;width:100%!important;height:auto!important;transform:none!important;margin:0!important}
+  .deck-card img{height:auto!important;max-height:320px!important}
+  .case-image{min-height:auto!important}
+  .case-image img,.case-card img{height:auto!important;max-height:360px!important}
+}
 
-  .deck-card,
-  .deck-card.one,
-  .deck-card.two,
-  .deck-card.three{
-    position:relative !important;
-    inset:auto !important;
-    width:100% !important;
-    height:auto !important;
-    transform:none !important;
-    margin:0 !important;
-  }
 
-  .deck:hover .deck-card,
-  .deck:hover .deck-card.one,
-  .deck:hover .deck-card.two,
-  .deck:hover .deck-card.three{
-    transform:none !important;
-  }
-
-  .deck-card img{ height:220px !important; }
+/* GLOBAL BUTTON HOVER FIX */
+.btn,.back-btn{
+  transition:transform .24s ease,box-shadow .24s ease,filter .24s ease,background .24s ease,border-color .24s ease!important;
+}
+.btn:hover,.back-btn:hover{
+  transform:translateY(-4px)!important;
+  filter:saturate(1.05) brightness(1.01);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 20px 38px rgba(20,59,52,.14)!important;
 }
 
 </style>
