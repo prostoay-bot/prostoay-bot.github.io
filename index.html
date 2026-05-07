@@ -4149,6 +4149,57 @@ section{scroll-margin-top:96px}
   }
 }
 
+
+/* MAIN FINAL PHOTO/FREE BLOCK */
+.useful-subtitle{max-width:650px!important;text-wrap:balance}
+.useful-subtitle br{display:block!important}
+.tag-button{
+  min-width:210px!important;min-height:58px!important;padding:0 30px!important;border-radius:999px!important;
+  background:linear-gradient(180deg,rgba(246,226,190,.98),rgba(238,207,155,.94))!important;
+  border:1px solid rgba(176,126,74,.28)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.82),0 12px 26px rgba(20,59,52,.08)!important;
+  font-family:"Marck Script",cursive!important;font-size:25px!important;font-weight:400!important;letter-spacing:0!important;color:#143b34!important;
+}
+@media(max-width:768px){
+  .hero-photo,.hero-photo-wrap,.hero-visual,.hero-image{position:relative!important;z-index:8!important}
+  .hero-photo{margin-bottom:-88px!important;transform:translateY(18px)!important}
+  .about-section{position:relative!important;z-index:4!important;padding-top:132px!important}
+  .about-collage{position:relative!important;min-height:590px!important}
+}
+
+/* FINAL POLISH BUTTONS AND LABELS */
+.label::after,.label:after{display:none!important;content:none!important}
+.btn,.back-btn,.service-card__back a,.tag-button,.nw-card__button,.project-link,.social-grid a{
+  position:relative;isolation:isolate;overflow:hidden;
+  transition:transform .24s ease,box-shadow .24s ease,filter .24s ease,background .24s ease,border-color .24s ease!important;
+}
+.btn::before,.back-btn::before,.service-card__back a::before,.tag-button::before,.nw-card__button::before,.project-link::before,.social-grid a::before{
+  content:"";position:absolute;inset:1px;border-radius:inherit;
+  background:linear-gradient(120deg,transparent 0%,rgba(255,255,255,.62) 46%,transparent 62%);
+  transform:translateX(-130%);transition:transform .55s ease;z-index:-1;pointer-events:none;
+}
+.btn:hover,.back-btn:hover,.service-card__back a:hover,.tag-button:hover,.nw-card__button:hover,.project-link:hover,.social-grid a:hover{
+  transform:translateY(-4px)!important;filter:saturate(1.06) brightness(1.015);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 20px 38px rgba(20,59,52,.14)!important;
+  border-color:rgba(20,59,52,.16)!important;
+}
+.btn:hover::before,.back-btn:hover::before,.service-card__back a:hover::before,.tag-button:hover::before,.nw-card__button:hover::before,.project-link:hover::before,.social-grid a:hover::before{
+  transform:translateX(130%);
+}
+.btn:active,.back-btn:active,.service-card__back a:active,.tag-button:active,.nw-card__button:active,.project-link:active,.social-grid a:active{
+  transform:translateY(-1px) scale(.99)!important;
+}
+.tag-button::after{content:none!important}
+@media(max-width:768px){
+  .pin,.clip,.paperclip,.binder,.pushpin,.card-pin,.about-pin,.note-pin,.decor-pin,.stationery-pin,[class*="pin-"],[class*="clip-"],[class*="paperclip"]{
+    pointer-events:none!important;opacity:.26!important;z-index:0!important;
+  }
+  .about-copy,.contact-card,.service-card,.useful-tag,.note-card,.story-card,
+  .about-copy h2,.about-copy p,.contact-card h2,.contact-card p,.note-card h3,.note-card p,.story-card h3,.story-card p{
+    position:relative!important;z-index:6!important;
+  }
+}
+
 </style>
 
   <script type="application/ld+json">
