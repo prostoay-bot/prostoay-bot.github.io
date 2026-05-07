@@ -1371,7 +1371,7 @@
       }
 
       .about-fly-photo{
-        display:none !important;
+        display:block !important;
       }
     }
 
@@ -4307,6 +4307,69 @@ section{scroll-margin-top:96px}
   0%,100%{ transform:translate3d(0,0,0) rotate(0deg); }
   45%{ transform:translate3d(0,14px,0) rotate(-1deg); }
   70%{ transform:translate3d(0,-4px,0) rotate(.6deg); }
+}
+
+
+/* =========================================================
+   MOBILE REAL HERO PHOTO TRANSITION FIX
+   Возвращает старую логику перелёта фото в блок «Обо мне» на телефоне.
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .hero,
+  .hero__grid,
+  .hero__right,
+  .visual,
+  .photo-frame,
+  .about-section,
+  .about-inner,
+  .about-collage {
+    overflow: visible !important;
+  }
+
+  .about-fly-photo {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: none !important;
+    z-index: 18 !important;
+    will-change: transform, width, height, opacity !important;
+    transform-origin: center center !important;
+  }
+
+  .about-fly-photo img {
+    object-fit: cover !important;
+    object-position: center top !important;
+  }
+
+  .photo-frame {
+    will-change: transform, opacity !important;
+  }
+
+  /* Если JS-перелёт не успел подхватиться в мобильном Safari — оставляем живое движение фото */
+  .photo-frame:not(.is-flying) {
+    animation: mobileHeroAlive 6.8s ease-in-out infinite !important;
+  }
+
+  /* Коллаж во втором блоке остаётся читаемым */
+  .about-card,
+  .about-card--left,
+  .about-card--center,
+  .about-card--right {
+    will-change: transform, opacity !important;
+  }
+}
+
+@keyframes mobileHeroAlive {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  38% {
+    transform: translate3d(0, 12px, 0) rotate(-0.8deg);
+  }
+  68% {
+    transform: translate3d(0, -5px, 0) rotate(0.5deg);
+  }
 }
 
 </style>
