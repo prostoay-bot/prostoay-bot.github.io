@@ -4646,6 +4646,63 @@ section{scroll-margin-top:96px}
   }
 }
 
+
+/* =========================================================
+   MOBILE HERO PHOTO FLY — REPAIRED AFTER GEMINI CHECK
+   ========================================================= */
+
+.about-fly-photo{
+  display:none;
+}
+
+.about-fly-photo.is-flying{
+  display:block !important;
+  position:fixed !important;
+  z-index:99999 !important;
+  pointer-events:none !important;
+  will-change:transform, top, left, width, height, opacity !important;
+  transform:translateZ(0) !important;
+  border-radius:34px !important;
+  padding:12px !important;
+  background:rgba(255,255,255,.42) !important;
+  border:1px solid rgba(255,255,255,.86) !important;
+  box-shadow:0 28px 62px rgba(20,59,52,.18) !important;
+  overflow:hidden !important;
+  backdrop-filter:blur(12px) !important;
+  -webkit-backdrop-filter:blur(12px) !important;
+}
+
+.about-fly-photo.is-flying img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  object-position:center top !important;
+  border-radius:24px !important;
+  display:block !important;
+}
+
+@media(max-width:768px){
+  .about-fly-photo{
+    display:none;
+  }
+
+  .about-fly-photo.is-flying{
+    display:block !important;
+    z-index:99999 !important;
+    padding:10px !important;
+    border-radius:30px !important;
+  }
+
+  .about-fly-photo.is-flying img{
+    border-radius:21px !important;
+  }
+
+  .hero__right .photo-frame,
+  .about-card--center img{
+    transition:opacity .14s ease !important;
+  }
+}
+
 </style>
 
   <script type="application/ld+json">
@@ -5366,6 +5423,7 @@ section{scroll-margin-top:96px}
     
 
 
+
 function updateAboutFlyPhoto(){
       if (!aboutSection || !aboutFlyPhoto || !heroPhotoFrame || !aboutCenterMedia) {
         return;
@@ -5375,12 +5433,12 @@ function updateAboutFlyPhoto(){
       const aboutRect = aboutSection.getBoundingClientRect();
 
       /*
-        На десктопе оставляем прежнюю логику.
-        На мобильном делаем именно "перелёт":
-        одно фото едет сверху вниз и становится центральным фото во втором блоке.
+        Desktop-like mobile behavior:
+        one floating photo moves from hero card to about polaroid.
+        No duplicate visible while flying.
       */
-      const startPoint = window.innerHeight * (isMobile ? 1.06 : 0.92);
-      const endPoint = window.innerHeight * (isMobile ? 0.16 : 0.30);
+      const startPoint = window.innerHeight * (isMobile ? 1.08 : 0.92);
+      const endPoint = window.innerHeight * (isMobile ? 0.18 : 0.30);
 
       const progress = clampNumber(
         (startPoint - aboutRect.top) / (startPoint - endPoint),
@@ -5388,19 +5446,19 @@ function updateAboutFlyPhoto(){
         1
       );
 
-      const isFlying = progress > 0.015 && progress < 0.985;
+      const isFlying = progress > 0.012 && progress < 0.988;
 
       if (!isFlying) {
         aboutFlyPhoto.classList.remove('is-flying');
         aboutFlyPhoto.style.display = 'none';
         aboutFlyPhoto.style.opacity = '0';
 
-        if (aboutCenterImg) {
-          aboutCenterImg.style.opacity = progress >= 0.985 ? '1' : '';
-        }
-
         if (heroPhotoFrame) {
           heroPhotoFrame.style.opacity = '';
+        }
+
+        if (aboutCenterImg) {
+          aboutCenterImg.style.opacity = progress >= 0.988 ? '1' : '';
         }
 
         return;
@@ -5409,10 +5467,6 @@ function updateAboutFlyPhoto(){
       const heroRect = heroPhotoFrame.getBoundingClientRect();
       const targetRect = aboutCenterMedia.getBoundingClientRect();
 
-      /*
-        На мобильном стартуем не из полной hero-карточки,
-        а из того же визуального размера, чтобы не было резкого прыжка и дубля.
-      */
       const left = lerpNumber(heroRect.left, targetRect.left, progress);
       const top = lerpNumber(heroRect.top, targetRect.top, progress);
       const width = lerpNumber(heroRect.width, targetRect.width, progress);
@@ -5424,14 +5478,11 @@ function updateAboutFlyPhoto(){
       aboutFlyPhoto.style.top = top + 'px';
       aboutFlyPhoto.style.width = width + 'px';
       aboutFlyPhoto.style.height = height + 'px';
-      aboutFlyPhoto.style.opacity = progress < 0.94 ? '1' : String(1 - ((progress - 0.94) / 0.045));
+      aboutFlyPhoto.style.opacity = '1';
 
-      /*
-        Главное: во время перелёта не должно быть двух фото.
-        Исходное и конечное фото прячем, летит только overlay.
-      */
       if (isMobile) {
-        heroPhotoFrame.style.opacity = progress < 0.08 ? '1' : '0';
+        /* убираем дубль: летит только overlay */
+        heroPhotoFrame.style.opacity = progress < 0.05 ? '1' : '0';
         if (aboutCenterImg) {
           aboutCenterImg.style.opacity = progress > 0.965 ? '1' : '0';
         }
@@ -5444,7 +5495,9 @@ function updateAboutFlyPhoto(){
 
     window.addEventListener('scroll', updateAboutFlyPhoto, { passive:true });
     window.addEventListener('resize', updateAboutFlyPhoto);
+    window.addEventListener('orientationchange', updateAboutFlyPhoto);
     updateAboutFlyPhoto();
+
 
 
 
