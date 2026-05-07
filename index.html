@@ -1371,7 +1371,7 @@
       }
 
       .about-fly-photo{
-        display:block !important;
+        display:none;
       }
     }
 
@@ -4150,225 +4150,499 @@ section{scroll-margin-top:96px}
 }
 
 
-/* =========================================================
-   OPTIMIZED FULL FINAL SAFETY
-   Лёгкий финальный пакет: ссылки, мобилка, декор, кнопки.
-   ========================================================= */
-
-/* убрать странные кружки/точки рядом с заголовками */
-.services-section::before,
-.nw-workdeck::after,
-.nw-workdeck__label::before,
-.projects-kicker::after,
-.useful-label i::after,
-.contact-label i::after,
-.label::after,
-.label:after{
-  display:none !important;
-  content:none !important;
+/* MAIN FINAL PHOTO/FREE BLOCK */
+.useful-subtitle{max-width:650px!important;text-wrap:balance}
+.useful-subtitle br{display:block!important}
+.tag-button{
+  min-width:210px!important;min-height:58px!important;padding:0 30px!important;border-radius:999px!important;
+  background:linear-gradient(180deg,rgba(246,226,190,.98),rgba(238,207,155,.94))!important;
+  border:1px solid rgba(176,126,74,.28)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.82),0 12px 26px rgba(20,59,52,.08)!important;
+  font-family:"Marck Script",cursive!important;font-size:25px!important;font-weight:400!important;letter-spacing:0!important;color:#143b34!important;
+}
+@media(max-width:768px){
+  .hero-photo,.hero-photo-wrap,.hero-visual,.hero-image{position:relative!important;z-index:8!important}
+  .hero-photo{margin-bottom:-88px!important;transform:translateY(18px)!important}
+  .about-section{position:relative!important;z-index:4!important;padding-top:132px!important}
+  .about-collage{position:relative!important;min-height:590px!important}
 }
 
-/* кнопки: мягкая подсветка, блик, объём */
+/* =========================================================
+   FINAL BUTTONS + MOBILE PHOTO FLOW FIX
+   ========================================================= */
+
+/* Кнопки должны быть заметнее даже без наведения */
 .apple-btn,
-.service-card__back a,
+.btn,
+.back-btn,
 .tag-button,
+.social-grid a,
+.service-card__back a,
 .nw-card__button,
-.project-link,
-.social-grid a{
+.project-link{
   position:relative !important;
-  overflow:hidden !important;
   isolation:isolate !important;
-  transition:transform .24s ease, box-shadow .24s ease, filter .24s ease, background .24s ease, border-color .24s ease !important;
+  overflow:hidden !important;
+  border-color:rgba(20,59,52,.14) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.92),
+    0 14px 30px rgba(20,59,52,.10),
+    0 0 0 1px rgba(255,255,255,.48) !important;
+  transition:
+    transform .24s ease,
+    box-shadow .24s ease,
+    filter .24s ease,
+    background .24s ease,
+    border-color .24s ease !important;
 }
 
 .apple-btn::before,
-.service-card__back a::before,
+.btn::before,
+.back-btn::before,
 .tag-button::before,
+.social-grid a::before,
+.service-card__back a::before,
 .nw-card__button::before,
-.project-link::before,
-.social-grid a::before{
+.project-link::before{
   content:"" !important;
   position:absolute !important;
-  inset:1px !important;
+  inset:0 !important;
   border-radius:inherit !important;
-  background:linear-gradient(120deg, transparent 0%, rgba(255,255,255,.62) 46%, transparent 62%) !important;
-  transform:translateX(-130%) !important;
-  transition:transform .55s ease !important;
-  z-index:-1 !important;
+  background:
+    radial-gradient(circle at 22% 18%, rgba(255,255,255,.85), transparent 28%),
+    linear-gradient(120deg, transparent 0%, rgba(255,255,255,.70) 44%, transparent 62%) !important;
+  transform:translateX(-125%) !important;
+  opacity:.0 !important;
+  transition:transform .55s ease, opacity .22s ease !important;
   pointer-events:none !important;
+  z-index:0 !important;
+}
+
+.apple-btn > *,
+.btn > *,
+.back-btn > *,
+.tag-button > *,
+.social-grid a > *,
+.service-card__back a > *,
+.nw-card__button > *,
+.project-link > *{
+  position:relative;
+  z-index:1;
 }
 
 .apple-btn:hover,
-.service-card__back a:hover,
+.btn:hover,
+.back-btn:hover,
 .tag-button:hover,
+.social-grid a:hover,
+.service-card__back a:hover,
 .nw-card__button:hover,
 .project-link:hover,
-.social-grid a:hover{
-  transform:translateY(-4px) !important;
-  filter:saturate(1.06) brightness(1.015) !important;
+.apple-btn.is-touching,
+.btn.is-touching,
+.back-btn.is-touching,
+.tag-button.is-touching,
+.social-grid a.is-touching,
+.service-card__back a.is-touching,
+.nw-card__button.is-touching,
+.project-link.is-touching{
+  transform:translateY(-5px) scale(1.012) !important;
+  filter:saturate(1.08) brightness(1.02) !important;
+  border-color:rgba(20,59,52,.24) !important;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.92),
-    0 20px 38px rgba(20,59,52,.14) !important;
-  border-color:rgba(20,59,52,.16) !important;
+    inset 0 1px 0 rgba(255,255,255,.96),
+    0 22px 42px rgba(20,59,52,.16),
+    0 0 0 7px rgba(235,226,168,.18) !important;
 }
 
 .apple-btn:hover::before,
-.service-card__back a:hover::before,
+.btn:hover::before,
+.back-btn:hover::before,
 .tag-button:hover::before,
+.social-grid a:hover::before,
+.service-card__back a:hover::before,
 .nw-card__button:hover::before,
 .project-link:hover::before,
-.social-grid a:hover::before{
-  transform:translateX(130%) !important;
+.apple-btn.is-touching::before,
+.btn.is-touching::before,
+.back-btn.is-touching::before,
+.tag-button.is-touching::before,
+.social-grid a.is-touching::before,
+.service-card__back a.is-touching::before,
+.nw-card__button.is-touching::before,
+.project-link.is-touching::before{
+  transform:translateX(125%) !important;
+  opacity:1 !important;
 }
 
+.apple-btn:active,
+.btn:active,
+.back-btn:active,
+.tag-button:active,
+.social-grid a:active,
+.service-card__back a:active,
+.nw-card__button:active,
+.project-link:active{
+  transform:translateY(-1px) scale(.99) !important;
+}
+
+/* Чтобы не вернулись двойные стрелки */
 .tag-button::after{
   content:none !important;
 }
 
-/* полезное: подзаголовок ровно в две строки */
-.useful-subtitle{
-  max-width:650px !important;
-  text-wrap:balance;
-}
-.useful-subtitle br{
-  display:block !important;
+/* Ссылки-кнопки в портфолио */
+.nw-card__button{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-decoration:none !important;
+  cursor:pointer !important;
 }
 
-/* мобилка: читаемость, фото, декор */
+/* На телефоне overlay-фото должно лететь поверх секций */
 @media(max-width:768px){
-  body{ overflow-x:hidden !important; }
-
-  .hero,
-  .hero__grid,
-  .hero__right,
-  .visual,
-  .photo-frame{
-    overflow:visible !important;
-  }
-
-  .photo-frame{
-    animation:mobileHeroSoftMove 6.5s ease-in-out infinite !important;
-    will-change:transform !important;
-    transform-origin:center center !important;
-  }
-
-  .about-section,
-  .services-section,
-  .why-clean,
-  .useful-section,
-  .contact-footer{
-    overflow:hidden !important;
-  }
-
-  .paper-pin,
-  .binder-real,
-  .pin,
-  .clip,
-  .paperclip,
-  .card-pin,
-  [class*="pin-"],
-  [class*="clip-"],
-  [class*="paperclip"]{
+  .about-fly-photo{
+    display:none;
+    position:fixed !important;
+    z-index:999 !important;
     pointer-events:none !important;
-    opacity:.22 !important;
-    z-index:0 !important;
+    border-radius:30px !important;
+    padding:10px !important;
+    background:rgba(255,255,255,.40) !important;
+    border:1px solid rgba(255,255,255,.82) !important;
+    box-shadow:0 24px 56px rgba(20,59,52,.18) !important;
+    backdrop-filter:blur(12px) !important;
+    -webkit-backdrop-filter:blur(12px) !important;
   }
 
-  .why-card,
-  .service-card,
-  .useful-tag,
-  .contact-card,
-  .about-copy{
-    position:relative !important;
-    z-index:6 !important;
+  .about-fly-photo img{
+    border-radius:22px !important;
+    object-fit:cover !important;
+    object-position:center top !important;
   }
 
-  .service-card__face{
-    overflow:hidden !important;
+  .about-card--center img{
+    transition:opacity .18s ease !important;
   }
-
-  .useful-tag{
-    transform:none !important;
-  }
-
-  .tag-head,
-  .tag-inner p{
-    padding-right:0 !important;
-  }
-
-  .useful-subtitle{
-    max-width:360px !important;
-    font-size:24px !important;
-    line-height:1.25 !important;
-  }
-}
-
-@keyframes mobileHeroSoftMove{
-  0%,100%{ transform:translate3d(0,0,0) rotate(0deg); }
-  45%{ transform:translate3d(0,14px,0) rotate(-1deg); }
-  70%{ transform:translate3d(0,-4px,0) rotate(.6deg); }
 }
 
 
 /* =========================================================
-   MOBILE REAL HERO PHOTO TRANSITION FIX
-   Возвращает старую логику перелёта фото в блок «Обо мне» на телефоне.
+   ONE FINAL VISUAL SYSTEM — headings, services, buttons, contacts
    ========================================================= */
 
-@media (max-width: 768px) {
-  .hero,
-  .hero__grid,
-  .hero__right,
-  .visual,
-  .photo-frame,
-  .about-section,
-  .about-inner,
-  .about-collage {
-    overflow: visible !important;
+/* 1. Единый вид маленьких заголовков разделов: всегда линия */
+.label,
+.section-label,
+.kicker,
+.eyebrow{
+  display:flex !important;
+  align-items:center !important;
+  gap:18px !important;
+}
+
+.label::after,
+.section-label::after,
+.kicker::after,
+.eyebrow::after,
+.label:after,
+.section-label:after,
+.kicker:after,
+.eyebrow:after{
+  content:"" !important;
+  display:block !important;
+  width:76px !important;
+  height:1px !important;
+  flex:0 0 76px !important;
+  background:linear-gradient(90deg, rgba(191,126,146,.72), rgba(191,126,146,.16)) !important;
+}
+
+/* Убираем странные кружки внутри карточек услуг */
+.service-card::after,
+.service-card .circle,
+.service-card .dot-circle,
+.service-card [class*="circle"]{
+  display:none !important;
+  content:none !important;
+}
+
+/* Карточки услуг: спокойная, логичная палитра */
+.service-card{
+  border:1px solid rgba(255,255,255,.74) !important;
+  box-shadow:0 18px 42px rgba(20,59,52,.08) !important;
+  background:linear-gradient(145deg, rgba(255,255,255,.72), rgba(246,250,248,.56)) !important;
+}
+
+.service-card:nth-child(2),
+.service-card:nth-child(5){
+  background:linear-gradient(145deg, rgba(246,239,226,.82), rgba(255,255,255,.62)) !important;
+}
+
+.service-card:nth-child(3),
+.service-card:nth-child(4){
+  background:linear-gradient(145deg, rgba(245,220,228,.58), rgba(255,255,255,.64)) !important;
+}
+
+.service-card:nth-child(6){
+  background:linear-gradient(145deg, rgba(255,255,255,.74), rgba(228,237,242,.68)) !important;
+}
+
+/* 2. Кнопки: другой цвет при выделении + подсветка */
+.apple-btn,
+.btn,
+.back-btn,
+.tag-button,
+.social-grid a,
+.service-card__back a,
+.nw-card__button,
+.project-link{
+  position:relative !important;
+  isolation:isolate !important;
+  overflow:hidden !important;
+  border-color:rgba(20,59,52,.14) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.92),
+    0 14px 30px rgba(20,59,52,.10),
+    0 0 0 1px rgba(255,255,255,.48) !important;
+  transition:
+    transform .24s ease,
+    box-shadow .24s ease,
+    filter .24s ease,
+    background .24s ease,
+    color .24s ease,
+    border-color .24s ease !important;
+}
+
+.apple-btn::before,
+.btn::before,
+.back-btn::before,
+.tag-button::before,
+.social-grid a::before,
+.service-card__back a::before,
+.nw-card__button::before,
+.project-link::before{
+  content:"" !important;
+  position:absolute !important;
+  inset:0 !important;
+  border-radius:inherit !important;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,.84), transparent 28%),
+    linear-gradient(120deg, transparent 0%, rgba(255,255,255,.68) 44%, transparent 62%) !important;
+  transform:translateX(-125%) !important;
+  opacity:0 !important;
+  transition:transform .55s ease, opacity .22s ease !important;
+  pointer-events:none !important;
+  z-index:0 !important;
+}
+
+.apple-btn:hover,
+.btn:hover,
+.back-btn:hover,
+.tag-button:hover,
+.social-grid a:hover,
+.service-card__back a:hover,
+.nw-card__button:hover,
+.project-link:hover,
+.apple-btn.is-touching,
+.btn.is-touching,
+.back-btn.is-touching,
+.tag-button.is-touching,
+.social-grid a.is-touching,
+.service-card__back a.is-touching,
+.nw-card__button.is-touching,
+.project-link.is-touching{
+  color:#143b34 !important;
+  background:linear-gradient(135deg, rgba(235,226,168,.98), rgba(226,162,180,.78)) !important;
+  transform:translateY(-5px) scale(1.012) !important;
+  filter:saturate(1.08) brightness(1.02) !important;
+  border-color:rgba(20,59,52,.24) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.96),
+    0 22px 42px rgba(20,59,52,.16),
+    0 0 0 7px rgba(235,226,168,.20) !important;
+}
+
+.apple-btn:hover::before,
+.btn:hover::before,
+.back-btn:hover::before,
+.tag-button:hover::before,
+.social-grid a:hover::before,
+.service-card__back a:hover::before,
+.nw-card__button:hover::before,
+.project-link:hover::before,
+.apple-btn.is-touching::before,
+.btn.is-touching::before,
+.back-btn.is-touching::before,
+.tag-button.is-touching::before,
+.social-grid a.is-touching::before,
+.service-card__back a.is-touching::before,
+.nw-card__button.is-touching::before,
+.project-link.is-touching::before{
+  transform:translateX(125%) !important;
+  opacity:1 !important;
+}
+
+.apple-btn:active,
+.btn:active,
+.back-btn:active,
+.tag-button:active,
+.social-grid a:active,
+.service-card__back a:active,
+.nw-card__button:active,
+.project-link:active{
+  transform:translateY(-1px) scale(.99) !important;
+}
+
+.tag-button::after{content:none !important}
+
+/* Portfolio links now look exactly like buttons */
+.nw-card__button{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-decoration:none !important;
+  cursor:pointer !important;
+}
+
+/* 3. Контакты: логотипы/знаки мессенджеров в кнопках */
+.social-grid a{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:10px !important;
+}
+
+.messenger-icon{
+  width:28px !important;
+  height:28px !important;
+  border-radius:50% !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  font-family:Inter,Arial,sans-serif !important;
+  font-size:14px !important;
+  font-weight:800 !important;
+  color:#143b34 !important;
+  background:rgba(235,226,168,.54) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.72) !important;
+}
+
+.messenger-icon--telegram{background:rgba(155,205,218,.45) !important}
+.messenger-icon--instagram{background:rgba(226,162,180,.42) !important}
+.messenger-icon--pinterest{background:rgba(245,220,228,.62) !important}
+.messenger-icon--max{background:rgba(235,226,168,.58) !important}
+
+/* 4. Useful subtitle exactly 2 lines */
+.useful-subtitle{
+  max-width:650px !important;
+  text-wrap:balance !important;
+}
+.useful-subtitle br{display:block !important}
+
+/* 5. Mobile fly photo enabled and visible */
+@media(max-width:768px){
+  .about-fly-photo{
+    display:none;
+    position:fixed !important;
+    z-index:999 !important;
+    pointer-events:none !important;
+    border-radius:30px !important;
+    padding:10px !important;
+    background:rgba(255,255,255,.40) !important;
+    border:1px solid rgba(255,255,255,.82) !important;
+    box-shadow:0 24px 56px rgba(20,59,52,.18) !important;
+    backdrop-filter:blur(12px) !important;
+    -webkit-backdrop-filter:blur(12px) !important;
   }
 
-  .about-fly-photo {
-    display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: none !important;
-    z-index: 18 !important;
-    will-change: transform, width, height, opacity !important;
-    transform-origin: center center !important;
+  .about-fly-photo img{
+    border-radius:22px !important;
+    object-fit:cover !important;
+    object-position:center top !important;
   }
 
-  .about-fly-photo img {
-    object-fit: cover !important;
-    object-position: center top !important;
+  .about-card--center img{
+    transition:opacity .18s ease !important;
   }
 
-  .photo-frame {
-    will-change: transform, opacity !important;
+  .label::after,
+  .section-label::after,
+  .kicker::after,
+  .eyebrow::after{
+    width:46px !important;
+    flex-basis:46px !important;
   }
 
-  /* Если JS-перелёт не успел подхватиться в мобильном Safari — оставляем живое движение фото */
-  .photo-frame:not(.is-flying) {
-    animation: mobileHeroAlive 6.8s ease-in-out infinite !important;
+  /* Декор не перекрывает текст */
+  .pin,.clip,.paperclip,.binder,.pushpin,.card-pin,
+  .about-pin,.note-pin,.decor-pin,.stationery-pin,
+  [class*="pin-"],[class*="clip-"],[class*="paperclip"]{
+    pointer-events:none !important;
+    opacity:.24 !important;
+    z-index:0 !important;
   }
 
-  /* Коллаж во втором блоке остаётся читаемым */
-  .about-card,
-  .about-card--left,
-  .about-card--center,
-  .about-card--right {
-    will-change: transform, opacity !important;
+  .about-copy,.contact-card,.service-card,.useful-tag,.note-card,.story-card,
+  .about-copy h2,.about-copy p,.contact-card h2,.contact-card p,
+  .note-card h3,.note-card p,.story-card h3,.story-card p{
+    position:relative !important;
+    z-index:6 !important;
   }
 }
 
-@keyframes mobileHeroAlive {
-  0%, 100% {
-    transform: translate3d(0, 0, 0) rotate(0deg);
+
+/* =========================================================
+   TRUE MOBILE FLY PHOTO — desktop-like behavior
+   ========================================================= */
+
+/* По умолчанию скрыто */
+.about-fly-photo{
+  display:none !important;
+}
+
+/* Когда JS включает перелёт — показываем даже поверх старых mobile !important */
+.about-fly-photo.is-flying{
+  display:block !important;
+  position:fixed !important;
+  z-index:9999 !important;
+  pointer-events:none !important;
+  border-radius:34px !important;
+  padding:12px !important;
+  background:rgba(255,255,255,.38) !important;
+  border:1px solid rgba(255,255,255,.82) !important;
+  box-shadow:0 26px 58px rgba(20,59,52,.18) !important;
+  backdrop-filter:blur(12px) !important;
+  -webkit-backdrop-filter:blur(12px) !important;
+  overflow:hidden !important;
+  will-change:left, top, width, height, opacity !important;
+}
+
+.about-fly-photo.is-flying img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  object-position:center top !important;
+  border-radius:24px !important;
+}
+
+/* На мобильном центральное фото появляется только когда перелёт завершён */
+@media(max-width:768px){
+  .about-card--center img{
+    transition:opacity .18s ease !important;
   }
-  38% {
-    transform: translate3d(0, 12px, 0) rotate(-0.8deg);
+
+  .hero__right .photo-frame{
+    transition:opacity .16s ease !important;
   }
-  68% {
-    transform: translate3d(0, -5px, 0) rotate(0.5deg);
+
+  .about-fly-photo.is-flying{
+    padding:10px !important;
+    border-radius:30px !important;
+  }
+
+  .about-fly-photo.is-flying img{
+    border-radius:21px !important;
   }
 }
 
@@ -4790,11 +5064,11 @@ section{scroll-margin-top:96px}
     </header>
     <div class="nw-carousel" aria-label="Направления работ">
       <div class="nw-cards">
-                <article class="nw-card" data-index="0"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-app.png" alt="Приложение"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">01</span><span class="nw-card__hint">нажмите для деталей</span></div><h3>Приложение</h3><p>AI-инструменты и интерфейсы для адаптации, обучения и HR-процессов: от идеи до наглядной упаковки продукта.</p><div class="nw-tags"><span>приложение</span><span>автоматизация</span><span>адаптация</span><span>интерфейс</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">01</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Концепции приложений и HR-инструментов.</li><li>Наглядная подача экранов и пользовательского пути.</li><li>Материалы для презентации продукта и идеи.</li><li>Подходит для HR, обучения и внутренних сервисов.</li></ul><button class="nw-card__button" type="button">Смотреть проект</button></div></div></div></article>
-        <article class="nw-card" data-index="1"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-sites.png" alt="Сайты"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">02</span><span class="nw-card__hint">нажмите для деталей</span></div><h3>Сайты</h3><p>Сайты, где структура, текст и визуал работают вместе: человеку быстро понятно, что вы предлагаете и почему вам можно доверять.</p><div class="nw-tags"><span>сайты</span><span>лендинги</span><span>интернет-магазины</span><span>адаптив</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">02</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Лендинги для экспертов, услуг и HR-проектов.</li><li>Каталоги и страницы с понятной навигацией.</li><li>Тексты, визуальная логика, адаптив и подготовка к запуску.</li><li>Без случайных блоков: каждый экран ведёт человека к действию.</li></ul><button class="nw-card__button" type="button">Смотреть кейсы</button></div></div></div></article>
-        <article class="nw-card" data-index="2"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-comms.png" alt="Внутренние коммуникации"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">03</span><span class="nw-card__hint">нажмите для деталей</span></div><h3>Внутренние коммуникации</h3><p>HR-решения и тексты для сотрудников: рассылки, анонсы, инструкции, онбординг и объяснение изменений простым языком.</p><div class="nw-tags"><span>HR-решения</span><span>рассылки</span><span>онбординг</span><span>инструкции</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">03</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Рассылка о подписании документов в Jira.</li><li>Анонс вебинара для внутреннего календаря.</li><li>Материалы для адаптации сотрудников.</li><li>Тексты, которые понятно читать и легко внедрять.</li></ul><button class="nw-card__button" type="button">Смотреть примеры</button></div></div></div></article>
-        <article class="nw-card" data-index="3"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-design.png" alt="Дизайн"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">04</span><span class="nw-card__hint">нажмите для деталей</span></div><h3>Дизайн</h3><p>Визуальные материалы, которые помогают бренду выглядеть собранно и узнаваемо: от шаблонов для соцсетей до баннеров и обучающих материалов.</p><div class="nw-tags"><span>соцсети</span><span>шаблоны</span><span>баннеры</span><span>оформление</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">04</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Шаблоны для соцсетей и оформления визуальной ленты.</li><li>Баннеры и материалы для экспертов и брендов.</li><li>Мини-гайды и визуальные материалы.</li><li>Единый стиль и аккуратная подача контента.</li></ul><button class="nw-card__button" type="button">Смотреть дизайн</button></div></div></div></article>
-        <article class="nw-card" data-index="4"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-neuro.png" alt="Нейрофото"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">05</span><span class="nw-card__hint">нажмите для деталей</span></div><h3>Нейрофото</h3><p>Нейрофотосессии и визуальные образы для личного бренда, контента и вдохновения: от идеи образа до готового коллажа.</p><div class="nw-tags"><span>нейрофото</span><span>образы</span><span>контент</span><span>личный бренд</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">05</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Коллажи на основе ваших фотографий и референсов.</li><li>Разные стили: fashion, lifestyle, editorial.</li><li>Образы для личного бренда и контента.</li><li>Акцент на атмосферу, эстетику и узнаваемость.</li></ul><button class="nw-card__button" type="button">Смотреть образы</button></div></div></div></article>      </div>
+                <article class="nw-card" data-index="0"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-app.png" alt="Приложение"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">01</span><span class="nw-card__hint">нажмите для деталей</span></div><h3>Приложение</h3><p>AI-инструменты и интерфейсы для адаптации, обучения и HR-процессов: от идеи до наглядной упаковки продукта.</p><div class="nw-tags"><span>приложение</span><span>автоматизация</span><span>адаптация</span><span>интерфейс</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">01</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Концепции приложений и HR-инструментов.</li><li>Наглядная подача экранов и пользовательского пути.</li><li>Материалы для презентации продукта и идеи.</li><li>Подходит для HR, обучения и внутренних сервисов.</li></ul><a class="nw-card__button" href="automation/">Смотреть проект</a></div></div></div></article>
+        <article class="nw-card" data-index="1"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-sites.png" alt="Сайты"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">02</span><span class="nw-card__hint">нажмите для деталей</span></div><h3>Сайты</h3><p>Сайты, где структура, текст и визуал работают вместе: человеку быстро понятно, что вы предлагаете и почему вам можно доверять.</p><div class="nw-tags"><span>сайты</span><span>лендинги</span><span>интернет-магазины</span><span>адаптив</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">02</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Лендинги для экспертов, услуг и HR-проектов.</li><li>Каталоги и страницы с понятной навигацией.</li><li>Тексты, визуальная логика, адаптив и подготовка к запуску.</li><li>Без случайных блоков: каждый экран ведёт человека к действию.</li></ul><a class="nw-card__button" href="websites/">Смотреть кейсы</a></div></div></div></article>
+        <article class="nw-card" data-index="2"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-comms.png" alt="Внутренние коммуникации"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">03</span><span class="nw-card__hint">нажмите для деталей</span></div><h3>Внутренние коммуникации</h3><p>HR-решения и тексты для сотрудников: рассылки, анонсы, инструкции, онбординг и объяснение изменений простым языком.</p><div class="nw-tags"><span>HR-решения</span><span>рассылки</span><span>онбординг</span><span>инструкции</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">03</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Рассылка о подписании документов в Jira.</li><li>Анонс вебинара для внутреннего календаря.</li><li>Материалы для адаптации сотрудников.</li><li>Тексты, которые понятно читать и легко внедрять.</li></ul><a class="nw-card__button" href="communications/">Смотреть примеры</a></div></div></div></article>
+        <article class="nw-card" data-index="3"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-design.png" alt="Дизайн"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">04</span><span class="nw-card__hint">нажмите для деталей</span></div><h3>Дизайн</h3><p>Визуальные материалы, которые помогают бренду выглядеть собранно и узнаваемо: от шаблонов для соцсетей до баннеров и обучающих материалов.</p><div class="nw-tags"><span>соцсети</span><span>шаблоны</span><span>баннеры</span><span>оформление</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">04</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Шаблоны для соцсетей и оформления визуальной ленты.</li><li>Баннеры и материалы для экспертов и брендов.</li><li>Мини-гайды и визуальные материалы.</li><li>Единый стиль и аккуратная подача контента.</li></ul><a class="nw-card__button" href="designs/">Смотреть дизайн</a></div></div></div></article>
+        <article class="nw-card" data-index="4"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-neuro.png" alt="Нейрофото"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">05</span><span class="nw-card__hint">нажмите для деталей</span></div><h3>Нейрофото</h3><p>Нейрофотосессии и визуальные образы для личного бренда, контента и вдохновения: от идеи образа до готового коллажа.</p><div class="nw-tags"><span>нейрофото</span><span>образы</span><span>контент</span><span>личный бренд</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">05</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Коллажи на основе ваших фотографий и референсов.</li><li>Разные стили: fashion, lifestyle, editorial.</li><li>Образы для личного бренда и контента.</li><li>Акцент на атмосферу, эстетику и узнаваемость.</li></ul><a class="nw-card__button" href="https://prostoay-bot.github.io/-/" target="_blank" rel="noopener">Смотреть образы</a></div></div></div></article>      </div>
       <div class="nw-controls"><button class="nw-arrow" type="button" data-dir="prev" aria-label="Предыдущая карточка">‹</button><div class="nw-dots" aria-label="Навигация по карточкам"></div><button class="nw-arrow" type="button" data-dir="next" aria-label="Следующая карточка">›</button></div>
     </div>
   </div>
@@ -4835,7 +5109,7 @@ section{scroll-margin-top:96px}
             <div class="tag-chips">
               <span>HR</span><span>промты</span><span>PDF</span>
             </div>
-            <a href="designs/" class="tag-button" download>Скачать ↓</a>
+            <a href="hr-prompts.pdf" class="tag-button" download>Скачать ↓</a>
           </div>
         </div>
       </article>
@@ -4909,10 +5183,10 @@ section{scroll-margin-top:96px}
         </a>
   
         <div class="social-grid">
-          <a href="https://t.me/Marina_x6" target="_blank">Telegram</a>
-          <a href="https://www.instagram.com/neiro.way?igsh=azM1MnB2anFycmly&utm_source=qr" target="_blank">Instagram</a>
-          <a href="https://pin.it/3vPSZ2FBX" target="_blank">Pinterest</a>
-          <a href="https://max.ru/u/f9LHodD0cOLIr_lYl5w15E3qcAONoGJO6smF7oKU7mBUeeGDVIyLzMbrK94" target="_blank">MAX</a>
+          <a href="https://t.me/Marina_x6" target="_blank"><span class="messenger-icon messenger-icon--telegram">✈</span><span>Telegram</span></a>
+          <a href="https://www.instagram.com/neiro.way?igsh=azM1MnB2anFycmly&utm_source=qr" target="_blank"><span class="messenger-icon messenger-icon--instagram">◎</span><span>Instagram</span></a>
+          <a href="https://pin.it/3vPSZ2FBX" target="_blank"><span class="messenger-icon messenger-icon--pinterest">P</span><span>Pinterest</span></a>
+          <a href="https://max.ru/u/f9LHodD0cOLIr_lYl5w15E3qcAONoGJO6smF7oKU7mBUeeGDVIyLzMbrK94" target="_blank"><span class="messenger-icon messenger-icon--max">•</span><span>MAX</span></a>
         </div>
       </div>
     </div>
@@ -5089,31 +5363,44 @@ section{scroll-margin-top:96px}
       return start + (end - start) * progress;
     }
 
-    function updateAboutFlyPhoto(){
-      if (
-        !aboutSection ||
-        !aboutFlyPhoto ||
-        !heroPhotoFrame ||
-        !aboutCenterMedia ||
-        window.innerWidth <= 768
-      ) {
+    
+
+
+function updateAboutFlyPhoto(){
+      if (!aboutSection || !aboutFlyPhoto || !heroPhotoFrame || !aboutCenterMedia) {
         return;
       }
 
+      const isMobile = window.innerWidth <= 768;
       const aboutRect = aboutSection.getBoundingClientRect();
-      const startPoint = window.innerHeight * 0.92;
-      const endPoint = window.innerHeight * 0.30;
+
+      /*
+        На десктопе оставляем прежнюю логику.
+        На мобильном делаем именно "перелёт":
+        одно фото едет сверху вниз и становится центральным фото во втором блоке.
+      */
+      const startPoint = window.innerHeight * (isMobile ? 1.06 : 0.92);
+      const endPoint = window.innerHeight * (isMobile ? 0.16 : 0.30);
+
       const progress = clampNumber(
         (startPoint - aboutRect.top) / (startPoint - endPoint),
         0,
         1
       );
 
-      if (progress <= 0 || progress >= 1) {
+      const isFlying = progress > 0.015 && progress < 0.985;
+
+      if (!isFlying) {
+        aboutFlyPhoto.classList.remove('is-flying');
         aboutFlyPhoto.style.display = 'none';
+        aboutFlyPhoto.style.opacity = '0';
 
         if (aboutCenterImg) {
-          aboutCenterImg.style.opacity = '';
+          aboutCenterImg.style.opacity = progress >= 0.985 ? '1' : '';
+        }
+
+        if (heroPhotoFrame) {
+          heroPhotoFrame.style.opacity = '';
         }
 
         return;
@@ -5122,26 +5409,45 @@ section{scroll-margin-top:96px}
       const heroRect = heroPhotoFrame.getBoundingClientRect();
       const targetRect = aboutCenterMedia.getBoundingClientRect();
 
+      /*
+        На мобильном стартуем не из полной hero-карточки,
+        а из того же визуального размера, чтобы не было резкого прыжка и дубля.
+      */
       const left = lerpNumber(heroRect.left, targetRect.left, progress);
       const top = lerpNumber(heroRect.top, targetRect.top, progress);
       const width = lerpNumber(heroRect.width, targetRect.width, progress);
       const height = lerpNumber(heroRect.height, targetRect.height, progress);
 
+      aboutFlyPhoto.classList.add('is-flying');
       aboutFlyPhoto.style.display = 'block';
       aboutFlyPhoto.style.left = left + 'px';
       aboutFlyPhoto.style.top = top + 'px';
       aboutFlyPhoto.style.width = width + 'px';
       aboutFlyPhoto.style.height = height + 'px';
-      aboutFlyPhoto.style.opacity = progress < 0.96 ? '1' : '0';
+      aboutFlyPhoto.style.opacity = progress < 0.94 ? '1' : String(1 - ((progress - 0.94) / 0.045));
 
-      if (aboutCenterImg) {
-        aboutCenterImg.style.opacity = progress > 0.92 ? '1' : '0';
+      /*
+        Главное: во время перелёта не должно быть двух фото.
+        Исходное и конечное фото прячем, летит только overlay.
+      */
+      if (isMobile) {
+        heroPhotoFrame.style.opacity = progress < 0.08 ? '1' : '0';
+        if (aboutCenterImg) {
+          aboutCenterImg.style.opacity = progress > 0.965 ? '1' : '0';
+        }
+      } else {
+        if (aboutCenterImg) {
+          aboutCenterImg.style.opacity = progress > 0.88 ? '1' : '0';
+        }
       }
     }
 
     window.addEventListener('scroll', updateAboutFlyPhoto, { passive:true });
     window.addEventListener('resize', updateAboutFlyPhoto);
     updateAboutFlyPhoto();
+
+
+
 
   
 
@@ -5179,5 +5485,17 @@ section{scroll-margin-top:96px}
   update();
 })();
 </script>
+
+<script>
+(function(){
+  const items = document.querySelectorAll('.apple-btn, .btn, .back-btn, .tag-button, .social-grid a, .service-card__back a, .nw-card__button, .project-link');
+  items.forEach((item) => {
+    item.addEventListener('touchstart', () => item.classList.add('is-touching'), { passive:true });
+    item.addEventListener('touchend', () => setTimeout(() => item.classList.remove('is-touching'), 420), { passive:true });
+    item.addEventListener('touchcancel', () => item.classList.remove('is-touching'), { passive:true });
+  });
+})();
+</script>
+
 </body>
 </html>
