@@ -15,12 +15,12 @@
   <meta property="og:title" content="NEIRO.WAY — HR с душой дизайнера" />
   <meta property="og:description" content="Сайты, HR-решения, AI-инструменты и дизайн-материалы, которые помогают объяснять, вовлекать и вызывать доверие." />
   <meta property="og:url" content="https://prostoay-bot.github.io/" />
-  <meta property="og:image" content="https://prostoay-bot.github.io/projects-sites.webp" />
+  <meta property="og:image" content="https://prostoay-bot.github.io/projects-sites.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="NEIRO.WAY — HR с душой дизайнера" />
   <meta name="twitter:description" content="HR, AI и дизайн-решения для понятных внутренних коммуникаций, онбординга, сайтов и визуальных материалов." />
-  <meta name="twitter:image" content="https://prostoay-bot.github.io/projects-sites.webp" />
+  <meta name="twitter:image" content="https://prostoay-bot.github.io/projects-sites.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -3770,434 +3770,518 @@
 
 
 /* =========================================================
-   NEIRO.WAY FINAL SAFE FIX — 06.05
-   Исправляет: ссылки на страницы, наложения, мобильный блок «Обо мне», кнопки, футер.
+   NEIRO.WAY — ТОЧЕЧНАЯ ПРАВКА ОТ СТАРОГО КОДА
+   Ничего не пересобирает: только исправляет замечания.
    ========================================================= */
 
-html{ scroll-padding-top:96px; }
-body{ -webkit-font-smoothing:antialiased; text-rendering:geometricPrecision; }
+/* 1. Убираем странные декоративные круги у заголовков */
+.services-section::before,
+.nw-workdeck::after,
+.projects-section::after,
+.footer-mini::after,
+.footer-box::after,
+.result-panel::after,
+.case-hero::after{
+  display:none !important;
+  content:none !important;
+}
 
-/* Кнопки: возвращаем мягкий стиль, без жирного «обсудить» */
+/* 2. Карточки услуг: спокойнее цвета, без драки розового и жёлтого рядом */
+.service-card__front--rose{
+  background:linear-gradient(180deg, rgba(255,255,255,.82), rgba(246,226,232,.42)) !important;
+}
+.service-card__front--butter{
+  background:linear-gradient(180deg, rgba(255,255,255,.84), rgba(241,235,198,.42)) !important;
+}
+.service-card__front--neuro{
+  background:radial-gradient(circle at 82% 14%, rgba(226,162,180,.18), transparent 30%), linear-gradient(180deg, rgba(255,255,255,.82), rgba(235,244,247,.55)) !important;
+}
+.service-card__front::after{ opacity:.55 !important; }
+
+/* 3. Кнопки: заметный, но аккуратный hover без двойных стрелок */
 .apple-btn,
 .service-card__back a,
 .tag-button,
 .nw-card__button,
-.project-link{
-  font-family:"Marck Script", cursive !important;
-  font-size:22px !important;
-  font-weight:400 !important;
-  letter-spacing:0 !important;
-  line-height:1 !important;
-  text-transform:none !important;
-  border-radius:999px !important;
-  color:#143b34 !important;
-  text-decoration:none !important;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.42), rgba(255,255,255,0)),
-    linear-gradient(135deg, #f3dfbf, #ead19f) !important;
-  border:1px solid rgba(159,118,72,.24) !important;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.86), 0 12px 24px rgba(20,59,52,.08) !important;
+.project-link,
+.btn,
+.back-btn,
+.social-grid a{
+  position:relative !important;
+  isolation:isolate !important;
+  overflow:hidden !important;
+  transition:transform .24s ease, box-shadow .24s ease, filter .24s ease, background .24s ease, border-color .24s ease !important;
 }
-
-.apple-btn{ font-size:23px !important; }
-.service-card__back a{ min-height:46px !important; padding:0 22px !important; }
-.tag-button{ min-height:54px !important; display:flex !important; align-items:center !important; justify-content:center !important; }
+.apple-btn::before,
+.service-card__back a::before,
+.tag-button::before,
+.nw-card__button::before,
+.project-link::before,
+.btn::before,
+.back-btn::before,
+.social-grid a::before{
+  content:"" !important;
+  position:absolute !important;
+  inset:1px !important;
+  border-radius:inherit !important;
+  background:linear-gradient(115deg, transparent 0%, rgba(255,255,255,.72) 46%, transparent 64%) !important;
+  transform:translateX(-135%) !important;
+  transition:transform .62s ease !important;
+  z-index:-1 !important;
+  pointer-events:none !important;
+}
 .apple-btn:hover,
 .service-card__back a:hover,
 .tag-button:hover,
 .nw-card__button:hover,
-.project-link:hover{
-  transform:translateY(-2px) !important;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.9), 0 18px 32px rgba(20,59,52,.12) !important;
+.project-link:hover,
+.btn:hover,
+.back-btn:hover,
+.social-grid a:hover{
+  transform:translateY(-4px) !important;
+  filter:saturate(1.06) brightness(1.02) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.94), 0 20px 42px rgba(20,59,52,.16), 0 0 0 1px rgba(226,162,180,.16) !important;
+  border-color:rgba(20,59,52,.18) !important;
 }
+.apple-btn:hover::before,
+.service-card__back a:hover::before,
+.tag-button:hover::before,
+.nw-card__button:hover::before,
+.project-link:hover::before,
+.btn:hover::before,
+.back-btn:hover::before,
+.social-grid a:hover::before{ transform:translateX(135%) !important; }
+.tag-button::after{ content:none !important; display:none !important; }
+.nw-card__button{ display:inline-flex !important; align-items:center !important; justify-content:center !important; text-decoration:none !important; }
 
-.social-grid a{
-  font-family:"Inter","Manrope",Arial,sans-serif !important;
-  font-size:15px !important;
-  font-weight:500 !important;
-  letter-spacing:0 !important;
-  min-height:52px !important;
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  border-radius:999px !important;
-  background:linear-gradient(180deg, rgba(255,255,255,.86), rgba(255,255,255,.54)) !important;
-  border:1px solid rgba(20,59,52,.13) !important;
-  color:#143b34 !important;
+/* 4. Полезное: фраза строго в две аккуратные строки */
+.useful-subtitle{
+  max-width:620px !important;
+  white-space:normal !important;
+  text-wrap:balance !important;
 }
+.useful-subtitle br{ display:block !important; }
 
-/* Карточки услуг: ровная сетка и читаемость */
-.services-section{ overflow:hidden !important; isolation:isolate !important; }
-.service-card__face{ overflow:hidden !important; }
-.service-card__back p{ max-width:100% !important; }
-.service-card h3{ overflow-wrap:break-word; }
+/* 5. Скрепки/кнопки в блоке подхода: не перекрывают текст на телефоне */
+.why-card{ overflow:visible !important; }
+.why-card h3,
+.why-card p{ position:relative !important; z-index:3 !important; }
+.paper-pin,
+.binder-real{ pointer-events:none !important; }
 
-/* Блок «Обо мне»: на десктопе сохраняем коллаж, на мобильном убираем конфликтные подписи */
-.about-section{ overflow:hidden !important; isolation:isolate !important; }
-.about-copy{ position:relative !important; z-index:20 !important; }
+/* 6. Контакты: при переходе по якорю не залезают под фиксированное меню */
+#contacts{ scroll-margin-top:132px !important; }
+.contact-footer{ overflow:hidden !important; }
+.contact-left,
+.contact-right,
+.contact-card{ position:relative !important; z-index:5 !important; }
 
-/* Полезное: карточки не могут залезать на контакты */
-.useful-section{
-  min-height:auto !important;
-  align-items:start !important;
-  padding-bottom:clamp(120px, 12vw, 190px) !important;
-  overflow:hidden !important;
-  isolation:isolate !important;
-}
-.useful-right{ min-height:760px !important; }
-.useful-tag{ max-width:860px !important; box-shadow:0 18px 42px rgba(20,59,52,.10) !important; }
-.tag-1{ top:18px !important; }
-.tag-2{ top:268px !important; }
-.tag-3{ top:518px !important; }
-.tag-head,.tag-inner p{ padding-right:70px !important; }
+/* 7. Мобильная версия: нормальная читаемость без наездов */
+@media(max-width:768px){
+  #contacts{ scroll-margin-top:150px !important; }
 
-/* Контакты и футер */
-.contact-footer{
-  min-height:auto !important;
-  padding-bottom:46px !important;
-  overflow:hidden !important;
-  isolation:isolate !important;
-}
-.contact-left h2{ max-width:820px !important; text-wrap:balance; }
-.contact-card{ max-width:520px !important; }
-.contact-note{ letter-spacing:.02em !important; }
+  .site-header{ z-index:90 !important; }
 
-.footer-legal{
-  position:relative !important;
-  left:auto !important;
-  right:auto !important;
-  bottom:auto !important;
-  grid-column:1 / -1 !important;
-  width:100% !important;
-  margin:54px 0 0 !important;
-  padding:22px 0 0 !important;
-  border-top:1px solid rgba(20,59,52,.12) !important;
-  color:rgba(20,59,52,.58) !important;
-  z-index:6 !important;
-}
-.footer-legal__top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
-  margin-bottom:12px;
-  font-size:12px;
-  line-height:1.4;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-}
-.footer-legal__top a{
-  color:rgba(20,59,52,.70) !important;
-  text-decoration:none !important;
-  border-bottom:1px solid rgba(20,59,52,.18) !important;
-}
-.footer-legal__top span{ white-space:nowrap; color:rgba(20,59,52,.48); }
-.footer-legal__note{
-  display:flex;
-  flex-direction:column;
-  gap:5px;
-  max-width:none !important;
-  margin:0 !important;
-  font-size:11px !important;
-  line-height:1.55 !important;
-  letter-spacing:0 !important;
-  color:rgba(20,59,52,.50) !important;
-}
-.footer-legal__note span{ display:block; }
-.footer-bottom{
-  position:relative !important;
-  left:auto !important;
-  right:auto !important;
-  bottom:auto !important;
-  grid-column:1 / -1 !important;
-  width:100% !important;
-  margin-top:24px !important;
-  padding-top:0 !important;
-}
+  .hero{ padding-bottom:42px !important; }
+  .hero__grid{ gap:30px !important; }
+  .hero__right{ z-index:6 !important; }
 
-/* Портфолио на главной */
-.nw-workdeck{ overflow:hidden !important; isolation:isolate !important; }
-.nw-carousel{ min-height:700px !important; }
-.nw-cards{ height:630px !important; }
-.nw-card{ height:590px !important; }
-.nw-card__image{ height:292px !important; }
-.nw-card h3{ overflow-wrap:break-word; }
+  /* Возвращаем движение главного фото к блоку «Обо мне» на телефоне */
+  .about-fly-photo{
+    display:block;
+    z-index:25 !important;
+    border-radius:24px !important;
+  }
 
-@media (max-width:980px){
-  .useful-section{ display:block !important; padding:80px 28px 96px !important; }
-  .useful-right{ min-height:0 !important; display:grid !important; grid-template-columns:1fr !important; gap:22px !important; margin-top:42px !important; }
-  .back-paper{ display:none !important; }
-  .useful-tag{ position:relative !important; top:auto !important; right:auto !important; width:100% !important; max-width:none !important; min-height:auto !important; transform:none !important; }
-  .useful-tag::before,.useful-tag::after{ display:none !important; }
-  .tag-head,.tag-inner p{ padding-right:0 !important; }
-
-  .contact-footer{ display:block !important; padding:78px 28px 44px !important; }
-  .contact-right{ min-height:auto !important; margin-top:42px !important; }
-  .contact-card{ position:relative !important; right:auto !important; top:auto !important; width:100% !important; max-width:560px !important; margin-left:auto !important; }
-  .contact-envelope,.contact-bg-card{ display:none !important; }
-}
-
-@media (max-width:768px){
-  html{ scroll-padding-top:86px; }
-  .site-header{ z-index:80 !important; }
-
-  /* Мобильный «Обо мне»: больше никаких наездов статистики на фото и текст */
-  .about-section{ padding:84px 0 76px !important; }
+  .about-section{
+    padding-top:88px !important;
+    overflow:hidden !important;
+  }
   .about-collage{
-    min-height:auto !important;
-    display:grid !important;
-    grid-template-columns:1fr !important;
-    place-items:center !important;
-    gap:14px !important;
-    padding-top:54px !important;
+    min-height:690px !important;
   }
-  .about-script,.about-stat{ display:none !important; }
-  .about-card{
-    position:relative !important;
-    inset:auto !important;
-    opacity:1 !important;
-    filter:none !important;
-  }
+  .about-script{ display:block !important; top:8px !important; left:6% !important; z-index:7 !important; }
+  .about-stat{ display:block !important; z-index:6 !important; }
+  .about-stat strong{ font-size:46px !important; }
+  .about-stat span{ font-size:11px !important; line-height:1.22 !important; max-width:124px !important; }
+  .about-stat--left{ left:0 !important; top:82px !important; }
+  .about-stat--right{ right:0 !important; top:92px !important; }
+  .about-stat--bottom{ right:2% !important; bottom:58px !important; }
+
+  .about-card{ position:absolute !important; opacity:1 !important; filter:none !important; }
   .about-card--center{
-    width:min(86vw, 330px) !important;
+    width:min(70vw, 270px) !important;
     height:auto !important;
-    aspect-ratio:3 / 4.15 !important;
-    order:1;
+    aspect-ratio:3/4.18 !important;
+    left:50% !important;
+    top:150px !important;
+    right:auto !important;
+    transform:translateX(-50%) rotate(-1deg) !important;
     z-index:5 !important;
-    transform:rotate(0deg) !important;
   }
-  .about-card--left,
-  .about-card--right{
-    width:min(72vw, 255px) !important;
+  .about-card--left{
+    width:min(42vw, 156px) !important;
     height:auto !important;
-    aspect-ratio:3 / 4 !important;
-    opacity:.96 !important;
+    aspect-ratio:3/4 !important;
+    left:0 !important;
+    top:320px !important;
+    transform:rotate(-11deg) !important;
+    z-index:4 !important;
   }
-  .about-card--left{ order:2; transform:rotate(-4deg) !important; }
-  .about-card--right{ order:3; transform:rotate(4deg) !important; }
-  .about-copy{ margin-top:30px !important; padding:0 2px !important; background:none !important; text-align:left !important; }
-  .about-copy h2{ font-size:48px !important; line-height:.95 !important; }
-  .about-copy p{ font-size:18px !important; line-height:1.58 !important; }
+  .about-card--right{
+    width:min(42vw, 156px) !important;
+    height:auto !important;
+    aspect-ratio:3/4 !important;
+    right:0 !important;
+    top:340px !important;
+    transform:rotate(10deg) !important;
+    z-index:4 !important;
+  }
+  .about-card--left img{ object-position:center 16% !important; transform:scale(1.03) !important; }
+  .about-card--right img{ object-position:center 14% !important; transform:scale(1.06) !important; }
+  .about-copy{ margin-top:0 !important; opacity:1 !important; filter:none !important; transform:none !important; }
+  .about-copy h2{ font-size:44px !important; line-height:.96 !important; }
+  .about-copy p{ font-size:16px !important; line-height:1.56 !important; }
 
-  .useful-section{ padding:68px 18px 84px !important; }
-  .useful-left h2{ font-size:48px !important; line-height:.95 !important; }
-  .useful-subtitle{ max-width:360px !important; font-size:25px !important; line-height:1.2 !important; }
-  .tag-head{ align-items:flex-start !important; }
-  .tag-head h3{ font-size:30px !important; line-height:1.05 !important; }
-  .tag-footer{ align-items:stretch !important; }
-  .tag-button{ width:100% !important; }
+  .why-clean{ padding-top:80px !important; }
+  .why-collage{ display:grid !important; grid-template-columns:1fr !important; gap:18px !important; }
+  .why-card{ position:relative !important; inset:auto !important; width:100% !important; min-height:auto !important; padding:30px 26px 28px 44px !important; transform:none !important; }
+  .paper-pin{ left:8px !important; top:8px !important; bottom:auto !important; width:44px !important; height:52px !important; opacity:.22 !important; z-index:1 !important; transform:rotate(-8deg) !important; }
+  .binder-real{ left:8px !important; top:8px !important; width:48px !important; height:48px !important; opacity:.20 !important; z-index:1 !important; transform:rotate(-8deg) !important; }
+  .clip-four{ left:8px !important; top:8px !important; transform:rotate(-8deg) !important; }
+  .why-card h3{ font-size:36px !important; line-height:1 !important; }
+  .why-card p{ font-size:15px !important; line-height:1.55 !important; }
 
-  .contact-footer{ padding:68px 18px 34px !important; }
-  .contact-left h2{ font-size:42px !important; line-height:1.02 !important; letter-spacing:-1.2px !important; }
+  .useful-section{ padding-top:74px !important; }
+  .useful-subtitle{ max-width:360px !important; font-size:24px !important; line-height:1.25 !important; }
+  .useful-tag{ padding:22px 18px !important; }
+  .tag-head h3{ font-size:30px !important; line-height:1.06 !important; }
+  .tag-inner p{ font-size:15px !important; line-height:1.48 !important; }
+
+  .contact-footer{ padding-top:86px !important; }
+  .contact-left h2{ font-size:40px !important; line-height:1.03 !important; }
   .contact-left p{ font-size:16px !important; line-height:1.62 !important; }
-  .contact-card{ max-width:none !important; padding:32px 22px 26px !important; border-radius:28px !important; }
-  .social-grid{ grid-template-columns:1fr !important; }
 
-  .footer-legal{ margin-top:34px !important; }
-  .footer-legal__top{ display:block !important; }
-  .footer-legal__top span{ display:block; margin-top:10px; white-space:normal !important; }
-  .footer-legal__note{ font-size:10.5px !important; line-height:1.55 !important; }
-  .footer-bottom{ flex-direction:column !important; align-items:flex-start !important; gap:8px !important; }
-
-  .nw-carousel{ min-height:640px !important; }
-  .nw-cards{ height:580px !important; }
-  .nw-card{ width:88vw !important; height:548px !important; }
-  .nw-card__image{ height:218px !important; }
-  .nw-card h3{ font-size:34px !important; }
-  .nw-card p{ font-size:14px !important; line-height:1.5 !important; }
+  .nw-workdeck::after{ display:none !important; }
+  .nw-card[data-pos="1"],
+  .nw-card[data-pos="-1"],
+  .nw-card[data-pos="2"],
+  .nw-card[data-pos="-2"]{ opacity:0 !important; pointer-events:none !important; }
 }
 
-@media (max-width:560px){
-  .nw-card[data-pos="1"],.nw-card[data-pos="-1"],.nw-card[data-pos="2"],.nw-card[data-pos="-2"]{ opacity:0 !important; pointer-events:none !important; }
-}
-
-
-
-/* =========================================================
-   NEIRO.WAY FINAL MAIN FIX — agreed zones only
-   Hero/PDF untouched. Fixes services, mobile About, footer, social buttons.
-   ========================================================= */
-section{scroll-margin-top:96px}
-.service-card__back a,.tag-button,.nw-card__button,.project-link{
-  font-family:"Marck Script",cursive!important;
-  font-size:22px!important;
-  font-weight:400!important;
-  letter-spacing:0!important;
-  border-radius:999px!important;
-}
-.social-grid a{
-  font-family:"Manrope","Inter",Arial,sans-serif!important;
-  font-weight:500!important;
-  letter-spacing:.015em!important;
-}
-.useful-section{min-height:auto!important;overflow:hidden!important;padding-bottom:clamp(110px,10vw,170px)!important}
-.useful-right{min-height:760px!important}
-.tag-1{top:18px!important}.tag-2{top:268px!important}.tag-3{top:518px!important}
-.tag-head,.tag-inner p{padding-right:70px!important}
-.footer-legal{
-  position:relative!important;left:auto!important;right:auto!important;bottom:auto!important;
-  grid-column:1/-1!important;width:100%!important;margin:54px 0 0!important;padding:22px 0 0!important;
-  border-top:1px solid rgba(20,59,52,.12)!important;color:rgba(20,59,52,.58)!important;z-index:6!important
-}
-.footer-legal__top{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:12px;font-size:12px;line-height:1.4;letter-spacing:.08em;text-transform:uppercase}
-.footer-legal__top a{color:rgba(20,59,52,.70)!important;text-decoration:none!important;border-bottom:1px solid rgba(20,59,52,.18)!important}
-.footer-legal__top span{white-space:nowrap;color:rgba(20,59,52,.48)}
-.footer-legal__note{display:flex;flex-direction:column;gap:5px;max-width:none!important;margin:0!important;font-size:11px!important;line-height:1.55!important;color:rgba(20,59,52,.50)!important}
-.footer-bottom{position:relative!important;left:auto!important;right:auto!important;bottom:auto!important;grid-column:1/-1!important;width:100%!important;margin-top:24px!important}
-@media(max-width:980px){
-  .useful-section{display:block!important;padding:80px 28px 96px!important}
-  .useful-right{min-height:0!important;display:grid!important;grid-template-columns:1fr!important;gap:22px!important;margin-top:42px!important}
-  .back-paper{display:none!important}
-  .useful-tag{position:relative!important;top:auto!important;right:auto!important;width:100%!important;max-width:none!important;min-height:auto!important;transform:none!important}
-  .useful-tag:before,.useful-tag:after{display:none!important}
-  .tag-head,.tag-inner p{padding-right:0!important}
-}
-@media(max-width:768px){
-  .about-section{padding:82px 0 92px!important;overflow:hidden!important}
-  .about-collage{position:relative!important;min-height:610px!important;display:block!important}
-  .about-script{display:block!important;top:2px!important;left:4%!important;font-size:38px!important;z-index:8!important}
-  .about-stat--left{left:0!important;top:78px!important;z-index:7!important}
-  .about-stat--right{right:0!important;top:78px!important;z-index:7!important}
-  .about-stat--bottom{right:2%!important;bottom:46px!important;z-index:7!important}
-  .about-stat strong{font-size:48px!important}
-  .about-stat span{font-size:11px!important;max-width:132px!important;line-height:1.22!important}
-  .about-card{position:absolute!important;opacity:1!important;filter:none!important}
-  .about-card--center{width:236px!important;height:344px!important;left:50%!important;top:142px!important;right:auto!important;transform:translateX(-50%) rotate(-1deg)!important;z-index:5!important}
-  .about-card--left{width:132px!important;height:202px!important;left:2px!important;top:264px!important;right:auto!important;transform:rotate(-12deg)!important;z-index:4!important}
-  .about-card--right{width:132px!important;height:202px!important;right:2px!important;top:288px!important;left:auto!important;transform:rotate(11deg)!important;z-index:4!important}
-  .about-card--left img{object-position:center 18%!important;transform:scale(1.03)!important}
-  .about-card--center img{object-position:center top!important;transform:scale(1.01)!important}
-  .about-card--right img{object-position:center 16%!important;transform:scale(1.08)!important}
-  .about-copy{position:relative!important;z-index:20!important;margin-top:6px!important;text-align:left!important;opacity:1!important;filter:none!important;transform:none!important}
-  .about-copy h2{font-size:44px!important;line-height:.95!important}
-  .about-copy p{font-size:16px!important;line-height:1.58!important}
-  .footer-legal{margin-top:34px!important}
-  .footer-legal__top{display:block!important}
-  .footer-legal__top span{display:block;margin-top:10px;white-space:normal!important}
-  .footer-legal__note{font-size:10.5px!important}
-  .footer-bottom{flex-direction:column!important;align-items:flex-start!important;gap:8px!important}
-}
 @media(max-width:390px){
-  .about-collage{min-height:590px!important}
-  .about-card--center{width:220px!important;height:322px!important;top:146px!important}
-  .about-card--left{width:118px!important;height:184px!important;top:276px!important}
-  .about-card--right{width:118px!important;height:184px!important;top:300px!important}
+  .about-collage{ min-height:660px !important; }
+  .about-card--center{ width:236px !important; top:158px !important; }
+  .about-card--left{ width:132px !important; top:326px !important; }
+  .about-card--right{ width:132px !important; top:350px !important; }
 }
 
 
+/* =========================================================
+   MOBILE HERO PHOTO ANIMATION FIX ONLY
+   Правка только мобильного первого фото. Остальное не трогаем.
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .hero,
+  .hero-section,
+  .first-screen,
+  .hero-inner,
+  .hero-grid {
+    overflow: visible !important;
+  }
+
+  .hero-photo,
+  .hero-visual,
+  .hero-image,
+  .hero-photo-wrap,
+  .photo-stack,
+  .photo-cards,
+  .polaroid-stack,
+  .hero-polaroids {
+    overflow: visible !important;
+    transform-style: preserve-3d !important;
+    will-change: transform, opacity !important;
+  }
+
+  /* Если в старом коде фото были карточками/полароидами — возвращаем им движение */
+  .hero-photo img,
+  .hero-image img,
+  .hero-visual img,
+  .photo-stack img,
+  .photo-cards img,
+  .polaroid-stack img,
+  .hero-polaroids img,
+  .hero-card img,
+  .hero-photo-card img {
+    will-change: transform, opacity !important;
+    backface-visibility: hidden !important;
+  }
+
+  /* Мягкое перелистывание для центрального фото, если JS/старый transform не сработает */
+  .hero-photo,
+  .hero-photo-wrap,
+  .hero-visual {
+    animation: mobileHeroFloat 7s ease-in-out infinite !important;
+  }
+
+  .hero-card:nth-child(1),
+  .hero-photo-card:nth-child(1),
+  .photo-card:nth-child(1),
+  .polaroid:nth-child(1) {
+    animation: mobileHeroCardOne 8s ease-in-out infinite !important;
+  }
+
+  .hero-card:nth-child(2),
+  .hero-photo-card:nth-child(2),
+  .photo-card:nth-child(2),
+  .polaroid:nth-child(2) {
+    animation: mobileHeroCardTwo 8s ease-in-out infinite !important;
+  }
+
+  .hero-card:nth-child(3),
+  .hero-photo-card:nth-child(3),
+  .photo-card:nth-child(3),
+  .polaroid:nth-child(3) {
+    animation: mobileHeroCardThree 8s ease-in-out infinite !important;
+  }
+
+  /* Фото снова аккуратно заходит во второй блок, но не перекрывает текст */
+  .about,
+  .about-section,
+  #about {
+    position: relative !important;
+    overflow: visible !important;
+    z-index: 2 !important;
+  }
+
+  .about-title,
+  .about-copy,
+  .about-text,
+  .about-content,
+  .about h2,
+  .about-section h2,
+  #about h2,
+  .about p,
+  .about-section p,
+  #about p {
+    position: relative !important;
+    z-index: 12 !important;
+  }
+
+  /* Декор не должен залезать на текст на телефоне */
+  .pin,
+  .clip,
+  .paperclip,
+  .binder,
+  .pushpin,
+  .card-pin,
+  .about-pin,
+  .note-pin,
+  .decor-pin,
+  .stationery-pin,
+  [class*="pin-"],
+  [class*="clip-"],
+  [class*="paperclip"] {
+    pointer-events: none !important;
+  }
+}
+
+@keyframes mobileHeroFloat {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  45% { transform: translate3d(0, 14px, 0) rotate(-1deg); }
+  70% { transform: translate3d(0, -4px, 0) rotate(.6deg); }
+}
+
+@keyframes mobileHeroCardOne {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-5deg); opacity: 1; }
+  50% { transform: translate3d(-10px, 10px, 0) rotate(-7deg); opacity: .96; }
+}
+
+@keyframes mobileHeroCardTwo {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(1deg); opacity: 1; }
+  50% { transform: translate3d(8px, -8px, 0) rotate(3deg); opacity: .98; }
+}
+
+@keyframes mobileHeroCardThree {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(6deg); opacity: 1; }
+  50% { transform: translate3d(10px, 8px, 0) rotate(8deg); opacity: .96; }
+}
 
 
 
 /* =========================================================
-   MAIN SAFE MOBILE + BUTTON HOVER FIX
+   FINAL CONTROL FIX — LINKS/MOBILE/READABILITY ONLY
+   Last block wins. No HTML structure rewrite.
    ========================================================= */
 
-.useful-subtitle{max-width:650px!important;text-wrap:balance}
-.useful-subtitle br{display:block!important}
-
-.tag-button{
-  min-width:210px!important;
-  min-height:58px!important;
-  padding:0 30px!important;
-  border-radius:999px!important;
-  background:linear-gradient(180deg,rgba(246,226,190,.98),rgba(238,207,155,.94))!important;
-  border:1px solid rgba(176,126,74,.28)!important;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.82),0 12px 26px rgba(20,59,52,.08)!important;
-  font-family:"Marck Script",cursive!important;
-  font-size:25px!important;
-  font-weight:400!important;
-  letter-spacing:0!important;
-  color:#143b34!important;
+/* убрать круги/точки возле заголовков и в услугах */
+.services-section::before,
+.nw-workdeck::after,
+.useful-label i::after,
+.contact-label i::after,
+.label::after,
+.label:after{
+  display:none!important;
+  content:none!important;
 }
-.tag-button::after{content:none!important}
-.tag-button:hover{transform:translateY(-3px)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 20px 38px rgba(20,59,52,.14)!important;filter:saturate(1.06)}
 
-.service-card__back a,.social-grid a,.btn,.back-btn,.tag-button{transition:transform .24s ease,box-shadow .24s ease,filter .24s ease,background .24s ease,border-color .24s ease!important}
-.service-card__back a:hover,.social-grid a:hover,.btn:hover,.back-btn:hover{transform:translateY(-4px)!important;box-shadow:0 18px 34px rgba(20,59,52,.13)!important;filter:saturate(1.04)}
+/* кнопки — заметный, но аккуратный hover */
+.apple-btn,
+.service-card__back a,
+.tag-button,
+.nw-card__button,
+.project-link,
+.social-grid a,
+.menu-btn-top{
+  position:relative!important;
+  overflow:hidden!important;
+  transition:transform .24s ease, box-shadow .24s ease, filter .24s ease, background .24s ease, border-color .24s ease!important;
+}
+.apple-btn::before,
+.service-card__back a::before,
+.tag-button::before,
+.nw-card__button::before,
+.project-link::before,
+.social-grid a::before{
+  content:""!important;
+  position:absolute!important;
+  inset:1px!important;
+  border-radius:inherit!important;
+  background:linear-gradient(115deg, transparent 0%, rgba(255,255,255,.72) 45%, transparent 62%)!important;
+  transform:translateX(-135%)!important;
+  transition:transform .55s ease!important;
+  pointer-events:none!important;
+  z-index:0!important;
+}
+.apple-btn:hover::before,
+.service-card__back a:hover::before,
+.tag-button:hover::before,
+.nw-card__button:hover::before,
+.project-link:hover::before,
+.social-grid a:hover::before{
+  transform:translateX(135%)!important;
+}
+.apple-btn:hover,
+.service-card__back a:hover,
+.tag-button:hover,
+.nw-card__button:hover,
+.project-link:hover,
+.social-grid a:hover,
+.menu-btn-top:hover{
+  transform:translateY(-4px)!important;
+  filter:saturate(1.07) brightness(1.02)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.92), 0 20px 38px rgba(20,59,52,.15)!important;
+}
+.apple-btn > *, .service-card__back a > *, .tag-button > *, .nw-card__button > *, .project-link > *, .social-grid a > *{position:relative!important;z-index:2!important}
 
+/* карточки услуг: цвета спокойнее, без конфликта розовый/жёлтый рядом */
+.service-card__front--rose{
+  background:linear-gradient(180deg, rgba(255,255,255,.78), rgba(245,220,228,.40))!important;
+}
+.service-card__front--butter{
+  background:linear-gradient(180deg, rgba(255,255,255,.78), rgba(239,232,188,.42))!important;
+}
+.service-card__front--neuro{
+  background:radial-gradient(circle at 80% 14%, rgba(226,162,180,.18), transparent 28%), linear-gradient(180deg, rgba(255,255,255,.80), rgba(226,237,241,.50))!important;
+}
+
+/* мобильная версия: убрать перекрытия декора */
 @media(max-width:768px){
-  .useful-subtitle{max-width:360px!important;font-size:24px!important;line-height:1.25!important}
-  .tag-button{width:100%!important;min-height:56px!important;font-size:24px!important}
+  body{overflow-x:hidden!important;}
+  .container{width:min(100% - 24px, 1240px)!important;}
 
-  /* Канцелярские декоративные элементы не должны перекрывать текст */
-  .pin,.clip,.paperclip,.binder,.pushpin,.card-pin,
-  .about-pin,.note-pin,.decor-pin,.stationery-pin,
+  .pin,.clip,.paperclip,.binder,.pushpin,.card-pin,.about-pin,.note-pin,.decor-pin,.stationery-pin,.paper-pin,.binder-real,
   [class*="pin-"],[class*="clip-"],[class*="paperclip"]{
     pointer-events:none!important;
-    opacity:.32!important;
+    opacity:.22!important;
     z-index:0!important;
   }
 
-  /* Если декоративные скрепки стоят внутри карточек — уводим к краю */
-  .note-card .pin,.note-card .clip,
-  .story-card .pin,.story-card .clip,
-  .about-card .pin,.about-card .clip{
-    transform:translate(-16px,-16px) scale(.72)!important;
+  /* Hero: возвращаем живое движение фото, не ломая старую разметку */
+  .hero{overflow:visible!important;padding-bottom:64px!important;}
+  .hero__grid{gap:30px!important;}
+  .hero__right,.visual,.photo-frame{overflow:visible!important;}
+  .visual{max-width:min(86vw,390px)!important;margin:0 auto!important;}
+  .photo-frame{
+    animation:nwHeroMobileFloat 7s ease-in-out infinite!important;
+    transform-origin:center bottom!important;
+    will-change:transform!important;
+  }
+  .photo-frame img{
+    object-position:center top!important;
   }
 
-  .about-copy,.contact-card,.service-card,.useful-tag,.note-card,.story-card{
-    position:relative!important;
-    z-index:5!important;
-  }
+  /* About: коллаж сохраняется, но текст не перекрывается */
+  .about-section{padding:84px 0 92px!important;overflow:hidden!important;}
+  .about-collage{position:relative!important;min-height:640px!important;display:block!important;}
+  .about-script{display:block!important;top:2px!important;left:4%!important;font-size:38px!important;z-index:8!important;pointer-events:none!important;}
+  .about-stat--left{left:0!important;top:78px!important;z-index:7!important;}
+  .about-stat--right{right:0!important;top:78px!important;z-index:7!important;}
+  .about-stat--bottom{right:1%!important;bottom:42px!important;z-index:7!important;}
+  .about-stat strong{font-size:46px!important;}
+  .about-stat span{font-size:11px!important;max-width:128px!important;line-height:1.22!important;}
+  .about-card{position:absolute!important;opacity:1!important;filter:none!important;}
+  .about-card--center{width:238px!important;height:348px!important;left:50%!important;top:148px!important;right:auto!important;transform:translateX(-50%) rotate(-1deg)!important;z-index:5!important;}
+  .about-card--left{width:128px!important;height:198px!important;left:0!important;top:288px!important;right:auto!important;transform:rotate(-12deg)!important;z-index:4!important;}
+  .about-card--right{width:128px!important;height:198px!important;right:0!important;top:310px!important;left:auto!important;transform:rotate(11deg)!important;z-index:4!important;}
+  .about-card--left img{object-position:center 18%!important;transform:scale(1.03)!important;}
+  .about-card--center img{object-position:center top!important;transform:scale(1.01)!important;}
+  .about-card--right img{object-position:center 16%!important;transform:scale(1.08)!important;}
+  .about-copy{position:relative!important;z-index:20!important;margin-top:8px!important;text-align:left!important;opacity:1!important;filter:none!important;transform:none!important;}
+  .about-copy h2{font-size:44px!important;line-height:.95!important;}
+  .about-copy p{font-size:16px!important;line-height:1.58!important;}
 
-  .about-copy h2,.about-copy p,
-  .contact-card h2,.contact-card p,
-  .note-card h3,.note-card p,
-  .story-card h3,.story-card p{
-    position:relative!important;
-    z-index:6!important;
-  }
+  /* услуги — только одна колонка, текст не режется */
+  .services-section{padding:84px 0 92px!important;overflow:hidden!important;}
+  .services-grid{grid-template-columns:1fr!important;gap:16px!important;}
+  .service-card,.service-card__inner,.service-card__face{min-height:300px!important;}
+  .service-card__face{padding:24px!important;}
+  .service-card h3{font-size:34px!important;line-height:.98!important;}
+  .service-card__front p,.service-card__back p{font-size:15px!important;line-height:1.5!important;max-width:100%!important;}
+
+  /* полезное — без налезаний */
+  .useful-section{display:block!important;padding:68px 18px 84px!important;overflow:hidden!important;}
+  .useful-subtitle{max-width:360px!important;font-size:25px!important;line-height:1.22!important;}
+  .useful-right{min-height:0!important;display:grid!important;grid-template-columns:1fr!important;gap:22px!important;margin-top:38px!important;}
+  .back-paper{display:none!important;}
+  .useful-tag{position:relative!important;top:auto!important;right:auto!important;width:100%!important;min-height:auto!important;transform:none!important;padding:22px 18px!important;}
+  .useful-tag::before,.useful-tag::after{display:none!important;}
+  .tag-head,.tag-inner p{padding-right:0!important;}
+  .tag-head h3{font-size:30px!important;line-height:1.05!important;}
+  .tag-footer{align-items:stretch!important;}
+  .tag-button{width:100%!important;}
+
+  /* портфолио — карточки помещаются */
+  .nw-carousel{min-height:640px!important;}
+  .nw-cards{height:580px!important;}
+  .nw-card{width:88vw!important;height:548px!important;}
+  .nw-card__image{height:218px!important;}
+  .nw-card h3{font-size:34px!important;line-height:.98!important;}
+  .nw-card p{font-size:14px!important;line-height:1.5!important;}
+  .nw-card[data-pos="1"],.nw-card[data-pos="-1"],.nw-card[data-pos="2"],.nw-card[data-pos="-2"]{opacity:0!important;pointer-events:none!important;}
+
+  /* футер */
+  .contact-footer{display:block!important;padding:68px 18px 34px!important;overflow:hidden!important;}
+  .contact-left h2{font-size:42px!important;line-height:1.02!important;letter-spacing:-1.2px!important;}
+  .contact-left p{font-size:16px!important;line-height:1.62!important;}
+  .contact-right{min-height:auto!important;margin-top:36px!important;}
+  .contact-envelope,.contact-bg-card{display:none!important;}
+  .contact-card{position:relative!important;width:100%!important;right:auto!important;top:auto!important;max-width:none!important;padding:32px 22px 26px!important;border-radius:28px!important;}
+  .social-grid{grid-template-columns:1fr!important;}
 }
 
-
-/* MAIN FINAL PHOTO/FREE BLOCK */
-.useful-subtitle{max-width:650px!important;text-wrap:balance}
-.useful-subtitle br{display:block!important}
-.tag-button{
-  min-width:210px!important;min-height:58px!important;padding:0 30px!important;border-radius:999px!important;
-  background:linear-gradient(180deg,rgba(246,226,190,.98),rgba(238,207,155,.94))!important;
-  border:1px solid rgba(176,126,74,.28)!important;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.82),0 12px 26px rgba(20,59,52,.08)!important;
-  font-family:"Marck Script",cursive!important;font-size:25px!important;font-weight:400!important;letter-spacing:0!important;color:#143b34!important;
-}
-@media(max-width:768px){
-  .hero-photo,.hero-photo-wrap,.hero-visual,.hero-image{position:relative!important;z-index:8!important}
-  .hero-photo{margin-bottom:-88px!important;transform:translateY(18px)!important}
-  .about-section{position:relative!important;z-index:4!important;padding-top:132px!important}
-  .about-collage{position:relative!important;min-height:590px!important}
+@media(max-width:390px){
+  .about-collage{min-height:615px!important;}
+  .about-card--center{width:222px!important;height:326px!important;top:152px!important;}
+  .about-card--left{width:116px!important;height:182px!important;top:292px!important;}
+  .about-card--right{width:116px!important;height:182px!important;top:314px!important;}
 }
 
-/* FINAL POLISH BUTTONS AND LABELS */
-.label::after,.label:after{display:none!important;content:none!important}
-.btn,.back-btn,.service-card__back a,.tag-button,.nw-card__button,.project-link,.social-grid a{
-  position:relative;isolation:isolate;overflow:hidden;
-  transition:transform .24s ease,box-shadow .24s ease,filter .24s ease,background .24s ease,border-color .24s ease!important;
-}
-.btn::before,.back-btn::before,.service-card__back a::before,.tag-button::before,.nw-card__button::before,.project-link::before,.social-grid a::before{
-  content:"";position:absolute;inset:1px;border-radius:inherit;
-  background:linear-gradient(120deg,transparent 0%,rgba(255,255,255,.62) 46%,transparent 62%);
-  transform:translateX(-130%);transition:transform .55s ease;z-index:-1;pointer-events:none;
-}
-.btn:hover,.back-btn:hover,.service-card__back a:hover,.tag-button:hover,.nw-card__button:hover,.project-link:hover,.social-grid a:hover{
-  transform:translateY(-4px)!important;filter:saturate(1.06) brightness(1.015);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 20px 38px rgba(20,59,52,.14)!important;
-  border-color:rgba(20,59,52,.16)!important;
-}
-.btn:hover::before,.back-btn:hover::before,.service-card__back a:hover::before,.tag-button:hover::before,.nw-card__button:hover::before,.project-link:hover::before,.social-grid a:hover::before{
-  transform:translateX(130%);
-}
-.btn:active,.back-btn:active,.service-card__back a:active,.tag-button:active,.nw-card__button:active,.project-link:active,.social-grid a:active{
-  transform:translateY(-1px) scale(.99)!important;
-}
-.tag-button::after{content:none!important}
-@media(max-width:768px){
-  .pin,.clip,.paperclip,.binder,.pushpin,.card-pin,.about-pin,.note-pin,.decor-pin,.stationery-pin,[class*="pin-"],[class*="clip-"],[class*="paperclip"]{
-    pointer-events:none!important;opacity:.26!important;z-index:0!important;
-  }
-  .about-copy,.contact-card,.service-card,.useful-tag,.note-card,.story-card,
-  .about-copy h2,.about-copy p,.contact-card h2,.contact-card p,.note-card h3,.note-card p,.story-card h3,.story-card p{
-    position:relative!important;z-index:6!important;
-  }
+@keyframes nwHeroMobileFloat{
+  0%,100%{transform:translate3d(0,0,0) rotate(0deg);}
+  45%{transform:translate3d(0,13px,0) rotate(-1deg);}
+  72%{transform:translate3d(0,-4px,0) rotate(.6deg);}
 }
 
 </style>
@@ -4397,7 +4481,7 @@ section{scroll-margin-top:96px}
       <div class="services-head">
         <span class="services-kicker">УСЛУГИ</span>
         <h2>Чем могу помочь</h2>
-        <p>Решения, в которых HR, дизайн и AI работают вместе — спокойно, понятно и визуально аккуратно.</p>
+        <p>Решения, в которых HR, дизайн и AI работают вместе.</p>
       </div>
 
       <div class="services-grid">
@@ -4411,7 +4495,7 @@ section{scroll-margin-top:96px}
             </div>
             <div class="service-card__face service-card__back">
               <h3>Онбординг и коммуникации</h3>
-              <p>Welcome-материалы, внутренние новости, инструкции и HR-сообщения в понятном тоне — без канцелярита и лишнего шума.</p>
+              <p>Помогаю упаковать адаптацию, внутренние новости, инструкции и HR-материалы в понятный маршрут: welcome-гайды, страницы, рассылки, визуальные схемы и тексты без канцелярита.</p>
               <a href="communications/">подробнее</a>
             </div>
           </div>
@@ -4426,8 +4510,8 @@ section{scroll-margin-top:96px}
               <span class="service-card__hint">перевернуть</span>
             </div>
             <div class="service-card__face service-card__back">
-              <h3>HR-гайды</h3>
-              <p>Гайды, памятки, чек-листы, welcome-страницы и инструкции, которые помогают быстрее разобраться и не тонуть в длинных документах.</p>
+              <h3>Гайды</h3>
+              <p>Перевожу сложные регламенты и инструкции в структурные, красивые и удобные материалы, которые проще читать, применять и использовать в работе.</p>
               <a href="hr-guides/">подробнее</a>
             </div>
           </div>
@@ -4443,8 +4527,8 @@ section{scroll-margin-top:96px}
             </div>
             <div class="service-card__face service-card__back">
               <h3>Сайты</h3>
-              <p>Страницы, где структура, текст и визуал работают вместе: человеку понятно, куда он попал, чем вы полезны и что делать дальше.</p>
-              <a href="websites/">смотреть сайты</a>
+              <p>Создаю страницы и сайты с чистой структурой, понятной подачей и визуалом, который усиливает доверие к бренду, эксперту или HR-продукту.</p>
+              <a href="websites/">подробнее</a>
             </div>
           </div>
         </article>
@@ -4459,7 +4543,7 @@ section{scroll-margin-top:96px}
             </div>
             <div class="service-card__face service-card__back">
               <h3>AI и боты</h3>
-              <p>AI-сценарии, промты, HR-помощники и базы знаний, которые помогают в рутине и остаются понятными человеку.</p>
+              <p>Помогаю продумать и собрать AI-решения для HR и внутренних задач: сценарии, боты, помощники, автоматизация рутины и логика процессов.</p>
               <a href="automation/">подробнее</a>
             </div>
           </div>
@@ -4475,7 +4559,7 @@ section{scroll-margin-top:96px}
             </div>
             <div class="service-card__face service-card__back">
               <h3>Дизайн</h3>
-              <p>Презентации, обложки, гайды, шаблоны и digital-материалы, где визуал помогает понять смысл, а не просто украшает страницу.</p>
+              <p>Создаю визуальные материалы, которые не просто красиво выглядят, а помогают донести смысл: презентации, обложки, гайды, концепции и digital-оформление.</p>
               <a href="designs/">подробнее</a>
             </div>
           </div>
@@ -4491,7 +4575,7 @@ section{scroll-margin-top:96px}
             </div>
             <div class="service-card__face service-card__back">
               <h3>AI-образы</h3>
-              <p>Нейрообразы для личного бренда, аватаров и визуального контента — бережно, эстетично и без ощущения случайной генерации.</p>
+              <p>Создаю нейрообразы для личного бренда, аватаров, визуального контента и вдохновения — бережно, эстетично и с настроением.</p>
               <a href="https://prostoay-bot.github.io/-/" target="_blank" rel="noopener">посмотреть сайт</a>
             </div>
           </div>
@@ -4618,11 +4702,11 @@ section{scroll-margin-top:96px}
     </header>
     <div class="nw-carousel" aria-label="Направления работ">
       <div class="nw-cards">
-                <article class="nw-card" data-index="0"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-app.png" alt="Приложение"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">01</span><span class="nw-card__hint">нажмите для деталей</span></div><h3>Приложение</h3><p>AI-инструменты и интерфейсы для адаптации, обучения и HR-процессов: от идеи до наглядной упаковки продукта.</p><div class="nw-tags"><span>приложение</span><span>автоматизация</span><span>адаптация</span><span>интерфейс</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">01</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Концепции приложений и HR-инструментов.</li><li>Наглядная подача экранов и пользовательского пути.</li><li>Материалы для презентации продукта и идеи.</li><li>Подходит для HR, обучения и внутренних сервисов.</li></ul><button class="nw-card__button" type="button">Смотреть проект</button></div></div></div></article>
-        <article class="nw-card" data-index="1"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-sites.png" alt="Сайты"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">02</span><span class="nw-card__hint">нажмите для деталей</span></div><h3>Сайты</h3><p>Сайты, где структура, текст и визуал работают вместе: человеку быстро понятно, что вы предлагаете и почему вам можно доверять.</p><div class="nw-tags"><span>сайты</span><span>лендинги</span><span>интернет-магазины</span><span>адаптив</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">02</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Лендинги для экспертов, услуг и HR-проектов.</li><li>Каталоги и страницы с понятной навигацией.</li><li>Тексты, визуальная логика, адаптив и подготовка к запуску.</li><li>Без случайных блоков: каждый экран ведёт человека к действию.</li></ul><button class="nw-card__button" type="button">Смотреть кейсы</button></div></div></div></article>
-        <article class="nw-card" data-index="2"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-comms.png" alt="Внутренние коммуникации"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">03</span><span class="nw-card__hint">нажмите для деталей</span></div><h3>Внутренние коммуникации</h3><p>HR-решения и тексты для сотрудников: рассылки, анонсы, инструкции, онбординг и объяснение изменений простым языком.</p><div class="nw-tags"><span>HR-решения</span><span>рассылки</span><span>онбординг</span><span>инструкции</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">03</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Рассылка о подписании документов в Jira.</li><li>Анонс вебинара для внутреннего календаря.</li><li>Материалы для адаптации сотрудников.</li><li>Тексты, которые понятно читать и легко внедрять.</li></ul><button class="nw-card__button" type="button">Смотреть примеры</button></div></div></div></article>
-        <article class="nw-card" data-index="3"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-design.png" alt="Дизайн"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">04</span><span class="nw-card__hint">нажмите для деталей</span></div><h3>Дизайн</h3><p>Визуальные материалы, которые помогают бренду выглядеть собранно и узнаваемо: от шаблонов для соцсетей до баннеров и обучающих материалов.</p><div class="nw-tags"><span>соцсети</span><span>шаблоны</span><span>баннеры</span><span>оформление</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">04</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Шаблоны для соцсетей и оформления визуальной ленты.</li><li>Баннеры и материалы для экспертов и брендов.</li><li>Мини-гайды и визуальные материалы.</li><li>Единый стиль и аккуратная подача контента.</li></ul><button class="nw-card__button" type="button">Смотреть дизайн</button></div></div></div></article>
-        <article class="nw-card" data-index="4"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-neuro.png" alt="Нейрофото"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">05</span><span class="nw-card__hint">нажмите для деталей</span></div><h3>Нейрофото</h3><p>Нейрофотосессии и визуальные образы для личного бренда, контента и вдохновения: от идеи образа до готового коллажа.</p><div class="nw-tags"><span>нейрофото</span><span>образы</span><span>контент</span><span>личный бренд</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">05</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Коллажи на основе ваших фотографий и референсов.</li><li>Разные стили: fashion, lifestyle, editorial.</li><li>Образы для личного бренда и контента.</li><li>Акцент на атмосферу, эстетику и узнаваемость.</li></ul><button class="nw-card__button" type="button">Смотреть образы</button></div></div></div></article>      </div>
+                <article class="nw-card" data-index="0"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-app.png" alt="Приложение"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">01</span><span class="nw-card__hint">нажмите для деталей</span></div><h3>Приложение</h3><p>AI-инструменты и интерфейсы для адаптации, обучения и HR-процессов: от идеи до наглядной упаковки продукта.</p><div class="nw-tags"><span>приложение</span><span>автоматизация</span><span>адаптация</span><span>интерфейс</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">01</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Концепции приложений и HR-инструментов.</li><li>Наглядная подача экранов и пользовательского пути.</li><li>Материалы для презентации продукта и идеи.</li><li>Подходит для HR, обучения и внутренних сервисов.</li></ul><a class="nw-card__button" href="automation/">Смотреть проект</a></div></div></div></article>
+        <article class="nw-card" data-index="1"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-sites.png" alt="Сайты"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">02</span><span class="nw-card__hint">нажмите для деталей</span></div><h3>Сайты</h3><p>Лендинги и интернет-магазины: от структуры и визуальной концепции до сборки, адаптива и базовой подготовки к запуску.</p><div class="nw-tags"><span>сайты</span><span>лендинги</span><span>интернет-магазины</span><span>адаптив</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">02</span><h4>Что внутри</h4><ul class="nw-card__list"><li>ФанераПлит: интернет-магазин с каталогом.</li><li>ЖК Легенда: лендинг для презентации проекта.</li><li>Истина внутри: сайт с мягкой визуальной подачей.</li><li>Структура, визуал, адаптив и подготовка к запуску.</li></ul><a class="nw-card__button" href="websites/">Смотреть кейсы</a></div></div></div></article>
+        <article class="nw-card" data-index="2"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-comms.png" alt="Внутренние коммуникации"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">03</span><span class="nw-card__hint">нажмите для деталей</span></div><h3>Внутренние коммуникации</h3><p>HR-решения и тексты для сотрудников: рассылки, анонсы, инструкции, онбординг и объяснение изменений простым языком.</p><div class="nw-tags"><span>HR-решения</span><span>рассылки</span><span>онбординг</span><span>инструкции</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">03</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Рассылка о подписании документов в Jira.</li><li>Анонс вебинара для внутреннего календаря.</li><li>Материалы для адаптации сотрудников.</li><li>Тексты, которые понятно читать и легко внедрять.</li></ul><a class="nw-card__button" href="communications/">Смотреть примеры</a></div></div></div></article>
+        <article class="nw-card" data-index="3"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-design.png" alt="Дизайн"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">04</span><span class="nw-card__hint">нажмите для деталей</span></div><h3>Дизайн</h3><p>Визуальные материалы, которые помогают бренду выглядеть собранно и узнаваемо: от шаблонов для соцсетей до баннеров и обучающих материалов.</p><div class="nw-tags"><span>соцсети</span><span>шаблоны</span><span>баннеры</span><span>оформление</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">04</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Шаблоны для соцсетей и оформления визуальной ленты.</li><li>Баннеры и материалы для экспертов и брендов.</li><li>Мини-гайды и визуальные материалы.</li><li>Единый стиль и аккуратная подача контента.</li></ul><a class="nw-card__button" href="designs/">Смотреть дизайн</a></div></div></div></article>
+        <article class="nw-card" data-index="4"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-neuro.png" alt="Нейрофото"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">05</span><span class="nw-card__hint">нажмите для деталей</span></div><h3>Нейрофото</h3><p>Нейрофотосессии и визуальные образы для личного бренда, контента и вдохновения: от идеи образа до готового коллажа.</p><div class="nw-tags"><span>нейрофото</span><span>образы</span><span>контент</span><span>личный бренд</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">05</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Коллажи на основе ваших фотографий и референсов.</li><li>Разные стили: fashion, lifestyle, editorial.</li><li>Образы для личного бренда и контента.</li><li>Акцент на атмосферу, эстетику и узнаваемость.</li></ul><a class="nw-card__button" href="https://prostoay-bot.github.io/-/" target="_blank" rel="noopener">Смотреть образы</a></div></div></div></article>      </div>
       <div class="nw-controls"><button class="nw-arrow" type="button" data-dir="prev" aria-label="Предыдущая карточка">‹</button><div class="nw-dots" aria-label="Навигация по карточкам"></div><button class="nw-arrow" type="button" data-dir="next" aria-label="Следующая карточка">›</button></div>
     </div>
   </div>
@@ -4643,7 +4727,8 @@ section{scroll-margin-top:96px}
       </div>
   
       <p class="useful-subtitle">
-        Шаблоны, промты и мини-гайды,<br>которые помогают ускорить вашу работу
+        Шаблоны, промты и мини-гайды,<br>
+        которые помогают ускорить вашу работу
       </p>
     </div>
   
@@ -4680,7 +4765,7 @@ section{scroll-margin-top:96px}
             <div class="tag-chips">
               <span>Canva</span><span>шаблоны</span><span>гайды</span>
             </div>
-            <a href="https://canva.link/qrfjbz38egi6h25" class="tag-button" target="_blank" rel="noopener">Открыть ↗</a>
+            <a href="https://canva.link/qrfjbz38egi6h25" class="tag-button" target="_blank" rel="noopener">Открыть</a>
           </div>
         </div>
       </article>
@@ -4697,7 +4782,7 @@ section{scroll-margin-top:96px}
             <div class="tag-chips">
               <span>стикеры</span><span>офис</span><span>дизайн</span>
             </div>
-            <a href="https://t.me/addstickers/hr_ne_v_resurse" class="tag-button" target="_blank" rel="noopener">Открыть ↗</a>
+            <a href="https://t.me/addstickers/hr_ne_v_resurse" class="tag-button" target="_blank" rel="noopener">Открыть</a>
           </div>
         </div>
       </article>
@@ -4715,7 +4800,7 @@ section{scroll-margin-top:96px}
         <i></i>
       </div>
   
-      <h2>Обсудим вашу задачу<br>и соберём ясное решение</h2>
+      <h2>Давайте сделаем HR<br>понятнее и красивее</h2>
   
       <p>
         Открыта к сотрудничеству и интересным предложениям.
@@ -4746,16 +4831,9 @@ section{scroll-margin-top:96px}
     </div>
   
     <div class="footer-legal">
-      <div class="footer-legal__top">
-        <a href="/privacy.html">Политика конфиденциальности</a>
-        <span>NEIRO.WAY · HR / AI / дизайн</span>
-      </div>
-      <p class="footer-legal__note">
-        <span>Марина Голяева зарегистрирована как самозанятая и осуществляет деятельность в соответствии с законодательством РФ.</span>
-        <span>Представленный на сайте товар не предназначен для дистанционной продажи. Цены являются ориентировочными. Для согласования условий приобретения товара обращайтесь к продавцу.</span>
-      </p>
+      <a href="/privacy.html">Политика конфиденциальности</a>
     </div>
-
+  
     <div class="footer-bottom">
       <span>NEIRO.WAY</span>
       <span>HR с душой дизайнера</span>
@@ -4922,8 +5000,7 @@ section{scroll-margin-top:96px}
         !aboutSection ||
         !aboutFlyPhoto ||
         !heroPhotoFrame ||
-        !aboutCenterMedia ||
-        window.innerWidth <= 768
+        !aboutCenterMedia 
       ) {
         return;
       }
@@ -5003,7 +5080,7 @@ section{scroll-margin-top:96px}
   function update(){cards.forEach((c,i)=>{c.classList.remove('is-flipped'); const d=rel(i); c.dataset.pos=Math.abs(d)>2?'hidden':String(d);}); dots.forEach((d,i)=>d.classList.toggle('is-active',i===active));}
   root.querySelector('[data-dir="prev"]').addEventListener('click',()=>{active=(active-1+cards.length)%cards.length; update();});
   root.querySelector('[data-dir="next"]').addEventListener('click',()=>{active=(active+1)%cards.length; update();});
-  cards.forEach((card,i)=>{card.addEventListener('click',(e)=>{if(e.target.closest('.nw-card__close')){card.classList.remove('is-flipped'); e.stopPropagation(); return;} if(i!==active){active=i; update(); return;} card.classList.toggle('is-flipped');});});
+  cards.forEach((card,i)=>{card.addEventListener('click',(e)=>{if(e.target.closest('a')){ return; } if(e.target.closest('.nw-card__close')){card.classList.remove('is-flipped'); e.stopPropagation(); return;} if(i!==active){active=i; update(); return;} card.classList.toggle('is-flipped');});});
   update();
 })();
 </script>
