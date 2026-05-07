@@ -180,50 +180,6 @@ h3{font-family:var(--serif);font-weight:600;font-size:clamp(27px,2.2vw,38px);lin
   box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 20px 38px rgba(20,59,52,.14)!important;
 }
 
-
-/* HR GUIDES final no-overlap cards */
-.folder{min-height:auto!important;display:grid!important;grid-template-columns:1fr 1fr!important;gap:18px!important;padding:34px!important;overflow:hidden!important}
-.folder-tab{display:none!important}
-.doc,.doc.one,.doc.two,.doc.three,.doc.four{
-  position:relative!important;inset:auto!important;width:100%!important;min-height:238px!important;margin:0!important;opacity:1!important;z-index:1!important;pointer-events:auto!important;background:rgba(255,255,255,.88)!important;backdrop-filter:blur(8px);
-}
-.doc.one{transform:rotate(-2.4deg)!important}.doc.two{transform:rotate(1.8deg) translateY(8px)!important;background:rgba(246,239,226,.78)!important}.doc.three{transform:rotate(-1.4deg) translateY(-4px)!important;background:rgba(245,220,228,.58)!important}.doc.four{transform:rotate(1.2deg) translateY(6px)!important}
-.doc small,.doc strong,.doc p,.doc.three small,.doc.three strong,.doc.three p{opacity:1!important}
-@media(max-width:950px){.folder{grid-template-columns:1fr!important;gap:14px!important;padding:22px!important}.doc,.doc.one,.doc.two,.doc.three,.doc.four{min-height:auto!important;transform:none!important}}
-
-/* FINAL POLISH BUTTONS AND LABELS */
-.label::after,.label:after{display:none!important;content:none!important}
-.btn,.back-btn,.service-card__back a,.tag-button,.nw-card__button,.project-link,.social-grid a{
-  position:relative;isolation:isolate;overflow:hidden;
-  transition:transform .24s ease,box-shadow .24s ease,filter .24s ease,background .24s ease,border-color .24s ease!important;
-}
-.btn::before,.back-btn::before,.service-card__back a::before,.tag-button::before,.nw-card__button::before,.project-link::before,.social-grid a::before{
-  content:"";position:absolute;inset:1px;border-radius:inherit;
-  background:linear-gradient(120deg,transparent 0%,rgba(255,255,255,.62) 46%,transparent 62%);
-  transform:translateX(-130%);transition:transform .55s ease;z-index:-1;pointer-events:none;
-}
-.btn:hover,.back-btn:hover,.service-card__back a:hover,.tag-button:hover,.nw-card__button:hover,.project-link:hover,.social-grid a:hover{
-  transform:translateY(-4px)!important;filter:saturate(1.06) brightness(1.015);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 20px 38px rgba(20,59,52,.14)!important;
-  border-color:rgba(20,59,52,.16)!important;
-}
-.btn:hover::before,.back-btn:hover::before,.service-card__back a:hover::before,.tag-button:hover::before,.nw-card__button:hover::before,.project-link:hover::before,.social-grid a:hover::before{
-  transform:translateX(130%);
-}
-.btn:active,.back-btn:active,.service-card__back a:active,.tag-button:active,.nw-card__button:active,.project-link:active,.social-grid a:active{
-  transform:translateY(-1px) scale(.99)!important;
-}
-.tag-button::after{content:none!important}
-@media(max-width:768px){
-  .pin,.clip,.paperclip,.binder,.pushpin,.card-pin,.about-pin,.note-pin,.decor-pin,.stationery-pin,[class*="pin-"],[class*="clip-"],[class*="paperclip"]{
-    pointer-events:none!important;opacity:.26!important;z-index:0!important;
-  }
-  .about-copy,.contact-card,.service-card,.useful-tag,.note-card,.story-card,
-  .about-copy h2,.about-copy p,.contact-card h2,.contact-card p,.note-card h3,.note-card p,.story-card h3,.story-card p{
-    position:relative!important;z-index:6!important;
-  }
-}
-
 </style>
 </head>
 <body>
@@ -239,7 +195,7 @@ h3{font-family:var(--serif);font-weight:600;font-size:clamp(27px,2.2vw,38px);lin
     <section class="section" id="formats"><div class="container guide-ribbon"><div class="guide-panel"><div class="label">что можно собрать</div><h2>Материал под задачу, а не шаблон ради шаблона</h2><p class="lead">Иногда нужен небольшой чек-лист, иногда — полноценный PDF или страница для новичка. Формат подбирается под то, как люди будут этим пользоваться.</p></div><div class="format-list"><div class="format-item"><span>01</span><p><strong>HR-гайды и PDF.</strong><br>Гайды, памятки, мини-методички и презентационные материалы для сотрудников.</p></div><div class="format-item"><span>02</span><p><strong>Онбординг и welcome-материалы.</strong><br>Первый день, карта адаптации, чек-листы для новичка, HR и руководителя.</p></div><div class="format-item"><span>03</span><p><strong>Инструкции без канцелярита.</strong><br>Регламенты простым языком и с удобной структурой для чтения.</p></div><div class="format-item"><span>04</span><p><strong>Шаблоны для повторного использования.</strong><br>Основа, которую потом можно адаптировать под разные темы.</p></div></div></div></section>
     <section class="section"><div class="container"><div class="label">когда особенно полезно</div><h2>Если инструкция есть, но ей не пользуются</h2><div class="matrix"><article class="matrix-card"><h3>Для новичков</h3><p>Чтобы человеку было проще войти в работу и не задавать одни и те же вопросы.</p></article><article class="matrix-card"><h3>Для HR</h3><p>Чтобы не объяснять базовые процессы вручную каждый раз и сохранить единый стандарт.</p></article><article class="matrix-card"><h3>Для команды</h3><p>Чтобы правила, процессы и изменения были понятны без длинных тяжёлых документов.</p></article></div></div></section>
   </main>
-  <section class="footer-mini"><div class="container"><div class="footer-box"><div class="label">есть похожая задача?</div><h2>Понятный HR-материал экономит время всей команды</h2><p>Инструкции и HR-материалы могут быть не только полезными, но и понятными, аккуратными и приятными для людей.</p><div class="footer-actions"><a class="btn" href="https://t.me/Marina_x6" target="_blank" rel="noopener">написать</a><a class="btn butter" href="/">на главную</a></div></div></div></section>
+  <section class="footer-mini"><div class="container"><div class="footer-box"><div class="label">есть похожая задача?</div><h2>Хороший HR-материал экономит десятки одинаковых объяснений</h2><p>Напишите, что нужно оформить: гайд, инструкцию, памятку, welcome-материал или PDF. Я помогу собрать информацию в понятный формат, которым действительно удобно пользоваться.</p><div class="footer-actions"><a class="btn" href="https://t.me/Marina_x6" target="_blank" rel="noopener">написать</a><a class="btn butter" href="/">на главную</a></div></div></div></section>
 
 <script>
 document.querySelectorAll('img[data-fallback]').forEach(function(img){
