@@ -3976,6 +3976,138 @@
   .about-card--right{ width:132px !important; top:350px !important; }
 }
 
+
+/* =========================================================
+   MOBILE HERO PHOTO ANIMATION FIX ONLY
+   Правка только мобильного первого фото. Остальное не трогаем.
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .hero,
+  .hero-section,
+  .first-screen,
+  .hero-inner,
+  .hero-grid {
+    overflow: visible !important;
+  }
+
+  .hero-photo,
+  .hero-visual,
+  .hero-image,
+  .hero-photo-wrap,
+  .photo-stack,
+  .photo-cards,
+  .polaroid-stack,
+  .hero-polaroids {
+    overflow: visible !important;
+    transform-style: preserve-3d !important;
+    will-change: transform, opacity !important;
+  }
+
+  /* Если в старом коде фото были карточками/полароидами — возвращаем им движение */
+  .hero-photo img,
+  .hero-image img,
+  .hero-visual img,
+  .photo-stack img,
+  .photo-cards img,
+  .polaroid-stack img,
+  .hero-polaroids img,
+  .hero-card img,
+  .hero-photo-card img {
+    will-change: transform, opacity !important;
+    backface-visibility: hidden !important;
+  }
+
+  /* Мягкое перелистывание для центрального фото, если JS/старый transform не сработает */
+  .hero-photo,
+  .hero-photo-wrap,
+  .hero-visual {
+    animation: mobileHeroFloat 7s ease-in-out infinite !important;
+  }
+
+  .hero-card:nth-child(1),
+  .hero-photo-card:nth-child(1),
+  .photo-card:nth-child(1),
+  .polaroid:nth-child(1) {
+    animation: mobileHeroCardOne 8s ease-in-out infinite !important;
+  }
+
+  .hero-card:nth-child(2),
+  .hero-photo-card:nth-child(2),
+  .photo-card:nth-child(2),
+  .polaroid:nth-child(2) {
+    animation: mobileHeroCardTwo 8s ease-in-out infinite !important;
+  }
+
+  .hero-card:nth-child(3),
+  .hero-photo-card:nth-child(3),
+  .photo-card:nth-child(3),
+  .polaroid:nth-child(3) {
+    animation: mobileHeroCardThree 8s ease-in-out infinite !important;
+  }
+
+  /* Фото снова аккуратно заходит во второй блок, но не перекрывает текст */
+  .about,
+  .about-section,
+  #about {
+    position: relative !important;
+    overflow: visible !important;
+    z-index: 2 !important;
+  }
+
+  .about-title,
+  .about-copy,
+  .about-text,
+  .about-content,
+  .about h2,
+  .about-section h2,
+  #about h2,
+  .about p,
+  .about-section p,
+  #about p {
+    position: relative !important;
+    z-index: 12 !important;
+  }
+
+  /* Декор не должен залезать на текст на телефоне */
+  .pin,
+  .clip,
+  .paperclip,
+  .binder,
+  .pushpin,
+  .card-pin,
+  .about-pin,
+  .note-pin,
+  .decor-pin,
+  .stationery-pin,
+  [class*="pin-"],
+  [class*="clip-"],
+  [class*="paperclip"] {
+    pointer-events: none !important;
+  }
+}
+
+@keyframes mobileHeroFloat {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  45% { transform: translate3d(0, 14px, 0) rotate(-1deg); }
+  70% { transform: translate3d(0, -4px, 0) rotate(.6deg); }
+}
+
+@keyframes mobileHeroCardOne {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-5deg); opacity: 1; }
+  50% { transform: translate3d(-10px, 10px, 0) rotate(-7deg); opacity: .96; }
+}
+
+@keyframes mobileHeroCardTwo {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(1deg); opacity: 1; }
+  50% { transform: translate3d(8px, -8px, 0) rotate(3deg); opacity: .98; }
+}
+
+@keyframes mobileHeroCardThree {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(6deg); opacity: 1; }
+  50% { transform: translate3d(10px, 8px, 0) rotate(8deg); opacity: .96; }
+}
+
 </style>
 
   <script type="application/ld+json">
