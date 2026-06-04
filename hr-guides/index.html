@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HR-гайды, welcome book и инструкции для сотрудников | NEIRO.WAY</title>
+
+  <title>HR-гайды, welcome book и инструкции для сотрудников | NEIRO.WAY</title>
   <meta name="description" content="Создаю и оформляю HR-гайды, welcome book, инструкции, памятки и материалы для адаптации сотрудников: понятная структура, текст без канцелярита и аккуратный дизайн." />
   <link rel="canonical" href="https://hrneiroway.ru/hr-guides/" />
   <meta name="robots" content="index, follow" />
@@ -19,71 +20,557 @@
   <meta name="twitter:title" content="HR-гайды, welcome book и инструкции для сотрудников | NEIRO.WAY" />
   <meta name="twitter:description" content="Welcome book, инструкции, памятки, чек-листы и материалы для адаптации сотрудников: структура, текст и визуальное оформление." />
   <meta name="twitter:image" content="https://hrneiroway.ru/preview.jpg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Marck+Script&display=swap" rel="stylesheet">
+
 <style>
-
 :root{
-  --bg:#e4edf2;--bg2:#eef4f7;--white:#fff;--milk:#fbfaf5;--cream:#f6efe2;--butter:#ebe2a8;
-  --rose:#e2a2b4;--rose2:#f5dce4;--emerald:#143b34;--muted:#5f7671;
-  --line:rgba(20,59,52,.12);--shadow:0 24px 70px rgba(20,59,52,.10);--soft:0 14px 34px rgba(20,59,52,.07);
-  --serif:"Cormorant Garamond",Georgia,serif;--sans:"Inter",Arial,sans-serif;--script:"Marck Script",cursive;
+  --bg:#e4edf2;
+  --bg2:#eef4f7;
+  --white:#fff;
+  --milk:#fbfaf5;
+  --cream:#f6efe2;
+  --butter:#ebe2a8;
+  --rose:#e2a2b4;
+  --rose2:#f5dce4;
+  --emerald:#143b34;
+  --muted:#5f7671;
+  --line:rgba(20,59,52,.12);
+  --shadow:0 24px 70px rgba(20,59,52,.10);
+  --soft:0 14px 34px rgba(20,59,52,.07);
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Inter",Arial,sans-serif;
+  --script:"Marck Script",cursive;
 }
-*{box-sizing:border-box} html{scroll-behavior:smooth}
-body{margin:0;font-family:var(--sans);color:var(--emerald);background:radial-gradient(circle at 14% 8%,rgba(255,255,255,.72),transparent 30%),radial-gradient(circle at 86% 12%,rgba(226,162,180,.10),transparent 26%),linear-gradient(135deg,var(--bg),var(--bg2));overflow-x:hidden;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none} img{display:block;max-width:100%}
-.container{width:min(1180px,calc(100% - 48px));margin:0 auto}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:var(--sans);
+  color:var(--emerald);
+  background:
+    radial-gradient(circle at 14% 8%,rgba(255,255,255,.72),transparent 30%),
+    radial-gradient(circle at 86% 12%,rgba(226,162,180,.10),transparent 26%),
+    linear-gradient(135deg,var(--bg),var(--bg2));
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+
+.container{
+  width:min(1180px,calc(100% - 48px));
+  margin:0 auto;
+}
+
 .page-top{padding:28px 0 0}
-.back-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.back-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:999px;background:rgba(255,255,255,.66);border:1px solid rgba(255,255,255,.78);box-shadow:var(--soft);color:var(--emerald);font-weight:700;letter-spacing:.01em}
-.label{display:flex;align-items:center;gap:18px;font-size:12px;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:rgba(20,59,52,.58);margin-bottom:22px}
-.label:after{content:"";width:78px;height:1px;background:rgba(226,162,180,.78)}
-h1,h2,h3,p{margin-top:0}
-h1{font-family:var(--serif);font-weight:600;font-size:clamp(48px,6.2vw,92px);line-height:.94;letter-spacing:-.055em;margin-bottom:22px;text-wrap:balance}
-h2{font-family:var(--serif);font-weight:600;font-size:clamp(38px,4.6vw,70px);line-height:.96;letter-spacing:-.048em;margin-bottom:18px;text-wrap:balance}
-h3{font-family:var(--serif);font-weight:600;font-size:clamp(27px,2.2vw,38px);line-height:1.02;letter-spacing:-.035em}
-.lead{max-width:690px;font-size:clamp(18px,1.7vw,23px);line-height:1.55;color:rgba(20,59,52,.70)}
-.page-hero{padding:82px 0 70px}
-.btns{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 26px;border-radius:999px;border:1px solid rgba(255,255,255,.82);box-shadow:inset 0 1px 0 rgba(255,255,255,.72),0 12px 28px rgba(20,59,52,.07);font-family:var(--script);font-size:24px;line-height:1;background:linear-gradient(180deg,rgba(245,220,228,.96),rgba(233,187,201,.90))}
-.btn.butter{background:linear-gradient(180deg,rgba(239,232,188,.99),rgba(235,226,168,.92))}
-.btn.small{font-family:var(--sans);font-size:14px;font-weight:650;letter-spacing:.01em}
-.section{padding:82px 0}
-.soft-card{background:rgba(255,255,255,.58);border:1px solid rgba(255,255,255,.74);border-radius:30px;box-shadow:var(--soft)}
-.footer-mini{padding:64px 0 54px}
-.footer-box{position:relative;padding:38px;border-radius:34px;background:rgba(255,255,255,.64);border:1px solid rgba(255,255,255,.78);box-shadow:var(--shadow);display:grid;gap:18px;overflow:hidden}
-.footer-box:before{content:"";position:absolute;right:26px;top:24px;width:70px;height:70px;border-radius:50%;border:1px solid rgba(226,162,180,.36);opacity:.75}
-.footer-box p{max-width:760px;color:rgba(20,59,52,.70);line-height:1.65;margin:0}
-.footer-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px}
-@media(max-width:820px){
-  .container{width:min(100% - 28px,1180px)}
-  .page-hero{padding:56px 0 52px}
-  h1{font-size:clamp(42px,12.5vw,58px);line-height:1.02}
-  h2{font-size:clamp(36px,10vw,48px);line-height:1.02}
-  .lead{font-size:17px}.btn{width:100%;font-size:23px}.btn.small{font-size:14px}.section{padding:58px 0}.footer-box{padding:24px;border-radius:28px}
+
+.back-row{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center;
 }
 
+.back-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:0 22px;
+  border-radius:999px;
+  background:rgba(255,255,255,.66);
+  border:1px solid rgba(255,255,255,.78);
+  box-shadow:var(--soft);
+  color:var(--emerald);
+  font-weight:700;
+  letter-spacing:.01em;
+}
 
-.guide-hero{display:grid;grid-template-columns:1fr .9fr;gap:50px;align-items:center}
-.folder{position:relative;min-height:500px;border-radius:38px;padding:38px;background:linear-gradient(135deg,rgba(255,255,255,.48),rgba(246,239,226,.46));border:1px solid rgba(255,255,255,.72);box-shadow:var(--shadow)}
-.folder-tab{position:absolute;top:34px;left:38px;width:210px;height:54px;border-radius:24px 24px 0 0;background:rgba(245,220,228,.62);border:1px solid rgba(255,255,255,.7);border-bottom:0}
-.doc{position:absolute;border-radius:26px;padding:24px;background:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.82);box-shadow:0 18px 40px rgba(20,59,52,.08);transition:transform .35s ease}
-.folder:hover .doc.one{transform:translate(-8px,-5px) rotate(-6deg)}.folder:hover .doc.two{transform:translate(8px,-5px) rotate(5deg)}.folder:hover .doc.three{transform:translate(8px,7px) rotate(-3deg)}.folder:hover .doc.four{transform:translate(-7px,7px) rotate(1deg)}
-.doc small{display:block;font-size:11px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:rgba(20,59,52,.48);margin-bottom:22px}.doc strong{font-family:var(--serif);font-size:38px;line-height:1;color:var(--emerald)}.doc p{margin:12px 0 0;color:rgba(20,59,52,.62);line-height:1.45}
-.doc.one{left:34px;top:110px;width:280px;transform:rotate(-4deg)}.doc.two{right:80px;top:70px;width:270px;background:rgba(246,239,226,.76);transform:rotate(3deg)}.doc.three{right:30px;bottom:54px;width:310px;background:rgba(245,220,228,.62);transform:rotate(-2deg)}.doc.four{left:84px;bottom:36px;width:300px}
-.guide-ribbon{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:start}.guide-panel{padding:34px;border-radius:34px;background:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.76);box-shadow:var(--soft)}
-.format-list{display:grid;gap:14px}.format-item{display:grid;grid-template-columns:72px 1fr;gap:18px;align-items:start;padding:22px;border-radius:26px;background:rgba(255,255,255,.54);border:1px solid rgba(255,255,255,.72);box-shadow:var(--soft)}.format-item span{font-family:var(--serif);font-size:38px;color:rgba(226,162,180,.9);line-height:1}.format-item p{margin:0;color:rgba(20,59,52,.66);line-height:1.55}
-.matrix{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.matrix-card{padding:26px;border-radius:28px;background:rgba(255,255,255,.58);border:1px solid rgba(255,255,255,.72);box-shadow:var(--soft)}.matrix-card:nth-child(2){background:rgba(246,239,226,.62)}.matrix-card:nth-child(3){background:rgba(245,220,228,.48)}.matrix-card h3{font-size:32px;margin-bottom:10px}.matrix-card p{color:rgba(20,59,52,.66);line-height:1.55;margin:0}
-@media(max-width:950px){.guide-hero,.guide-ribbon{grid-template-columns:1fr}.folder{min-height:660px}.doc.one,.doc.two,.doc.three,.doc.four{position:relative;left:auto;right:auto;top:auto;bottom:auto;width:100%;transform:none!important;margin:14px 0}.folder:hover .doc{transform:none!important}.folder-tab{display:none}.matrix{grid-template-columns:1fr}}
+.label{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:rgba(20,59,52,.58);
+  margin-bottom:22px;
+}
 
+.label:after{
+  content:"";
+  width:78px;
+  height:1px;
+  background:rgba(226,162,180,.78);
+}
 
+h1,h2,h3,p{margin-top:0}
 
+h1{
+  font-family:var(--serif);
+  font-weight:600;
+  font-size:clamp(48px,6.2vw,92px);
+  line-height:.94;
+  letter-spacing:-.055em;
+  margin-bottom:22px;
+  text-wrap:balance;
+}
 
-/* =========================================================
-   HR-GUIDES ABSOLUTE NO-OVERLAP FIX
-   ========================================================= */
+h2{
+  font-family:var(--serif);
+  font-weight:600;
+  font-size:clamp(38px,4.6vw,70px);
+  line-height:.96;
+  letter-spacing:-.048em;
+  margin-bottom:18px;
+  text-wrap:balance;
+}
 
+h3{
+  font-family:var(--serif);
+  font-weight:600;
+  font-size:clamp(27px,2.2vw,38px);
+  line-height:1.02;
+  letter-spacing:-.035em;
+}
+
+.lead{
+  max-width:690px;
+  font-size:clamp(18px,1.7vw,23px);
+  line-height:1.55;
+  color:rgba(20,59,52,.70);
+}
+
+.page-hero{padding:82px 0 70px}
+
+.btns{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:30px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:54px;
+  padding:0 26px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.82);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.72),0 12px 28px rgba(20,59,52,.07);
+  font-family:var(--script);
+  font-size:24px;
+  line-height:1;
+  background:linear-gradient(180deg,rgba(245,220,228,.96),rgba(233,187,201,.90));
+}
+
+.btn.butter{
+  background:linear-gradient(180deg,rgba(239,232,188,.99),rgba(235,226,168,.92));
+}
+
+.btn.small{
+  font-family:var(--sans);
+  font-size:14px;
+  font-weight:650;
+  letter-spacing:.01em;
+}
+
+.section{padding:82px 0}
+
+.soft-card{
+  background:rgba(255,255,255,.58);
+  border:1px solid rgba(255,255,255,.74);
+  border-radius:30px;
+  box-shadow:var(--soft);
+}
+
+.footer-mini{padding:64px 0 54px}
+
+.footer-box{
+  position:relative;
+  padding:38px;
+  border-radius:34px;
+  background:rgba(255,255,255,.64);
+  border:1px solid rgba(255,255,255,.78);
+  box-shadow:var(--shadow);
+  display:grid;
+  gap:18px;
+  overflow:hidden;
+}
+
+.footer-box:before{
+  content:"";
+  position:absolute;
+  right:26px;
+  top:24px;
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  border:1px solid rgba(226,162,180,.36);
+  opacity:.75;
+}
+
+.footer-box p{
+  max-width:760px;
+  color:rgba(20,59,52,.70);
+  line-height:1.65;
+  margin:0;
+}
+
+.footer-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:12px;
+}
+
+.guide-hero{
+  display:grid;
+  grid-template-columns:1fr .9fr;
+  gap:50px;
+  align-items:center;
+}
+
+.folder{
+  position:relative;
+  min-height:500px;
+  border-radius:38px;
+  padding:38px;
+  background:linear-gradient(135deg,rgba(255,255,255,.48),rgba(246,239,226,.46));
+  border:1px solid rgba(255,255,255,.72);
+  box-shadow:var(--shadow);
+}
+
+.folder-tab{
+  position:absolute;
+  top:34px;
+  left:38px;
+  width:210px;
+  height:54px;
+  border-radius:24px 24px 0 0;
+  background:rgba(245,220,228,.62);
+  border:1px solid rgba(255,255,255,.7);
+  border-bottom:0;
+}
+
+.doc{
+  position:absolute;
+  border-radius:26px;
+  padding:24px;
+  background:rgba(255,255,255,.78);
+  border:1px solid rgba(255,255,255,.82);
+  box-shadow:0 18px 40px rgba(20,59,52,.08);
+  transition:transform .35s ease;
+}
+
+.folder:hover .doc.one{transform:translate(-8px,-5px) rotate(-6deg)}
+.folder:hover .doc.two{transform:translate(8px,-5px) rotate(5deg)}
+.folder:hover .doc.three{transform:translate(8px,7px) rotate(-3deg)}
+.folder:hover .doc.four{transform:translate(-7px,7px) rotate(1deg)}
+
+.doc small{
+  display:block;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:rgba(20,59,52,.48);
+  margin-bottom:22px;
+}
+
+.doc strong{
+  font-family:var(--serif);
+  font-size:38px;
+  line-height:1;
+  color:var(--emerald);
+}
+
+.doc p{
+  margin:12px 0 0;
+  color:rgba(20,59,52,.62);
+  line-height:1.45;
+}
+
+.doc.one{
+  left:34px;
+  top:110px;
+  width:280px;
+  transform:rotate(-4deg);
+}
+
+.doc.two{
+  right:80px;
+  top:70px;
+  width:270px;
+  background:rgba(246,239,226,.76);
+  transform:rotate(3deg);
+}
+
+.doc.three{
+  right:30px;
+  bottom:54px;
+  width:310px;
+  background:rgba(245,220,228,.62);
+  transform:rotate(-2deg);
+}
+
+.doc.four{
+  left:84px;
+  bottom:36px;
+  width:300px;
+}
+
+.guide-ribbon{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:26px;
+  align-items:start;
+}
+
+.guide-panel{
+  padding:34px;
+  border-radius:34px;
+  background:rgba(255,255,255,.62);
+  border:1px solid rgba(255,255,255,.76);
+  box-shadow:var(--soft);
+}
+
+.format-list{
+  display:grid;
+  gap:14px;
+}
+
+.format-item{
+  display:grid;
+  grid-template-columns:72px 1fr;
+  gap:18px;
+  align-items:start;
+  padding:22px;
+  border-radius:26px;
+  background:rgba(255,255,255,.54);
+  border:1px solid rgba(255,255,255,.72);
+  box-shadow:var(--soft);
+}
+
+.format-item span{
+  font-family:var(--serif);
+  font-size:38px;
+  color:rgba(226,162,180,.9);
+  line-height:1;
+}
+
+.format-item p{
+  margin:0;
+  color:rgba(20,59,52,.66);
+  line-height:1.55;
+}
+
+.guide-cases{
+  padding-top:54px;
+}
+
+.cases-head{
+  max-width:860px;
+  margin-bottom:34px;
+}
+
+.cases-head .lead{
+  max-width:790px;
+}
+
+.cases-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:24px;
+  align-items:stretch;
+}
+
+.case-card{
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  border-radius:36px;
+  background:rgba(255,255,255,.64);
+  border:1px solid rgba(255,255,255,.78);
+  box-shadow:var(--soft);
+}
+
+.case-visual{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:330px;
+  padding:16px;
+  background:
+    radial-gradient(circle at 20% 10%,rgba(255,255,255,.95),transparent 35%),
+    linear-gradient(135deg,rgba(255,255,255,.72),rgba(246,239,226,.34));
+  border-bottom:1px solid rgba(20,59,52,.07);
+  overflow:hidden;
+}
+
+.case-card.big .case-visual{
+  min-height:390px;
+}
+
+.case-visual img{
+  width:100%;
+  height:100%;
+  max-height:430px;
+  object-fit:contain;
+  border-radius:24px;
+  box-shadow:0 16px 36px rgba(20,59,52,.08);
+  transition:transform .35s ease, filter .35s ease;
+}
+
+.case-card:hover .case-visual img{
+  transform:scale(1.012);
+  filter:saturate(1.04) brightness(1.01);
+}
+
+.case-body{
+  padding:26px 28px 30px;
+}
+
+.case-tag{
+  display:inline-flex;
+  align-items:center;
+  min-height:30px;
+  padding:0 12px;
+  margin-bottom:14px;
+  border-radius:999px;
+  background:rgba(235,226,168,.45);
+  border:1px solid rgba(255,255,255,.72);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(20,59,52,.62);
+}
+
+.case-card:nth-child(2) .case-tag{
+  background:rgba(245,220,228,.56);
+}
+
+.case-body h3{
+  margin-bottom:12px;
+  font-size:clamp(32px,2.8vw,46px);
+}
+
+.case-body p{
+  margin:0;
+  color:rgba(20,59,52,.68);
+  line-height:1.62;
+}
+
+.case-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.case-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  padding:0 16px;
+  border-radius:999px;
+  background:rgba(255,255,255,.66);
+  border:1px solid rgba(255,255,255,.78);
+  box-shadow:0 10px 24px rgba(20,59,52,.06);
+  font-size:13px;
+  font-weight:750;
+  color:rgba(20,59,52,.78);
+  transition:transform .24s ease, box-shadow .24s ease;
+}
+
+.case-link:hover{
+  transform:translateY(-3px);
+  box-shadow:0 16px 30px rgba(20,59,52,.12);
+}
+
+.case-thumbs{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:10px;
+  padding:0 18px 20px;
+}
+
+.case-thumbs a{
+  display:block;
+  overflow:hidden;
+  border-radius:18px;
+  background:rgba(255,255,255,.62);
+  border:1px solid rgba(255,255,255,.78);
+  box-shadow:0 10px 24px rgba(20,59,52,.06);
+}
+
+.case-thumbs img{
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  transition:transform .28s ease;
+}
+
+.case-thumbs a:hover img{
+  transform:scale(1.04);
+}
+
+.case-note{
+  margin-top:24px;
+  padding:22px 26px;
+  border-radius:28px;
+  background:linear-gradient(135deg,rgba(245,220,228,.46),rgba(255,255,255,.56));
+  border:1px solid rgba(255,255,255,.72);
+  box-shadow:var(--soft);
+}
+
+.case-note p{
+  margin:0;
+  max-width:880px;
+  color:rgba(20,59,52,.70);
+  line-height:1.65;
+}
+
+.matrix{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.matrix-card{
+  padding:26px;
+  border-radius:28px;
+  background:rgba(255,255,255,.58);
+  border:1px solid rgba(255,255,255,.72);
+  box-shadow:var(--soft);
+}
+
+.matrix-card:nth-child(2){background:rgba(246,239,226,.62)}
+.matrix-card:nth-child(3){background:rgba(245,220,228,.48)}
+
+.matrix-card h3{
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.matrix-card p{
+  color:rgba(20,59,52,.66);
+  line-height:1.55;
+  margin:0;
+}
+
+/* HR-GUIDES ABSOLUTE NO-OVERLAP FIX */
 .folder{
   min-height:auto !important;
   display:grid !important;
@@ -93,7 +580,7 @@ h3{font-family:var(--serif);font-weight:600;font-size:clamp(27px,2.2vw,38px);lin
   overflow:hidden !important;
 }
 
-.folder-tab{ display:none !important; }
+.folder-tab{display:none !important}
 
 .doc,
 .doc.one,
@@ -113,10 +600,10 @@ h3{font-family:var(--serif);font-weight:600;font-size:clamp(27px,2.2vw,38px);lin
   box-shadow:0 18px 40px rgba(20,59,52,.08) !important;
 }
 
-.doc.one{ transform:rotate(-2.4deg) !important; }
-.doc.two{ transform:rotate(1.8deg) translateY(8px) !important; background:rgba(246,239,226,.78) !important; }
-.doc.three{ transform:rotate(-1.4deg) translateY(-4px) !important; background:rgba(245,220,228,.58) !important; }
-.doc.four{ transform:rotate(1.2deg) translateY(6px) !important; }
+.doc.one{transform:rotate(-2.4deg) !important}
+.doc.two{transform:rotate(1.8deg) translateY(8px) !important;background:rgba(246,239,226,.78) !important}
+.doc.three{transform:rotate(-1.4deg) translateY(-4px) !important;background:rgba(245,220,228,.58) !important}
+.doc.four{transform:rotate(1.2deg) translateY(6px) !important}
 
 .doc small,
 .doc strong,
@@ -132,24 +619,41 @@ h3{font-family:var(--serif);font-weight:600;font-size:clamp(27px,2.2vw,38px);lin
   line-height:1.42 !important;
 }
 
-.folder:hover .doc.one{ transform:translateY(-5px) rotate(-2.4deg) !important; }
-.folder:hover .doc.two{ transform:translateY(3px) rotate(1.8deg) !important; }
-.folder:hover .doc.three{ transform:translateY(-8px) rotate(-1.4deg) !important; }
-.folder:hover .doc.four{ transform:translateY(1px) rotate(1.2deg) !important; }
+.folder:hover .doc.one{transform:translateY(-5px) rotate(-2.4deg) !important}
+.folder:hover .doc.two{transform:translateY(3px) rotate(1.8deg) !important}
+.folder:hover .doc.three{transform:translateY(-8px) rotate(-1.4deg) !important}
+.folder:hover .doc.four{transform:translateY(1px) rotate(1.2deg) !important}
 
-.btn{
-  transition:transform .24s ease, box-shadow .24s ease, filter .24s ease, border-color .24s ease !important;
+/* GLOBAL BUTTON HOVER FIX */
+.btn,
+.back-btn{
+  transition:transform .24s ease,box-shadow .24s ease,filter .24s ease,background .24s ease,border-color .24s ease!important;
 }
-.btn:hover{
-  transform:translateY(-3px) !important;
-  filter:saturate(1.04) brightness(1.01);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.86),
-    0 18px 34px rgba(20,59,52,.13) !important;
-  border-color:rgba(20,59,52,.12) !important;
+
+.btn:hover,
+.back-btn:hover{
+  transform:translateY(-4px)!important;
+  filter:saturate(1.05) brightness(1.01);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 20px 38px rgba(20,59,52,.14)!important;
+}
+
+@media(max-width:1000px){
+  .cases-grid{
+    grid-template-columns:1fr;
+  }
+
+  .case-card.big .case-visual,
+  .case-visual{
+    min-height:360px;
+  }
 }
 
 @media(max-width:950px){
+  .guide-hero,
+  .guide-ribbon{
+    grid-template-columns:1fr;
+  }
+
   .folder{
     grid-template-columns:1fr !important;
     gap:14px !important;
@@ -172,21 +676,112 @@ h3{font-family:var(--serif);font-weight:600;font-size:clamp(27px,2.2vw,38px);lin
   .folder:hover .doc.four{
     transform:none !important;
   }
+
+  .matrix{
+    grid-template-columns:1fr;
+  }
 }
 
+@media(max-width:820px){
+  .container{
+    width:min(100% - 28px,1180px);
+  }
 
-/* GLOBAL BUTTON HOVER FIX */
-.btn,.back-btn{
-  transition:transform .24s ease,box-shadow .24s ease,filter .24s ease,background .24s ease,border-color .24s ease!important;
-}
-.btn:hover,.back-btn:hover{
-  transform:translateY(-4px)!important;
-  filter:saturate(1.05) brightness(1.01);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 20px 38px rgba(20,59,52,.14)!important;
+  .page-hero{
+    padding:56px 0 52px;
+  }
+
+  h1{
+    font-size:clamp(42px,12.5vw,58px);
+    line-height:1.02;
+  }
+
+  h2{
+    font-size:clamp(36px,10vw,48px);
+    line-height:1.02;
+  }
+
+  .lead{
+    font-size:17px;
+  }
+
+  .btn{
+    width:100%;
+    font-size:23px;
+  }
+
+  .btn.small{
+    font-size:14px;
+  }
+
+  .section{
+    padding:58px 0;
+  }
+
+  .footer-box{
+    padding:24px;
+    border-radius:28px;
+  }
+
+  .guide-cases{
+    padding-top:22px;
+  }
+
+  .case-card{
+    border-radius:28px;
+  }
+
+  .case-card.big .case-visual,
+  .case-visual{
+    min-height:300px;
+    padding:12px;
+  }
+
+  .case-body{
+    padding:22px 20px 24px;
+  }
+
+  .case-body h3{
+    font-size:32px;
+  }
+
+  .case-thumbs{
+    grid-template-columns:repeat(3,1fr);
+    padding:0 14px 18px;
+  }
+
+  .case-note{
+    padding:20px;
+    border-radius:24px;
+  }
 }
 
+@media(max-width:520px){
+  .label{
+    gap:12px;
+    letter-spacing:.22em;
+  }
+
+  .label:after{
+    width:48px;
+  }
+
+  .format-item{
+    grid-template-columns:1fr;
+  }
+
+  .case-card.big .case-visual,
+  .case-visual{
+    min-height:250px;
+  }
+
+  .case-thumbs{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
 </style>
 </head>
+
 <body>
   <div class="page-top">
     <div class="container back-row">
@@ -196,11 +791,215 @@ h3{font-family:var(--serif);font-weight:600;font-size:clamp(27px,2.2vw,38px);lin
   </div>
 
   <main>
-    <section class="page-hero"><div class="container guide-hero"><div><div class="label">HR-гайды</div><h1>Понятные HR-гайды и инструкции</h1><p class="lead">Оформляю welcome book, инструкции, памятки и материалы для адаптации сотрудников — с понятной структурой, простым языком и удобной навигацией.</p><div class="btns"><a class="btn" href="https://t.me/Marina_x6" target="_blank" rel="noopener">обсудить гайд</a><a class="btn butter" href="#formats">форматы</a></div></div><div class="folder" aria-label="Папка с HR-материалами"><div class="folder-tab"></div><div class="doc one"><small>PDF</small><strong>Гайд</strong><p>Понятный материал для сотрудников, который можно отправить, распечатать или добавить в базу знаний.</p></div><div class="doc two"><small>welcome</small><strong>Адаптация</strong><p>Первые шаги, правила компании и полезная информация для нового сотрудника.</p></div><div class="doc three"><small>чек-лист</small><strong>Памятка</strong><p>Короткий формат для правил, этапов, сроков и повторяющихся вопросов.</p></div><div class="doc four"><small>регламент</small><strong>Инструкция</strong><p>Сложный документ становится понятной структурой.</p></div></div></div></section>
-    <section class="section" id="formats"><div class="container guide-ribbon"><div class="guide-panel"><div class="label">что можно собрать</div><h2>Материал под задачу, а не шаблон ради шаблона</h2><p class="lead">Иногда нужен небольшой чек-лист, иногда — полноценный PDF или страница для новичка. Формат подбирается под то, как люди будут этим пользоваться.</p></div><div class="format-list"><div class="format-item"><span>01</span><p><strong>HR-гайды и PDF.</strong><br>Гайды, памятки, мини-методички и презентационные материалы для сотрудников.</p></div><div class="format-item"><span>02</span><p><strong>Адаптация и welcome-материалы.</strong><br>Первый день, карта адаптации, чек-листы для новичка, HR и руководителя.</p></div><div class="format-item"><span>03</span><p><strong>Инструкции без канцелярита.</strong><br>Регламенты простым языком и с удобной структурой для чтения.</p></div><div class="format-item"><span>04</span><p><strong>Шаблоны для повторного использования.</strong><br>Основа, которую потом можно адаптировать под разные темы.</p></div></div></div></section>
-    <section class="section"><div class="container"><div class="label">когда особенно полезно</div><h2>Если инструкция есть, но ей не пользуются</h2><div class="matrix"><article class="matrix-card"><h3>Для новичков</h3><p>Чтобы человеку было проще войти в работу и не задавать одни и те же вопросы.</p></article><article class="matrix-card"><h3>Для HR</h3><p>Чтобы не объяснять базовые процессы вручную каждый раз и сохранить единый стандарт.</p></article><article class="matrix-card"><h3>Для команды</h3><p>Чтобы правила, процессы и изменения были понятны без длинных тяжёлых документов.</p></article></div></div></section>
+    <section class="page-hero">
+      <div class="container guide-hero">
+        <div>
+          <div class="label">HR-гайды</div>
+
+          <h1>Понятные HR-гайды и инструкции</h1>
+
+          <p class="lead">
+            Оформляю welcome book, инструкции, памятки и материалы для адаптации сотрудников — с понятной структурой, простым языком и удобной навигацией.
+          </p>
+
+          <div class="btns">
+            <a class="btn" href="https://t.me/Marina_x6" target="_blank" rel="noopener">обсудить гайд</a>
+            <a class="btn butter" href="#formats">форматы</a>
+          </div>
+        </div>
+
+        <div class="folder" aria-label="Папка с HR-материалами">
+          <div class="folder-tab"></div>
+
+          <div class="doc one">
+            <small>PDF</small>
+            <strong>Гайд</strong>
+            <p>Понятный материал для сотрудников, который можно отправить, распечатать или добавить в базу знаний.</p>
+          </div>
+
+          <div class="doc two">
+            <small>welcome</small>
+            <strong>Адаптация</strong>
+            <p>Первые шаги, правила компании и полезная информация для нового сотрудника.</p>
+          </div>
+
+          <div class="doc three">
+            <small>чек-лист</small>
+            <strong>Памятка</strong>
+            <p>Короткий формат для правил, этапов, сроков и повторяющихся вопросов.</p>
+          </div>
+
+          <div class="doc four">
+            <small>регламент</small>
+            <strong>Инструкция</strong>
+            <p>Сложный документ становится понятной структурой.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="formats">
+      <div class="container guide-ribbon">
+        <div class="guide-panel">
+          <div class="label">что можно собрать</div>
+
+          <h2>Материал под задачу, а не шаблон ради шаблона</h2>
+
+          <p class="lead">
+            Иногда нужен небольшой чек-лист, иногда — полноценный PDF или страница для новичка. Формат подбирается под то, как люди будут этим пользоваться.
+          </p>
+        </div>
+
+        <div class="format-list">
+          <div class="format-item">
+            <span>01</span>
+            <p><strong>HR-гайды и PDF.</strong><br>Гайды, памятки, мини-методички и презентационные материалы для сотрудников.</p>
+          </div>
+
+          <div class="format-item">
+            <span>02</span>
+            <p><strong>Адаптация и welcome-материалы.</strong><br>Первый день, карта адаптации, чек-листы для новичка, HR и руководителя.</p>
+          </div>
+
+          <div class="format-item">
+            <span>03</span>
+            <p><strong>Инструкции без канцелярита.</strong><br>Регламенты простым языком и с удобной структурой для чтения.</p>
+          </div>
+
+          <div class="format-item">
+            <span>04</span>
+            <p><strong>Шаблоны для повторного использования.</strong><br>Основа, которую потом можно адаптировать под разные темы.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section guide-cases" id="cases">
+      <div class="container">
+        <div class="cases-head">
+          <div class="label">примеры</div>
+
+          <h2>Примеры HR-гайдов и welcome-материалов</h2>
+
+          <p class="lead">
+            Так могут выглядеть материалы, которые помогают сотрудникам быстрее разобраться в процессе, а HR — меньше объяснять одно и то же вручную.
+          </p>
+        </div>
+
+        <div class="cases-grid">
+          <article class="case-card big">
+            <a class="case-visual" href="onboarding-01-cover.webp" target="_blank" rel="noopener" aria-label="Открыть пример онбординга для новой команды">
+              <img src="onboarding-01-cover.webp" alt="Обложка кейса: онбординг для новой команды" loading="lazy">
+            </a>
+
+            <div class="case-body">
+              <span class="case-tag">welcome-материалы</span>
+              <h3>Онбординг для новой команды</h3>
+              <p>
+                Концепт HR-материалов для IT-компании: маршрут новичка, welcome-письмо, чек-лист первого дня, FAQ-бот, база знаний и карточки для внутренних коммуникаций.
+              </p>
+
+              <div class="case-actions">
+                <a class="case-link" href="onboarding-01-cover.webp" target="_blank" rel="noopener">открыть обложку</a>
+                <a class="case-link" href="onboarding-08-kit.webp" target="_blank" rel="noopener">посмотреть комплект</a>
+              </div>
+            </div>
+
+            <div class="case-thumbs" aria-label="Превью страниц кейса онбординга">
+              <a href="onboarding-03-problem.webp" target="_blank" rel="noopener">
+                <img src="onboarding-03-problem.webp" alt="Проблема: новичок теряется в первые недели" loading="lazy">
+              </a>
+
+              <a href="onboarding-05-route.webp" target="_blank" rel="noopener">
+                <img src="onboarding-05-route.webp" alt="Маршрут новичка в онбординге" loading="lazy">
+              </a>
+
+              <a href="onboarding-06-tools.webp" target="_blank" rel="noopener">
+                <img src="onboarding-06-tools.webp" alt="Инструменты онбординга" loading="lazy">
+              </a>
+
+              <a href="onboarding-07-result.webp" target="_blank" rel="noopener">
+                <img src="onboarding-07-result.webp" alt="Что получает компания после онбординга" loading="lazy">
+              </a>
+
+              <a href="onboarding-08-kit.webp" target="_blank" rel="noopener">
+                <img src="onboarding-08-kit.webp" alt="Итоговый комплект онбординга" loading="lazy">
+              </a>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <a class="case-visual" href="remote-retention-guide.pdf" target="_blank" rel="noopener" aria-label="Открыть мини-гайд по удержанию сотрудников на удалёнке">
+              <img src="remote-retention-cover.webp" alt="Мини-гайд: удержание сотрудников на удалёнке" loading="lazy">
+            </a>
+
+            <div class="case-body">
+              <span class="case-tag">мини-гайд</span>
+              <h3>Удержание сотрудников на удалёнке</h3>
+              <p>
+                Материал для HR и руководителей распределённых команд: почему сотрудники теряют вовлечённость, что помогает удерживать людей и какую систему поддержки можно выстроить.
+              </p>
+
+              <div class="case-actions">
+                <a class="case-link" href="remote-retention-guide.pdf" target="_blank" rel="noopener">открыть PDF</a>
+                <a class="case-link" href="remote-retention-cover.webp" target="_blank" rel="noopener">посмотреть обложку</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="case-note">
+          <p>
+            Такие материалы помогают собрать информацию в понятную систему: сотрудник видит следующий шаг, а HR не объясняет базовые процессы вручную каждый раз.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="label">когда особенно полезно</div>
+
+        <h2>Если инструкция есть, но ей не пользуются</h2>
+
+        <div class="matrix">
+          <article class="matrix-card">
+            <h3>Для новичков</h3>
+            <p>Чтобы человеку было проще войти в работу и не задавать одни и те же вопросы.</p>
+          </article>
+
+          <article class="matrix-card">
+            <h3>Для HR</h3>
+            <p>Чтобы не объяснять базовые процессы вручную каждый раз и сохранить единый стандарт.</p>
+          </article>
+
+          <article class="matrix-card">
+            <h3>Для команды</h3>
+            <p>Чтобы правила, процессы и изменения были понятны без длинных тяжёлых документов.</p>
+          </article>
+        </div>
+      </div>
+    </section>
   </main>
-  <section class="footer-mini"><div class="container"><div class="footer-box"><div class="label">есть похожая задача?</div><h2>Хороший HR-материал экономит десятки одинаковых объяснений</h2><p>Напишите, что нужно оформить: гайд, инструкцию, памятку, welcome-материал или PDF. Я помогу собрать информацию в понятный формат, которым действительно удобно пользоваться.</p><div class="footer-actions"><a class="btn" href="https://t.me/Marina_x6" target="_blank" rel="noopener">написать</a><a class="btn butter" href="/">на главную</a></div></div></div></section>
+
+  <section class="footer-mini">
+    <div class="container">
+      <div class="footer-box">
+        <div class="label">есть похожая задача?</div>
+
+        <h2>Хороший HR-материал экономит десятки одинаковых объяснений</h2>
+
+        <p>
+          Напишите, что нужно оформить: гайд, инструкцию, памятку, welcome-материал или PDF. Я помогу собрать информацию в понятный формат, которым действительно удобно пользоваться.
+        </p>
+
+        <div class="footer-actions">
+          <a class="btn" href="https://t.me/Marina_x6" target="_blank" rel="noopener">написать</a>
+          <a class="btn butter" href="/">на главную</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
 <script>
 document.querySelectorAll('img[data-fallback]').forEach(function(img){
