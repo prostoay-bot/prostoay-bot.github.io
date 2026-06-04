@@ -385,79 +385,69 @@ h3{
 }
 
 .examples-head{
-  max-width:820px;
+  max-width:860px;
   margin-bottom:34px;
 }
 
 .examples-head .lead{
-  max-width:760px;
+  max-width:790px;
 }
 
 .examples-grid{
   display:grid;
-  grid-template-columns:1.15fr .85fr;
+  grid-template-columns:repeat(3,1fr);
   gap:22px;
   align-items:stretch;
 }
 
-.examples-side{
-  display:grid;
-  gap:22px;
-}
-
 .example-card{
-  position:relative;
   display:flex;
   flex-direction:column;
   overflow:hidden;
-  min-height:100%;
   border-radius:34px;
-  background:rgba(255,255,255,.62);
-  border:1px solid rgba(255,255,255,.76);
+  background:rgba(255,255,255,.64);
+  border:1px solid rgba(255,255,255,.78);
   box-shadow:var(--soft);
 }
 
-.example-card.big{
-  min-height:620px;
-}
-
-.example-card.small{
-  min-height:299px;
-}
-
 .example-image{
-  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:350px;
+  padding:14px;
+  background:
+    radial-gradient(circle at 20% 10%,rgba(255,255,255,.95),transparent 35%),
+    linear-gradient(135deg,rgba(255,255,255,.72),rgba(246,239,226,.34));
+  border-bottom:1px solid rgba(20,59,52,.07);
   overflow:hidden;
-  background:rgba(255,255,255,.55);
-}
-
-.example-card.big .example-image{
-  aspect-ratio:16/10;
-}
-
-.example-card.small .example-image{
-  aspect-ratio:16/9;
 }
 
 .example-image img{
   width:100%;
   height:100%;
-  object-fit:cover;
-  transition:transform .42s ease, filter .42s ease;
+  object-fit:contain;
+  object-position:center;
+  border-radius:22px;
+  transition:transform .35s ease, filter .35s ease;
 }
 
 .example-card:hover .example-image img{
-  transform:scale(1.025);
+  transform:scale(1.015);
   filter:saturate(1.04) brightness(1.01);
 }
 
 .example-body{
-  padding:24px 26px 28px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  padding:22px 24px 26px;
 }
 
 .example-tag{
   display:inline-flex;
   align-items:center;
+  align-self:flex-start;
   min-height:30px;
   padding:0 12px;
   margin-bottom:14px;
@@ -471,13 +461,9 @@ h3{
   color:rgba(20,59,52,.62);
 }
 
-.example-card:nth-child(2) .example-tag,
-.examples-side .example-card:nth-child(2) .example-tag{
-  background:rgba(245,220,228,.56);
-}
-
 .example-body h3{
   margin-bottom:10px;
+  font-size:clamp(29px,2.2vw,36px);
 }
 
 .example-body p{
@@ -541,11 +527,20 @@ h3{
   box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 20px 38px rgba(20,59,52,.14)!important;
 }
 
+@media(max-width:1000px){
+  .examples-grid{
+    grid-template-columns:1fr;
+  }
+
+  .example-image{
+    height:420px;
+  }
+}
+
 @media(max-width:900px){
   .comm-hero,
   .comm-layout,
-  .comm-result,
-  .examples-grid{
+  .comm-result{
     grid-template-columns:1fr;
   }
 
@@ -562,16 +557,6 @@ h3{
 
   .comm-board:hover .message{
     transform:none!important;
-  }
-
-  .example-card.big,
-  .example-card.small{
-    min-height:auto;
-  }
-
-  .example-card.big .example-image,
-  .example-card.small .example-image{
-    aspect-ratio:16/10;
   }
 }
 
@@ -628,6 +613,11 @@ h3{
     border-radius:28px;
   }
 
+  .example-image{
+    height:340px;
+    padding:12px;
+  }
+
   .example-body{
     padding:20px 20px 22px;
   }
@@ -652,9 +642,12 @@ h3{
     width:48px;
   }
 
-  .example-card.big .example-image,
-  .example-card.small .example-image{
-    aspect-ratio:4/3;
+  .example-image{
+    height:300px;
+  }
+
+  .example-card:nth-child(3) .example-image{
+    height:360px;
   }
 }
 </style>
@@ -768,49 +761,47 @@ h3{
         </div>
 
         <div class="examples-grid">
-          <article class="example-card big">
-            <div class="example-image">
-              <img src="case-meeting-room.webp" alt="Пример поста для внутреннего канала о бронировании переговорной" loading="lazy">
-            </div>
+          <article class="example-card">
+            <a class="example-image" href="case-meeting-room.webp" target="_blank" rel="noopener" aria-label="Открыть пример поста о бронировании переговорных">
+              <img src="case-meeting-room.webp" alt="Пример поста для внутреннего канала о бронировании переговорных" loading="lazy">
+            </a>
 
             <div class="example-body">
               <span class="example-tag">пост для канала</span>
-              <h3>Как бронировать переговорку</h3>
+              <h3>Порядок бронирования переговорных</h3>
               <p>
-                Короткая памятка для сотрудников: как выбрать комнату, добавить участников и не потерять бронь.
+                Короткий пост, который объясняет порядок бронирования: где выбрать комнату, что указать в заявке и как отменить встречу, если планы изменились.
               </p>
             </div>
           </article>
 
-          <div class="examples-side">
-            <article class="example-card small">
-              <div class="example-image">
-                <img src="case-office-map.webp" alt="Пример навигационного сообщения для сотрудников с картой офиса" loading="lazy">
-              </div>
+          <article class="example-card">
+            <a class="example-image" href="case-office.webp" target="_blank" rel="noopener" aria-label="Открыть пример навигации по офису">
+              <img src="case-office.webp" alt="Пример навигационного сообщения для сотрудников с картой офиса" loading="lazy">
+            </a>
 
-              <div class="example-body">
-                <span class="example-tag">навигация</span>
-                <h3>Карта офиса</h3>
-                <p>
-                  Пост для офисного канала: где найти переговорные, рабочие зоны, ресепшен, кухню и зону печати.
-                </p>
-              </div>
-            </article>
+            <div class="example-body">
+              <span class="example-tag">навигация</span>
+              <h3>Навигация по офису</h3>
+              <p>
+                Короткое сообщение, которое помогает сотрудникам быстро найти переговорные, рабочие зоны, ресепшен, кухню и зону печати.
+              </p>
+            </div>
+          </article>
 
-            <article class="example-card small">
-              <div class="example-image">
-                <img src="case-hr-situations.webp" alt="Пример HR-памятки для сотрудников: командировка, больничный и изменение данных" loading="lazy">
-              </div>
+          <article class="example-card">
+            <a class="example-image" href="case-hr-situations.webp" target="_blank" rel="noopener" aria-label="Открыть пример HR-памятки для сотрудников">
+              <img src="case-hr-situations.webp" alt="Пример HR-памятки для сотрудников: командировка, больничный и изменение данных" loading="lazy">
+            </a>
 
-              <div class="example-body">
-                <span class="example-tag">HR-памятка</span>
-                <h3>3 HR-ситуации</h3>
-                <p>
-                  Визуальная инструкция по частым вопросам: командировка, больничный и изменение данных.
-                </p>
-              </div>
-            </article>
-          </div>
+            <div class="example-body">
+              <span class="example-tag">HR-памятка</span>
+              <h3>Частые HR-вопросы</h3>
+              <p>
+                Материал, который помогает сотрудникам быстро понять порядок действий и снижает количество одинаковых вопросов в HR.
+              </p>
+            </div>
+          </article>
         </div>
 
         <div class="example-note">
