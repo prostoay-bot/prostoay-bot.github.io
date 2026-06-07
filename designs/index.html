@@ -118,7 +118,69 @@ h3{font-family:var(--serif);font-weight:600;font-size:clamp(27px,2.2vw,38px);lin
   .gallery-card img,.gallery-card.big img{height:auto;max-height:520px}
   .mood img{height:auto}
 }
+.reglament-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px;
+  margin-top:32px;
+}
 
+.reglament-card{
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.78);
+  border-radius:30px;
+  background:rgba(255,255,255,.62);
+  box-shadow:var(--soft);
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+
+.reglament-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 26px 54px rgba(20,59,52,.12);
+}
+
+.reglament-card a{
+  display:block;
+  background:rgba(255,255,255,.48);
+}
+
+.reglament-card img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+.reglament-card__body{
+  padding:22px 24px 26px;
+}
+
+.reglament-card__body h3{
+  margin:0 0 10px;
+  font-size:clamp(27px,2.1vw,38px);
+  line-height:1.05;
+}
+
+.reglament-card__body p{
+  margin:0;
+  color:rgba(20,59,52,.70);
+  font-size:17px;
+  line-height:1.55;
+}
+
+@media(max-width:760px){
+  .reglament-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+  .reglament-card__body{
+    padding:18px 18px 22px;
+  }
+
+  .reglament-card__body p{
+    font-size:16px;
+  }
+}
 </style>
 </head>
 <body>
@@ -199,7 +261,103 @@ h3{font-family:var(--serif);font-weight:600;font-size:clamp(27px,2.2vw,38px);lin
         </div>
       </div>
     </section>
+<section class="section reglament-section">
+  <div class="container">
+    <div class="label">примеры работ</div>
+    <h2>Визуальные регламенты и памятки</h2>
+    <p class="lead">
+      Оформляю правила и рабочие процессы так, чтобы сотрудникам было проще найти главное, понять порядок действий и использовать материал в работе.
+    </p>
 
+    <div class="reglament-grid">
+
+      <article class="reglament-card">
+        <a href="/reglament-logistics.webp" target="_blank" rel="noopener">
+          <img
+            src="/reglament-logistics.webp"
+            alt="Визуальный регламент отдела логистики"
+            loading="lazy"
+          >
+        </a>
+        <div class="reglament-card__body">
+          <h3>Регламент отдела логистики</h3>
+          <p>Планирование, сроки, документы, связь с клиентом и контроль перевозки.</p>
+        </div>
+      </article>
+
+      <article class="reglament-card">
+        <a href="/reglament-accounting.webp" target="_blank" rel="noopener">
+          <img
+            src="/reglament-accounting.webp"
+            alt="Визуальный регламент бухгалтерии"
+            loading="lazy"
+          >
+        </a>
+        <div class="reglament-card__body">
+          <h3>Регламент бухгалтерии</h3>
+          <p>Документы, сроки, проверка данных, порядок хранения файлов и исправление ошибок.</p>
+        </div>
+      </article>
+
+      <article class="reglament-card">
+        <a href="/reglament-chestny-znak.webp" target="_blank" rel="noopener">
+          <img
+            src="/reglament-chestny-znak.webp"
+            alt="Памятка по работе с системой Честный знак"
+            loading="lazy"
+          >
+        </a>
+        <div class="reglament-card__body">
+          <h3>Работа с системой «Честный знак»</h3>
+          <p>Приёмка товара, проверка кодов, ввод в оборот, продажа, возвраты и контроль ошибок.</p>
+        </div>
+      </article>
+
+      <article class="reglament-card">
+        <a href="/reglament-marketing.webp" target="_blank" rel="noopener">
+          <img
+            src="/reglament-marketing.webp"
+            alt="Визуальный регламент отдела маркетинга"
+            loading="lazy"
+          >
+        </a>
+        <div class="reglament-card__body">
+          <h3>Регламент отдела маркетинга</h3>
+          <p>Цели, контент, реклама, планирование, проверка материалов и анализ результатов.</p>
+        </div>
+      </article>
+
+      <article class="reglament-card">
+        <a href="/reglament-sales.webp" target="_blank" rel="noopener">
+          <img
+            src="/reglament-sales.webp"
+            alt="Визуальный регламент отдела продаж"
+            loading="lazy"
+          >
+        </a>
+        <div class="reglament-card__body">
+          <h3>Регламент отдела продаж</h3>
+          <p>Работа с заявками, звонками, CRM, возражениями, договорённостями и планом продаж.</p>
+        </div>
+      </article>
+
+      <article class="reglament-card">
+        <a href="/reglament-company.webp" target="_blank" rel="noopener">
+          <img
+            src="/reglament-company.webp"
+            alt="Визуальный регламент работы для команды"
+            loading="lazy"
+          >
+        </a>
+        <div class="reglament-card__body">
+          <h3>Регламент для команды</h3>
+          <p>Общие правила работы, коммуникации, задачи, перерывы, ответственность и результат.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
     <section class="section">
       <div class="container">
         <div class="label">палитры и настроение</div>
