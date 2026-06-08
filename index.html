@@ -4741,30 +4741,162 @@ section{scroll-margin-top:96px}
 
 @media(max-width:768px){
   .hero__buttons{
-    align-items:flex-start;
+    flex-direction:column;
+    align-items:stretch;
+    gap:13px;
+  }
+
+  .hero__buttons .hero-cta--primary,
+  .hero__buttons .hero-cta--secondary{
+    width:100%;
+    min-width:0;
+    height:62px;
+    min-height:62px !important;
+    padding:0 30px;
+    border-radius:999px;
+    line-height:1 !important;
+    text-align:center;
   }
 
   .hero__buttons .hero-cta--primary{
-    width:100%;
+    background:var(--emerald) !important;
+    border:1px solid var(--emerald) !important;
   }
 
   .hero__buttons .hero-cta--secondary{
-    width:auto;
-    min-width:0;
-    height:auto;
-    min-height:0 !important;
-    padding:8px 2px;
-    border:0 !important;
-    border-bottom:1px solid rgba(20,59,52,.38) !important;
-    border-radius:0;
-    background:transparent !important;
-    box-shadow:none !important;
-    line-height:1.4 !important;
+    background:rgba(255,255,255,.54) !important;
+    border:1px solid rgba(20,59,52,.30) !important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.76) !important;
+  }
+}
+
+/* Services: visible outcomes and HR-first hierarchy */
+.services-grid{
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+}
+
+.service-card__front{
+  justify-content:flex-start;
+  gap:0;
+}
+
+.service-card__front .service-card__result{
+  max-width:none;
+  margin:16px 0 0;
+  font-family:"Inter",sans-serif;
+  font-size:15px;
+  line-height:1.35;
+  font-weight:700;
+  color:var(--emerald);
+}
+
+.service-card__front .service-card__summary{
+  max-width:none;
+  margin:7px 0 0;
+  font-family:"Inter",sans-serif;
+  font-size:13px;
+  line-height:1.4;
+  font-weight:500;
+  color:rgba(20,59,52,.62);
+}
+
+.service-card__hint{
+  margin-top:auto;
+  transform:none;
+  font-family:"Inter",sans-serif;
+  font-size:13px;
+  line-height:1.2;
+  font-weight:650;
+  color:rgba(20,59,52,.76);
+}
+
+.services-group-label{
+  grid-column:1 / -1;
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:24px;
+  margin:18px 0 -2px;
+  padding-top:26px;
+  border-top:1px solid rgba(20,59,52,.12);
+}
+
+.services-group-label span{
+  font-family:"Cormorant Garamond",serif;
+  font-size:32px;
+  line-height:1;
+  font-weight:600;
+  color:var(--emerald);
+}
+
+.services-group-label p{
+  font-family:"Inter",sans-serif;
+  font-size:13px;
+  line-height:1.4;
+  color:rgba(20,59,52,.58);
+}
+
+@media(max-width:768px){
+  .services-grid{
+    grid-template-columns:1fr;
   }
 
-  .hero__buttons .hero-cta--secondary::before,
-  .hero__buttons .hero-cta--secondary::after{
-    display:none;
+  .service-card,
+  .service-card__inner,
+  .service-card__face{
+    min-height:266px;
+  }
+
+  .service-card__face{
+    padding:20px;
+  }
+
+  .service-card h3{
+    font-size:29px;
+    line-height:.98;
+  }
+
+  .service-card__num{
+    font-size:46px;
+  }
+
+  .service-card__front .service-card__result{
+    margin-top:12px;
+    font-size:14px;
+  }
+
+  .service-card__front .service-card__summary{
+    margin-top:5px;
+    font-size:12px;
+  }
+
+  .service-card__hint{
+    padding:7px 12px;
+    font-size:12px;
+  }
+
+  .service-card__back{
+    gap:12px;
+  }
+
+  .service-card__back p{
+    font-size:14px;
+    line-height:1.4;
+  }
+
+  .services-group-label{
+    display:block;
+    margin-top:10px;
+    padding-top:22px;
+  }
+
+  .services-group-label span{
+    font-size:28px;
+  }
+
+  .services-group-label p{
+    margin-top:6px;
+    font-size:12px;
   }
 }
 
@@ -4978,12 +5110,13 @@ section{scroll-margin-top:96px}
           <div class="service-card__inner">
             <div class="service-card__face service-card__front">
               <span class="service-card__num">01</span>
-              <h3>Онбординг и коммуникации</h3>
-              <p>понятный старт и важное, которое читают</p>
-              <span class="service-card__hint">перевернуть</span>
+              <h3>Внутренние коммуникации</h3>
+              <p class="service-card__result">Важное читают, понимают и применяют.</p>
+              <p class="service-card__summary">Рассылки, новости, инструкции и HR-сообщения.</p>
+              <span class="service-card__hint">Что входит</span>
             </div>
             <div class="service-card__face service-card__back">
-              <h3>Онбординг и коммуникации</h3>
+              <h3>Внутренние коммуникации</h3>
               <p>Welcome-материалы, внутренние новости, инструкции и HR-сообщения в понятном тоне — без канцелярита и лишнего шума.</p>
               <a href="communications/">подробнее</a>
             </div>
@@ -4994,12 +5127,13 @@ section{scroll-margin-top:96px}
           <div class="service-card__inner">
             <div class="service-card__face service-card__front service-card__front--butter">
               <span class="service-card__num">02</span>
-              <h3>HR-гайды и инструкции</h3>
-              <p>не скучно, а понятно</p>
-              <span class="service-card__hint">перевернуть</span>
+              <h3>Welcome book и HR-гайды</h3>
+              <p class="service-card__result">Новый сотрудник быстрее входит в работу.</p>
+              <p class="service-card__summary">Welcome book, памятки, чек-листы и инструкции.</p>
+              <span class="service-card__hint">Что входит</span>
             </div>
             <div class="service-card__face service-card__back">
-              <h3>HR-гайды</h3>
+              <h3>Welcome book и HR-гайды</h3>
               <p>Гайды, памятки, чек-листы, welcome-страницы и инструкции, которые помогают быстрее разобраться и не тонуть в длинных документах.</p>
               <a href="hr-guides/">подробнее</a>
             </div>
@@ -5010,28 +5144,13 @@ section{scroll-margin-top:96px}
           <div class="service-card__inner">
             <div class="service-card__face service-card__front service-card__front--rose">
               <span class="service-card__num">03</span>
-              <h3>Сайты и лендинги</h3>
-              <p>Tilda / структура / визуал</p>
-              <span class="service-card__hint">перевернуть</span>
+              <h3>AI-помощники</h3>
+              <p class="service-card__result">Меньше рутины и повторяющихся HR-вопросов.</p>
+              <p class="service-card__summary">HR-боты, базы знаний, промты и AI-сценарии.</p>
+              <span class="service-card__hint">Что входит</span>
             </div>
             <div class="service-card__face service-card__back">
-              <h3>Сайты</h3>
-              <p>Страницы, где структура, текст и визуал работают вместе: человеку понятно, куда он попал, чем вы полезны и что делать дальше.</p>
-              <a href="websites/">смотреть сайты</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="service-card" tabindex="0">
-          <div class="service-card__inner">
-            <div class="service-card__face service-card__front service-card__front--rose">
-              <span class="service-card__num">04</span>
-              <h3>AI-автоматизация</h3>
-              <p>боты и процессы без хаоса</p>
-              <span class="service-card__hint">перевернуть</span>
-            </div>
-            <div class="service-card__face service-card__back">
-              <h3>AI и боты</h3>
+              <h3>AI-помощники</h3>
               <p>AI-сценарии, промты, HR-помощники и базы знаний, которые помогают в рутине и остаются понятными человеку.</p>
               <a href="automation/">подробнее</a>
             </div>
@@ -5041,26 +5160,50 @@ section{scroll-margin-top:96px}
         <article class="service-card" tabindex="0">
           <div class="service-card__inner">
             <div class="service-card__face service-card__front service-card__front--butter">
-              <span class="service-card__num">05</span>
-              <h3>Дизайн-решения</h3>
-              <p>визуал со смыслом</p>
-              <span class="service-card__hint">перевернуть</span>
+              <span class="service-card__num">04</span>
+              <h3>Презентации и визуал</h3>
+              <p class="service-card__result">Сложные идеи легче понять и согласовать.</p>
+              <p class="service-card__summary">Презентации, шаблоны, обложки и digital-материалы.</p>
+              <span class="service-card__hint">Что входит</span>
             </div>
             <div class="service-card__face service-card__back">
-              <h3>Дизайн</h3>
+              <h3>Презентации и визуал</h3>
               <p>Презентации, обложки, гайды, шаблоны и digital-материалы, где визуал помогает понять смысл, а не просто украшает страницу.</p>
               <a href="designs/">подробнее</a>
             </div>
           </div>
         </article>
 
-        <article class="service-card" tabindex="0">
+        <div class="services-group-label">
+          <span>Дополнительные направления</span>
+          <p>Для задач продвижения и личного бренда</p>
+        </div>
+
+        <article class="service-card service-card--additional" tabindex="0">
+          <div class="service-card__inner">
+            <div class="service-card__face service-card__front service-card__front--rose">
+              <span class="service-card__num">05</span>
+              <h3>Сайты и лендинги</h3>
+              <p class="service-card__result">Предложение понятно с первого экрана.</p>
+              <p class="service-card__summary">Структура, тексты, визуал и адаптив.</p>
+              <span class="service-card__hint">Подробнее</span>
+            </div>
+            <div class="service-card__face service-card__back">
+              <h3>Сайты и лендинги</h3>
+              <p>Страницы, где структура, текст и визуал работают вместе: человеку понятно, куда он попал, чем вы полезны и что делать дальше.</p>
+              <a href="websites/">смотреть сайты</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card service-card--additional" tabindex="0">
           <div class="service-card__inner">
             <div class="service-card__face service-card__front service-card__front--neuro">
               <span class="service-card__num">06</span>
               <h3>Нейрофотосессии</h3>
-              <p>образ через призму AI</p>
-              <span class="service-card__hint">перевернуть</span>
+              <p class="service-card__result">Цельный образ для личного бренда.</p>
+              <p class="service-card__summary">AI-образы для аватаров, контента и соцсетей.</p>
+              <span class="service-card__hint">Подробнее</span>
             </div>
             <div class="service-card__face service-card__back">
               <h3>AI-образы</h3>
