@@ -1771,8 +1771,8 @@
       max-width:570px;
       margin:6px 0 0;
       font-family:"Cormorant Garamond", serif;
-      font-size:clamp(28px, 2.75vw, 43px);
-      line-height:1.12;
+      font-size:clamp(26px, 2.35vw, 37px);
+      line-height:1.07;
       letter-spacing:-.035em;
       color:rgba(20,59,52,.74);
     }
@@ -2137,7 +2137,8 @@
       }
 
       .why-clean__lead{
-        font-size:28px;
+        font-size:24px;
+        line-height:1.14;
       }
 
       .why-collage{
@@ -3933,6 +3934,21 @@ body{ -webkit-font-smoothing:antialiased; text-rendering:geometricPrecision; }
 .nw-card{ height:590px !important; }
 .nw-card__image{ height:292px !important; }
 .nw-card h3{ overflow-wrap:break-word; }
+.nw-card[data-pos="0"] .nw-card__side{
+  background:rgba(255,255,255,.92);
+  border-color:rgba(255,255,255,.98);
+  box-shadow:0 36px 86px rgba(16,63,55,.22),0 0 0 1px rgba(16,63,55,.04);
+}
+.nw-card[data-pos="1"],
+.nw-card[data-pos="-1"]{
+  opacity:.52;
+  filter:blur(.45px) saturate(.82);
+}
+.nw-card[data-pos="2"],
+.nw-card[data-pos="-2"]{
+  opacity:.28;
+  filter:blur(1.4px) saturate(.72);
+}
 
 @media (max-width:980px){
   .useful-section{ display:block !important; padding:80px 28px 96px !important; }
@@ -4924,6 +4940,126 @@ section{scroll-margin-top:96px}
   }
 }
 
+/* Services: semantic palette and clearer group hierarchy */
+.services-grid > .service-card:nth-of-type(1) .service-card__front{
+  background:
+    radial-gradient(circle at 12% 14%, rgba(226,162,180,.12), transparent 26%),
+    linear-gradient(145deg, rgba(255,255,255,.94), rgba(247,249,246,.80));
+  border-color:rgba(20,59,52,.16);
+  box-shadow:0 22px 52px rgba(20,59,52,.12);
+}
+
+.services-grid > .service-card:nth-of-type(2) .service-card__front{
+  background:
+    linear-gradient(145deg, rgba(241,233,197,.94), rgba(255,252,241,.78));
+  border-color:rgba(174,151,78,.20);
+  box-shadow:0 22px 52px rgba(20,59,52,.10);
+}
+
+.services-grid > .service-card:nth-of-type(3) .service-card__front{
+  background:
+    radial-gradient(circle at 84% 12%, rgba(255,255,255,.52), transparent 30%),
+    linear-gradient(145deg, rgba(216,230,236,.94), rgba(244,249,250,.76));
+}
+
+.services-grid > .service-card:nth-of-type(4) .service-card__front{
+  background:
+    radial-gradient(circle at 84% 12%, rgba(255,255,255,.42), transparent 30%),
+    linear-gradient(145deg, rgba(241,211,220,.90), rgba(253,246,248,.74));
+}
+
+.services-grid > .service-card:nth-of-type(5) .service-card__front{
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.92), rgba(222,235,240,.76));
+  border-color:rgba(84,119,126,.16);
+}
+
+.services-grid > .service-card:nth-of-type(6) .service-card__front{
+  background:
+    radial-gradient(circle at 82% 16%, rgba(226,162,180,.26), transparent 30%),
+    linear-gradient(145deg, rgba(255,252,247,.92), rgba(249,231,236,.68));
+}
+
+.services-grid > .service-card:nth-of-type(-n+2) .service-card__front h3::before{
+  content:"ключевое направление";
+  display:block;
+  width:max-content;
+  margin:0 0 10px;
+  padding:5px 9px;
+  border:1px solid rgba(20,59,52,.13);
+  border-radius:999px;
+  background:rgba(255,255,255,.48);
+  font-family:"Inter",sans-serif;
+  font-size:10px;
+  line-height:1;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:rgba(20,59,52,.68);
+}
+
+.services-group-label{
+  margin:38px 0 2px;
+  padding:28px 30px 26px;
+  align-items:center;
+  border:1px solid rgba(20,59,52,.10);
+  border-radius:24px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.50), rgba(226,236,240,.38));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.62);
+}
+
+.services-group-label span{
+  font-size:38px;
+}
+
+.services-group-label p{
+  max-width:310px;
+  font-size:14px;
+  font-weight:550;
+  color:rgba(20,59,52,.72);
+}
+
+.service-card__hint{
+  gap:7px;
+  border:1px solid rgba(20,59,52,.13);
+  background:rgba(255,255,255,.70);
+  box-shadow:0 9px 22px rgba(20,59,52,.07);
+}
+
+.service-card__hint::after{
+  content:"→";
+  font-size:14px;
+  line-height:1;
+  transition:transform .2s ease;
+}
+
+.service-card:hover .service-card__hint::after,
+.service-card:focus .service-card__hint::after{
+  transform:translateX(3px);
+}
+
+@media(max-width:768px){
+  .services-grid > .service-card:nth-of-type(-n+2) .service-card__front h3::before{
+    margin-bottom:8px;
+    font-size:9px;
+  }
+
+  .services-group-label{
+    margin-top:28px;
+    padding:22px 20px 20px;
+  }
+
+  .services-group-label span{
+    font-size:31px;
+  }
+
+  .services-group-label p{
+    font-size:13px;
+    line-height:1.45;
+  }
+}
+
 </style>
 
   <script type="application/ld+json">
@@ -4931,7 +5067,7 @@ section{scroll-margin-top:96px}
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "NEIRO.WAY",
-    "jobTitle": "HR-специалист и дизайнер digital-материалов",
+    "jobTitle": "HR-специалист и дизайнер цифровых материалов",
     "url": "https://prostoay-bot.github.io/",
     "sameAs": [
       "https://t.me/Marina_x6",
@@ -5028,8 +5164,8 @@ section{scroll-margin-top:96px}
       <section class="hero__left">
         <div class="hero__meta">
           <span class="hero__meta-dot"></span>
-          <span class="hero__meta-label--desktop">WELCOME BOOK / HR-ГАЙДЫ / ВНУТРЕННИЕ КОММУНИКАЦИИ / AI-ПОМОЩНИКИ</span>
-          <span class="hero__meta-label--mobile">WELCOME BOOK / HR-ГАЙДЫ / AI-ПОМОЩНИКИ</span>
+          <span class="hero__meta-label--desktop">WELCOME&nbsp;BOOK / HR&#8209;ГАЙДЫ / ВНУТРЕННИЕ КОММУНИКАЦИИ / AI&#8209;ПОМОЩНИКИ</span>
+          <span class="hero__meta-label--mobile">WELCOME&nbsp;BOOK / HR&#8209;ГАЙДЫ / AI&#8209;ПОМОЩНИКИ</span>
         </div>
 
         <div class="hero__title-wrap">
@@ -5041,7 +5177,7 @@ section{scroll-margin-top:96px}
   <span>Помогаю компаниям превращать</span>
   <span>сложные HR&#8209;процессы в понятные</span>
   <span>материалы для сотрудников:</span>
-  <span>welcome book, инструкции, внутренние посты,</span>
+  <span>welcome&nbsp;book, инструкции, внутренние&nbsp;посты,</span>
   <span class="hero__text-last">гайды и <em>AI&#8209;помощники.</em></span>
 </p>
 
@@ -5114,9 +5250,9 @@ section{scroll-margin-top:96px}
           У меня 15+ лет опыта в HR, поэтому я хорошо понимаю, где в компаниях чаще всего теряется информация:
           в адаптации, инструкциях, внутренних сообщениях, регламентах и повторяющихся вопросах сотрудников.
           <br><br>
-          Сейчас я соединяю HR-опыт, дизайн, AI и digital-инструменты, чтобы создавать материалы,
-          которыми действительно удобно пользоваться: welcome book, HR-гайды, инструкции,
-          внутренние посты, презентации и AI-помощники для сотрудников.
+          Сейчас я соединяю HR-опыт, дизайн, AI и цифровые инструменты, чтобы создавать материалы,
+          которыми действительно удобно пользоваться: welcome&nbsp;book, HR&#8209;гайды, инструкции,
+          внутренние&nbsp;посты, презентации и AI&#8209;помощники для сотрудников.
         </p>
       </div>
     </div>
@@ -5152,13 +5288,13 @@ section{scroll-margin-top:96px}
           <div class="service-card__inner">
             <div class="service-card__face service-card__front service-card__front--butter">
               <span class="service-card__num">02</span>
-              <h3>Welcome book и HR-гайды</h3>
+              <h3>Welcome&nbsp;book и HR&#8209;гайды</h3>
               <p class="service-card__result">Новый сотрудник быстрее входит в работу.</p>
-              <p class="service-card__summary">Welcome book, памятки, чек-листы и инструкции.</p>
+              <p class="service-card__summary">Welcome&nbsp;book, памятки, чек-листы и инструкции.</p>
               <span class="service-card__hint">Что входит</span>
             </div>
             <div class="service-card__face service-card__back">
-              <h3>Welcome book и HR-гайды</h3>
+              <h3>Welcome&nbsp;book и HR&#8209;гайды</h3>
               <p>Гайды, памятки, чек-листы, welcome-страницы и инструкции, которые помогают быстрее разобраться и не тонуть в длинных документах.</p>
               <a href="hr-guides/">подробнее</a>
             </div>
@@ -5169,14 +5305,14 @@ section{scroll-margin-top:96px}
           <div class="service-card__inner">
             <div class="service-card__face service-card__front service-card__front--rose">
               <span class="service-card__num">03</span>
-              <h3>AI-помощники</h3>
+              <h3>AI&#8209;помощники</h3>
               <p class="service-card__result">Меньше рутины и повторяющихся HR-вопросов.</p>
-              <p class="service-card__summary">HR-боты, базы знаний, промты и AI-сценарии.</p>
+              <p class="service-card__summary">HR-боты, базы знаний, промты и AI&#8209;сценарии.</p>
               <span class="service-card__hint">Что входит</span>
             </div>
             <div class="service-card__face service-card__back">
-              <h3>AI-помощники</h3>
-              <p>AI-сценарии, промты, HR-помощники и базы знаний, которые помогают в рутине и остаются понятными человеку.</p>
+              <h3>AI&#8209;помощники</h3>
+              <p>AI&#8209;сценарии, промты, HR-помощники и базы знаний, которые помогают в рутине и остаются понятными человеку.</p>
               <a href="automation/">подробнее</a>
             </div>
           </div>
@@ -5188,12 +5324,12 @@ section{scroll-margin-top:96px}
               <span class="service-card__num">04</span>
               <h3>Презентации и визуал</h3>
               <p class="service-card__result">Сложные идеи легче понять и согласовать.</p>
-              <p class="service-card__summary">Презентации, шаблоны, обложки и digital-материалы.</p>
+              <p class="service-card__summary">Презентации, шаблоны, обложки и визуальные материалы.</p>
               <span class="service-card__hint">Что входит</span>
             </div>
             <div class="service-card__face service-card__back">
               <h3>Презентации и визуал</h3>
-              <p>Презентации, обложки, гайды, шаблоны и digital-материалы, где визуал помогает понять смысл, а не просто украшает страницу.</p>
+              <p>Презентации, обложки, гайды, шаблоны и визуальные материалы, где оформление помогает понять смысл, а не просто украшает страницу.</p>
               <a href="designs/">подробнее</a>
             </div>
           </div>
@@ -5250,7 +5386,8 @@ section{scroll-margin-top:96px}
           <h2 class="why-clean__title">Почему со мной<br>удобно работать</h2>
         </div>
         <p class="why-clean__lead">
-          Я соединяю HR-опыт, визуальное мышление и digital-инструменты, чтобы решения были красивыми, понятными и рабочими.
+          Со мной удобно работать, потому что я соединяю HR-опыт, тексты, дизайн и цифровые инструменты в одном проекте.<br><br>
+          Не нужно отдельно объяснять задачу нескольким специалистам: я понимаю и HR-содержание, и визуальную подачу, и рабочий контекст компании.
         </p>
       </div>
 
@@ -5265,9 +5402,9 @@ section{scroll-margin-top:96px}
               <path d="M24 24v-6"/>
             </svg>
           </span>
-          <h3>Вижу бизнес изнутри</h3>
-          <p>15+ лет в HR научили меня понимать процессы, людей и скрытые смыслы.</p>
-          <p>Я быстро считываю задачу и вижу, что важно не только “на бумаге”, но и в реальной работе.</p>
+          <h3>Понимаю HR изнутри</h3>
+          <p>15+ лет в HR помогают мне быстро разобраться в задаче, процессах и контексте компании.</p>
+          <p>Не нужно долго объяснять, как устроены адаптация, внутренние коммуникации и работа с сотрудниками.</p>
         </article>
 
         <article class="why-card why-card--cream why-card--two">
@@ -5280,8 +5417,8 @@ section{scroll-margin-top:96px}
               <path d="M12 21h7"/>
             </svg>
           </span>
-          <h3>Перевожу сложное на человеческий язык</h3>
-          <p>Инструкции, онбординг, регламенты и внутренние материалы можно подать так, чтобы их не просто открыли, а действительно прочитали и начали использовать.</p>
+          <h3>Сначала выстраиваю структуру</h3>
+          <p>Сначала собираю смысл и логику материала, затем согласую структуру с вами. Так мы не тратим время на переделку уже готового дизайна.</p>
         </article>
 
         <article class="why-card why-card--milk why-card--three">
@@ -5292,8 +5429,8 @@ section{scroll-margin-top:96px}
               <path d="M10 6l1.8 4L16 12l-4.2 2L10 18l-1.8-4L4 12l4.2-2L10 6Z"/>
             </svg>
           </span>
-          <h3>Делаю не просто красиво</h3>
-          <p>Мне важно, чтобы проект вызывал доверие, был понятным и решал вашу задачу. Красивый визуал должен не украшать хаос, а помогать людям быстрее разобраться.</p>
+          <h3>Работаю по этапам</h3>
+          <p>После согласования структуры последовательно собираю текст, визуальную подачу и финальные материалы. На каждом этапе понятно, что уже готово и что будет дальше.</p>
         </article>
 
         <article class="why-card why-card--white why-card--four">
@@ -5304,8 +5441,8 @@ section{scroll-margin-top:96px}
               <path d="M12 16h8"/>
             </svg>
           </span>
-          <h3>Моя суперсила — видеть людей</h3>
-          <p>Я вижу за документами людей, а за процессами — возможности. Дизайн для меня — способ говорить о компании ясно, аккуратно и с уважением к тем, кто будет этим пользоваться.</p>
+          <h3>Делаю для реального использования</h3>
+          <p>Материал должен не просто красиво выглядеть, а помогать людям в работе. Передаю результат в удобном редактируемом формате, чтобы его можно было обновлять и использовать дальше.</p>
         </article>
 
         <div class="why-doodle why-plane" aria-hidden="true">
@@ -5355,15 +5492,15 @@ section{scroll-margin-top:96px}
     <header class="nw-workdeck__head">
       <span class="nw-workdeck__label">портфолио</span>
       <h2>Что я создаю</h2>
-      <p>Сайты, HR-решения, AI-инструменты и дизайн-материалы, которые помогают объяснять, вовлекать и вызывать доверие.</p>
+      <p>Сайты, HR-решения, AI-инструменты и&nbsp;дизайн-материалы, которые помогают объяснять, вовлекать и вызывать доверие.</p>
     </header>
     <div class="nw-carousel" aria-label="Направления работ">
       <div class="nw-cards">
-                <article class="nw-card" data-index="0"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-app.png" alt="Приложение"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">01</span><span class="nw-card__hint">нажмите для деталей</span></div><h3>Приложение</h3><p>AI-инструменты и интерфейсы для адаптации, обучения и HR-процессов: от идеи до наглядной упаковки продукта.</p><div class="nw-tags"><span>приложение</span><span>автоматизация</span><span>адаптация</span><span>интерфейс</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">01</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Концепции приложений и HR-инструментов.</li><li>Наглядная подача экранов и пользовательского пути.</li><li>Материалы для презентации продукта и идеи.</li><li>Подходит для HR, обучения и внутренних сервисов.</li></ul><a class="nw-card__button" href="automation/">Смотреть проект</a></div></div></div></article>
-        <article class="nw-card" data-index="1"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-sites.png" alt="Сайты"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">02</span><span class="nw-card__hint">нажмите для деталей</span></div><h3>Сайты</h3><p>Сайты, где структура, текст и визуал работают вместе: человеку быстро понятно, что вы предлагаете и почему вам можно доверять.</p><div class="nw-tags"><span>сайты</span><span>лендинги</span><span>интернет-магазины</span><span>адаптив</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">02</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Лендинги для экспертов, услуг и HR-проектов.</li><li>Каталоги и страницы с понятной навигацией.</li><li>Тексты, визуальная логика, адаптив и подготовка к запуску.</li><li>Без случайных блоков: каждый экран ведёт человека к действию.</li></ul><a class="nw-card__button" href="websites/">Смотреть кейсы</a></div></div></div></article>
-        <article class="nw-card" data-index="2"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-comms.png" alt="Внутренние коммуникации"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">03</span><span class="nw-card__hint">нажмите для деталей</span></div><h3>Внутренние коммуникации</h3><p>HR-решения и тексты для сотрудников: рассылки, анонсы, инструкции, онбординг и объяснение изменений простым языком.</p><div class="nw-tags"><span>HR-решения</span><span>рассылки</span><span>онбординг</span><span>инструкции</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">03</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Рассылка о подписании документов в Jira.</li><li>Анонс вебинара для внутреннего календаря.</li><li>Материалы для адаптации сотрудников.</li><li>Тексты, которые понятно читать и легко внедрять.</li></ul><a class="nw-card__button" href="communications/">Смотреть примеры</a></div></div></div></article>
-        <article class="nw-card" data-index="3"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-design.png" alt="Дизайн"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">04</span><span class="nw-card__hint">нажмите для деталей</span></div><h3>Дизайн</h3><p>Визуальные материалы, которые помогают бренду выглядеть собранно и узнаваемо: от шаблонов для соцсетей до баннеров и обучающих материалов.</p><div class="nw-tags"><span>соцсети</span><span>шаблоны</span><span>баннеры</span><span>оформление</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">04</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Шаблоны для соцсетей и оформления визуальной ленты.</li><li>Баннеры и материалы для экспертов и брендов.</li><li>Мини-гайды и визуальные материалы.</li><li>Единый стиль и аккуратная подача контента.</li></ul><a class="nw-card__button" href="designs/">Смотреть дизайн</a></div></div></div></article>
-        <article class="nw-card" data-index="4"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-neuro.png" alt="Нейрофото"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">05</span><span class="nw-card__hint">нажмите для деталей</span></div><h3>Нейрофото</h3><p>Нейрофотосессии и визуальные образы для личного бренда, контента и вдохновения: от идеи образа до готового коллажа.</p><div class="nw-tags"><span>нейрофото</span><span>образы</span><span>контент</span><span>личный бренд</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">05</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Коллажи на основе ваших фотографий и референсов.</li><li>Разные стили: fashion, lifestyle, editorial.</li><li>Образы для личного бренда и контента.</li><li>Акцент на атмосферу, эстетику и узнаваемость.</li></ul><a class="nw-card__button" href="https://prostoay-bot.github.io/-/" target="_blank" rel="noopener">Смотреть образы</a></div></div></div></article>      </div>
+                <article class="nw-card" data-index="0"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-comms.webp" alt="Внутренние коммуникации" loading="lazy"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">01</span><span class="nw-card__hint">Задача и решение</span></div><h3>HR-коммуникации</h3><p>Задача: понятно доносить команде процессы, новости и изменения. Сделано: рассылки, анонсы, инструкции и материалы для адаптации.</p><div class="nw-tags"><span>HR-решения</span><span>рассылки</span><span>онбординг</span><span>инструкции</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">01</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Рассылка о подписании документов в Jira.</li><li>Анонс вебинара для внутреннего календаря.</li><li>Материалы для адаптации сотрудников.</li><li>Тексты, которые понятно читать и легко внедрять.</li></ul><a class="nw-card__button" href="communications/index.html">Смотреть примеры</a></div></div></div></article>
+        <article class="nw-card" data-index="1"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-app.webp" alt="Приложение" loading="lazy"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">02</span><span class="nw-card__hint">Задача и решение</span></div><h3>AI&#8209;помощники</h3><p>Задача: упростить работу с информацией и повторяющимися процессами. Сделано: концепция, логика, интерфейсы и пользовательский путь.</p><div class="nw-tags"><span>приложение</span><span>автоматизация</span><span>адаптация</span><span>интерфейс</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">02</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Концепции приложений и HR-инструментов.</li><li>Наглядная подача экранов и пользовательского пути.</li><li>Материалы для презентации продукта и идеи.</li><li>Подходит для HR, обучения и внутренних сервисов.</li></ul><a class="nw-card__button" href="automation/index.html">Смотреть проект</a></div></div></div></article>
+        <article class="nw-card" data-index="2"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-sites.webp" alt="Сайты" loading="lazy"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">03</span><span class="nw-card__hint">Задача и решение</span></div><h3>Сайты и лендинги</h3><p>Задача: понятно представить бизнес, услугу или продукт. Сделано: структура, тексты, визуальная подача и адаптивная версия сайта.</p><div class="nw-tags"><span>сайты</span><span>лендинги</span><span>интернет-магазины</span><span>адаптив</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">03</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Лендинги для экспертов, услуг и HR-проектов.</li><li>Каталоги и страницы с понятной навигацией.</li><li>Тексты, визуальная логика, адаптив и подготовка к запуску.</li><li>Без случайных блоков: каждый экран ведёт человека к действию.</li></ul><a class="nw-card__button" href="websites/index.html">Смотреть кейсы</a></div></div></div></article>
+        <article class="nw-card" data-index="3"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-design.webp" alt="Дизайн" loading="lazy"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">04</span><span class="nw-card__hint">Задача и решение</span></div><h3>Презентации и визуал</h3><p>Задача: сделать информацию понятной и визуально цельной. Сделано: презентации, шаблоны, баннеры, гайды и материалы для коммуникаций.</p><div class="nw-tags"><span>соцсети</span><span>шаблоны</span><span>баннеры</span><span>оформление</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">04</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Шаблоны для соцсетей и оформления визуальной ленты.</li><li>Баннеры и материалы для экспертов и брендов.</li><li>Мини-гайды и визуальные материалы.</li><li>Единый стиль и аккуратная подача контента.</li></ul><a class="nw-card__button" href="designs/index.html">Смотреть дизайн</a></div></div></div></article>
+        <article class="nw-card" data-index="4"><div class="nw-card__inner"><div class="nw-card__side"><figure class="nw-card__image"><img src="projects-neuro.webp" alt="Нейрофото" loading="lazy"></figure><div class="nw-card__body"><div class="nw-card__top"><span class="nw-card__num">05</span><span class="nw-card__hint">Задача и решение</span></div><h3>Нейрофото для бренда</h3><p>Задача: создать узнаваемые образы для контента и продвижения. Сделано: концепция и коллажи на основе фотографий и выбранных референсов.</p><div class="nw-tags"><span>нейрофото</span><span>образы</span><span>контент</span><span>личный бренд</span></div></div></div><div class="nw-card__side nw-card__back"><button class="nw-card__close" type="button">×</button><div class="nw-card__body"><span class="nw-card__num">05</span><h4>Что внутри</h4><ul class="nw-card__list"><li>Коллажи на основе ваших фотографий и референсов.</li><li>Разные стили: fashion, lifestyle, editorial.</li><li>Образы для личного бренда и контента.</li><li>Акцент на атмосферу, эстетику и узнаваемость.</li></ul><a class="nw-card__button" href="https://prostoay-bot.github.io/-/" target="_blank" rel="noopener">Смотреть образы</a></div></div></div></article>      </div>
       <div class="nw-controls"><button class="nw-arrow" type="button" data-dir="prev" aria-label="Предыдущая карточка">‹</button><div class="nw-dots" aria-label="Навигация по карточкам"></div><button class="nw-arrow" type="button" data-dir="next" aria-label="Следующая карточка">›</button></div>
     </div>
   </div>
