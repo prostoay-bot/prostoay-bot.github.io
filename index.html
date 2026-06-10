@@ -452,11 +452,16 @@
 
     .photo-frame img{
       width:100%;
+      height:auto;
       aspect-ratio:4 / 5.15;
       object-fit:cover;
       object-position:center top;
       border-radius:24px;
       background:#f4f4f4;
+    }
+
+    .photo-frame picture{
+      display:block;
     }
 
     .photo-badge{
@@ -1123,6 +1128,13 @@
       object-fit:cover;
       display:block;
       filter:saturate(.96) contrast(.98);
+    }
+
+    .about-card__media picture,
+    .about-fly-photo picture{
+      display:block;
+      width:100%;
+      height:100%;
     }
 
     .about-card--left{
@@ -5190,7 +5202,11 @@ section{scroll-margin-top:96px}
       <section class="hero__right">
         <div class="visual">
           <div class="photo-frame">
-            <img src="marina-photo.png" alt="Марина">
+            <picture>
+              <source media="(max-width: 768px)" srcset="marina-photo-mobile.webp" type="image/webp">
+              <source srcset="marina-photo.webp" type="image/webp">
+              <img src="marina-photo.png" alt="Марина" width="1254" height="1254" fetchpriority="high">
+            </picture>
             <div class="photo-badge">15+ лет в HR</div>
           </div>
         </div>
@@ -5201,7 +5217,11 @@ section{scroll-margin-top:96px}
   <!-- SECTIONS -->
   <section id="about" class="about-section">
     <div class="about-fly-photo" id="aboutFlyPhoto" aria-hidden="true">
-      <img src="marina-photo.png" alt="">
+      <picture>
+        <source media="(max-width: 768px)" srcset="marina-photo-mobile.webp" type="image/webp">
+        <source srcset="marina-photo.webp" type="image/webp">
+        <img src="marina-photo.png" alt="" width="1254" height="1254" loading="lazy">
+      </picture>
     </div>
 
     <div class="container about-inner">
@@ -5227,19 +5247,23 @@ section{scroll-margin-top:96px}
 
         <div class="about-card about-card--left">
           <div class="about-card__media">
-            <img src="about-black.png" alt="Марина">
+            <img src="about-black.png" alt="Марина" width="848" height="1264" loading="lazy">
           </div>
         </div>
 
         <div class="about-card about-card--center" id="aboutCenterCard">
           <div class="about-card__media">
-            <img src="marina-photo.png" alt="Марина">
+            <picture>
+              <source media="(max-width: 768px)" srcset="marina-photo-mobile.webp" type="image/webp">
+              <source srcset="marina-photo.webp" type="image/webp">
+              <img src="marina-photo.png" alt="Марина" width="1254" height="1254" loading="lazy">
+            </picture>
           </div>
         </div>
 
         <div class="about-card about-card--right">
           <div class="about-card__media">
-            <img src="about-white.png" alt="Марина">
+            <img src="about-white.png" alt="Марина" width="848" height="1264" loading="lazy">
           </div>
         </div>
       </div>
