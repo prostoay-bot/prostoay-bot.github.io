@@ -1200,11 +1200,15 @@
     }
 
     .about-copy p{
-      max-width:780px;
+      max-width:620px;
       margin:0 auto;
       font-size:clamp(16px, 1.25vw, 20px);
       line-height:1.55;
       color:rgba(20,59,52,.74);
+    }
+
+    .about-copy p + p{
+      margin-top:1.55em;
     }
 
     .about-fly-photo{
@@ -1781,6 +1785,7 @@
       font-weight:600;
       letter-spacing:-.055em;
       color:var(--emerald);
+      text-wrap:balance;
     }
 
     .why-clean__lead{
@@ -1791,6 +1796,14 @@
       line-height:1.07;
       letter-spacing:-.035em;
       color:rgba(20,59,52,.74);
+    }
+
+    .why-clean__lead p{
+      margin:0;
+    }
+
+    .why-clean__lead p + p{
+      margin-top:1.07em;
     }
 
     .why-collage{
@@ -1920,14 +1933,15 @@
     }
 
     .pin-one{
-      left:-18px;
-      bottom:28px;
+      left:20px;
+      top:-48px;
+      bottom:auto;
       transform:rotate(2deg);
     }
 
     .pin-three{
-      left:-18px;
-      top:-16px;
+      left:-48px;
+      top:-28px;
       transform:rotate(-10deg);
     }
 
@@ -1942,17 +1956,19 @@
     }
 
     .clip-two{
-      left:-42px;
-      top:96px;
+      left:auto;
+      right:22px;
+      top:-48px;
       width:64px;
       height:64px;
-      transform:rotate(-6deg);
+      transform:rotate(6deg);
     }
 
     .clip-four{
-      left:50%;
-      top:-36px;
-      transform:translateX(-50%) rotate(2deg);
+      left:auto;
+      right:24px;
+      top:-48px;
+      transform:rotate(4deg);
     }
 
     .why-doodle{
@@ -2129,10 +2145,14 @@
         transform:none !important;
       }
 
-      .clip-two{ left:-10px; top:20px; }
-      .clip-four{ top:-26px; }
-      .pin-one{ left:-10px; bottom:24px; }
-      .pin-three{ left:-10px; top:-14px; }
+      .clip-two,
+      .clip-four{
+        left:auto;
+        right:20px;
+        top:-56px;
+      }
+      .pin-one{ left:20px; top:-56px; bottom:auto; }
+      .pin-three{ left:-42px; top:-24px; }
 
       .why-doodle{ opacity:.55; }
       .why-plane{ left:50%; top:50%; transform:translate(-50%, -50%); }
@@ -3000,6 +3020,7 @@
 
     .useful-left h2 {
       margin: 0;
+      text-wrap: balance;
       font-family: 'Playfair Display', serif;
       font-size: clamp(58px, 5.6vw, 88px);
       line-height: .94;
@@ -4792,7 +4813,22 @@ section{scroll-margin-top:96px}
     letter-spacing:-.025em;
   }
 
+  .hero__text span{
+    display:inline;
+  }
+
   .hero__text .hero__text-last{
+    white-space:normal;
+  }
+
+  .useful-left h2{
+    width:calc(100% + 32px);
+    font-size:39px !important;
+    letter-spacing:-2.2px !important;
+  }
+
+  .useful-left h2 span{
+    display:block;
     white-space:nowrap;
   }
 
@@ -5225,7 +5261,7 @@ section{scroll-margin-top:96px}
   <span>Помогаю компаниям превращать</span>
   <span>сложные HR&#8209;процессы в понятные</span>
   <span>материалы для сотрудников:</span>
-  <span>welcome&nbsp;book, инструкции, внутренние&nbsp;посты,</span>
+  <span>welcome&nbsp;book, инструкции, внутренние посты,</span>
   <span class="hero__text-last">гайды и <em>AI&#8209;помощники.</em></span>
 </p>
 
@@ -5304,17 +5340,18 @@ section{scroll-margin-top:96px}
         </div>
       </div>
 
-      <div class="about-copy">
-        <h2>Я — Марина.</h2>
-        <p>
-          У меня 15+ лет опыта в HR, поэтому я хорошо понимаю, где в компаниях чаще всего теряется информация:
-          в адаптации, инструкциях, внутренних сообщениях, регламентах и повторяющихся вопросах сотрудников.
-          <br><br>
-          Сейчас я соединяю HR-опыт, дизайн, AI и цифровые инструменты, чтобы создавать материалы,
-          которыми действительно удобно пользоваться: welcome&nbsp;book, HR&#8209;гайды, инструкции,
-          внутренние&nbsp;посты, презентации и AI&#8209;помощники для сотрудников.
-        </p>
-      </div>
+          <div class="about-copy">
+            <h2>Я — Марина.</h2>
+            <p>
+              У меня 15+ лет опыта в HR. Я хорошо понимаю, где в компании теряется информация:
+              в адаптации, инструкциях, внутренних сообщениях и повторяющихся вопросах сотрудников.
+            </p>
+            <p>
+              Сейчас я соединяю HR-опыт, дизайн, AI и&nbsp;цифровые инструменты.
+              Помогаю собирать понятные материалы для сотрудников: гайды, инструкции,
+              внутренние посты, презентации и AI&#8209;помощники.
+            </p>
+          </div>
     </div>
   </section>
 
@@ -5443,12 +5480,12 @@ section{scroll-margin-top:96px}
       <div class="why-clean__head">
         <div>
           <div class="why-clean__kicker">подход</div>
-          <h2 class="why-clean__title">Почему со мной<br>удобно работать</h2>
+          <h2 class="why-clean__title">Почему со мной удобно работать</h2>
         </div>
-        <p class="why-clean__lead">
-          Со мной удобно работать, потому что я соединяю HR-опыт, тексты, дизайн и цифровые инструменты в одном проекте.<br><br>
-          Не нужно отдельно объяснять задачу нескольким специалистам: я понимаю и HR-содержание, и визуальную подачу, и рабочий контекст компании.
-        </p>
+        <div class="why-clean__lead">
+          <p>Со мной удобно работать, потому что я соединяю HR-опыт, тексты, дизайн и цифровые инструменты в одном проекте.</p>
+          <p>Не нужно отдельно объяснять задачу нескольким специалистам: я понимаю и HR-содержание, и визуальную подачу, и рабочий контекст компании.</p>
+        </div>
       </div>
 
       <div class="why-collage">
@@ -5501,7 +5538,7 @@ section{scroll-margin-top:96px}
               <path d="M12 16h8"/>
             </svg>
           </span>
-          <h3>Делаю для реального использования</h3>
+          <h3>Не просто красиво, а полезно</h3>
           <p>Материал должен не просто красиво выглядеть, а помогать людям в работе. Передаю результат в удобном редактируемом формате, чтобы его можно было обновлять и использовать дальше.</p>
         </article>
 
@@ -5574,14 +5611,14 @@ section{scroll-margin-top:96px}
         <i></i>
       </div>
   
-      <h2>Материалы,<br>которые можно<br>забрать</h2>
+      <h2><span>Материалы, которые</span> <span>можно забрать</span></h2>
   
       <div class="useful-decor">
         <span></span><b>✦</b><span></span>
       </div>
   
       <p class="useful-subtitle">
-        Готовые шаблоны, промты и мини-гайды для HR-задач:<br>посты, инструкции и материалы для сотрудников.
+        Готовые шаблоны, промты и мини-гайды для HR-задач: посты, инструкции и материалы для сотрудников.
       </p>
     </div>
   
@@ -5653,7 +5690,7 @@ section{scroll-margin-top:96px}
         <i></i>
       </div>
   
-      <h2>Обсудим вашу задачу<br>и соберём ясное решение</h2>
+      <h2>Обсудим вашу задачу и соберём ясное решение</h2>
   
       <p>
         Открыта к сотрудничеству и интересным предложениям.
