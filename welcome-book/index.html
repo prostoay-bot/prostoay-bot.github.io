@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  <title>Welcome Book для сотрудников — разработка и дизайн | NEIRO.WAY</title>
+  <meta name="description" content="Разрабатываю welcome book для сотрудников: собираю информацию о компании, первых шагах и правилах в понятный гайд для адаптации новичков." />
+  <link rel="canonical" href="https://hrneiroway.ru/welcome-book/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#e4edf2" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Welcome Book для сотрудников — разработка и дизайн | NEIRO.WAY" />
+  <meta property="og:description" content="Понятный гайд для нового сотрудника: первые шаги, контакты, правила, сервисы и полезные ссылки в одном месте." />
+  <meta property="og:url" content="https://hrneiroway.ru/welcome-book/" />
+  <meta property="og:image" content="https://hrneiroway.ru/preview.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Welcome Book для сотрудников | NEIRO.WAY" />
+  <meta name="twitter:description" content="Разработка и оформление понятного гайда для адаптации новых сотрудников." />
+  <meta name="twitter:image" content="https://hrneiroway.ru/preview.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=Marck+Script&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#e4edf2;--bg2:#eef4f7;--white:#fff;--milk:#fbfaf5;--cream:#f6efe2;
+  --butter:#ebe2a8;--rose:#e2a2b4;--rose2:#f5dce4;--emerald:#143b34;
+  --muted:#5f7671;--line:rgba(20,59,52,.13);--shadow:0 28px 80px rgba(20,59,52,.12);
+  --soft:0 14px 36px rgba(20,59,52,.08);--serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Inter",Arial,sans-serif;--script:"Marck Script",cursive;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:var(--sans);color:var(--emerald);overflow-x:hidden;
+  background:
+    radial-gradient(circle at 10% 6%,rgba(255,255,255,.82),transparent 28%),
+    radial-gradient(circle at 88% 16%,rgba(226,162,180,.13),transparent 24%),
+    linear-gradient(135deg,var(--bg),var(--bg2));
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(1180px,calc(100% - 48px));margin:0 auto}
+.page-top{padding:28px 0 0}
+.back-row{display:flex;gap:12px;flex-wrap:wrap}
+.back-btn,.btn{
+  display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 24px;
+  border-radius:999px;font-weight:700;border:1px solid rgba(255,255,255,.8);
+  background:rgba(255,255,255,.68);box-shadow:var(--soft);transition:.3s ease;
+}
+.btn{background:var(--emerald);color:white;border-color:var(--emerald)}
+.btn.light{background:rgba(255,255,255,.74);color:var(--emerald);border-color:rgba(20,59,52,.12)}
+.btn:hover,.back-btn:hover{transform:translateY(-3px);box-shadow:0 18px 42px rgba(20,59,52,.14)}
+.label{
+  display:flex;align-items:center;gap:16px;margin-bottom:20px;color:rgba(20,59,52,.59);
+  font-size:11px;font-weight:800;letter-spacing:.25em;text-transform:uppercase;
+}
+.label:after{content:"";width:70px;height:1px;background:rgba(226,162,180,.9)}
+h1,h2,h3,p{margin-top:0}
+h1,h2,h3{font-family:var(--serif);font-weight:600}
+h1{max-width:650px;margin-bottom:24px;font-size:clamp(58px,5.6vw,80px);line-height:.91;letter-spacing:-.055em}
+h2{margin-bottom:18px;font-size:clamp(42px,4.6vw,68px);line-height:.97;letter-spacing:-.045em;text-wrap:balance}
+h3{font-size:30px;line-height:1.02}
+.lead{font-size:clamp(17px,1.35vw,20px);line-height:1.65;color:rgba(20,59,52,.72)}
+.section{padding:105px 0}
+.section-head{max-width:760px;margin-bottom:44px}
+.hero{padding:52px 0 100px;min-height:760px;display:flex;align-items:center}
+.hero-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:68px;align-items:center}
+.hero-copy .lead{max-width:610px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+
+.book-stage{position:relative;min-height:560px;perspective:1200px}
+.book-shadow{position:absolute;left:13%;right:7%;bottom:30px;height:90px;border-radius:50%;background:rgba(20,59,52,.15);filter:blur(30px)}
+.book{
+  position:absolute;inset:62px 18px 62px 20px;display:grid;grid-template-columns:1fr 1fr;
+  transform:rotate(-2deg);filter:drop-shadow(0 30px 34px rgba(20,59,52,.13));
+}
+.page{
+  position:relative;min-height:400px;padding:44px 38px;background:var(--milk);
+  border:1px solid rgba(20,59,52,.12);overflow:hidden;
+}
+.page.left{border-radius:28px 6px 6px 28px;transform:rotateY(4deg);transform-origin:right}
+.page.right{border-radius:6px 28px 28px 6px;transform:rotateY(-4deg);transform-origin:left}
+.page:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 80%,rgba(20,59,52,.055));pointer-events:none}
+.page.right:before{background:linear-gradient(90deg,rgba(20,59,52,.055),transparent 20%)}
+.book-kicker{font-size:10px;font-weight:800;letter-spacing:.25em;text-transform:uppercase;color:rgba(20,59,52,.5)}
+.book-title{margin:28px 0 18px;font-family:var(--serif);font-size:45px;line-height:.9}
+.paper-line{height:7px;margin:12px 0;border-radius:10px;background:rgba(20,59,52,.09)}
+.paper-line.short{width:62%}.paper-line.mid{width:82%}
+.page-number{position:absolute;right:30px;bottom:24px;font-family:var(--serif);font-size:22px;color:rgba(20,59,52,.32)}
+.book-note{margin-top:36px;padding:20px;border-radius:18px;background:var(--rose2);font-size:13px;line-height:1.55}
+.tab{
+  position:absolute;z-index:3;padding:14px 18px;border:1px solid rgba(20,59,52,.12);
+  border-radius:17px;background:var(--white);box-shadow:var(--soft);font-size:12px;font-weight:800;
+  letter-spacing:.03em;transition:transform .45s ease,box-shadow .45s ease;
+}
+.tab:hover{transform:translateY(-6px) rotate(0)!important;box-shadow:0 22px 45px rgba(20,59,52,.15)}
+.tab.one{left:1%;top:30px;transform:rotate(-7deg);background:var(--rose2)}
+.tab.two{right:1%;top:18px;transform:rotate(6deg);background:var(--butter)}
+.tab.three{left:0;bottom:48px;transform:rotate(5deg);background:var(--cream)}
+.tab.four{right:0;bottom:24px;transform:rotate(-5deg)}
+
+.intro-panel{
+  display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:end;padding:52px;
+  border-radius:38px;background:rgba(255,255,255,.58);border:1px solid rgba(255,255,255,.82);box-shadow:var(--soft);
+}
+.intro-panel p{margin:0;font-size:19px;line-height:1.7;color:rgba(20,59,52,.72)}
+.compare{display:grid;grid-template-columns:1fr 72px 1fr;align-items:stretch}
+.compare-card{padding:44px;border-radius:34px;background:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.85);box-shadow:var(--soft)}
+.compare-card.after{background:var(--milk);border-color:rgba(20,59,52,.12)}
+.compare-card small{font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:rgba(20,59,52,.52)}
+.compare-card p{margin:22px 0 0;font-size:20px;line-height:1.6}
+.compare-arrow{display:grid;place-items:center;font-size:32px;color:var(--rose)}
+
+.grid-4,.grid-6,.formats{display:grid;gap:18px}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+.grid-6{grid-template-columns:repeat(3,1fr)}
+.formats{grid-template-columns:repeat(5,1fr)}
+.card{
+  position:relative;padding:30px;border-radius:28px;background:rgba(255,255,255,.58);
+  border:1px solid rgba(255,255,255,.82);box-shadow:var(--soft);transition:.35s ease;
+}
+.card:hover{transform:translateY(-6px);background:rgba(255,255,255,.82);box-shadow:0 24px 52px rgba(20,59,52,.12)}
+.card h3{margin-bottom:12px}.card p{margin:0;line-height:1.6;color:rgba(20,59,52,.68)}
+.folder-card{padding-top:52px;min-height:230px}
+.folder-card:before{
+  content:"";position:absolute;left:28px;top:23px;width:64px;height:16px;border-radius:8px 8px 0 0;
+  background:var(--rose2);border:1px solid rgba(20,59,52,.08);
+}
+.folder-card:nth-child(2n):before{background:var(--butter)}
+.folder-card:nth-child(3n):before{background:var(--cream)}
+.format-card{text-align:center;padding:28px 18px}
+.format-icon{
+  display:grid;place-items:center;width:58px;height:58px;margin:0 auto 20px;border-radius:18px;
+  background:var(--milk);border:1px solid var(--line);font-family:var(--serif);font-size:18px;font-weight:700;
+}
+.format-card h3{font-size:26px}.format-card p{font-size:14px}
+
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-radius:34px;overflow:hidden;box-shadow:var(--soft)}
+.step{min-height:280px;padding:34px 26px;background:rgba(255,255,255,.58);border-right:1px solid var(--line)}
+.step:last-child{border-right:0}.step:nth-child(even){background:rgba(251,250,245,.78)}
+.step span{display:block;margin-bottom:42px;font-family:var(--serif);font-size:42px;color:var(--rose)}
+.step h3{font-size:27px}.step p{font-size:14px;line-height:1.6;color:rgba(20,59,52,.68)}
+
+.deliverable{display:grid;grid-template-columns:.85fr 1.15fr;gap:46px;align-items:center}
+.check-sheet{padding:46px;border-radius:8px 34px 34px 8px;background:var(--milk);border:1px solid var(--line);box-shadow:var(--shadow)}
+.check-sheet ul{display:grid;grid-template-columns:1fr 1fr;gap:18px 28px;margin:0;padding:0;list-style:none}
+.check-sheet li{position:relative;padding-left:32px;line-height:1.55}
+.check-sheet li:before{content:"✓";position:absolute;left:0;top:0;color:var(--rose);font-weight:800}
+
+.faq-list{max-width:900px;margin:0 auto}
+details{border-bottom:1px solid var(--line);background:rgba(255,255,255,.3)}
+details:first-child{border-radius:28px 28px 0 0}
+details:last-child{border-radius:0 0 28px 28px}
+summary{position:relative;padding:27px 70px 27px 28px;cursor:pointer;list-style:none;font-weight:700;font-size:18px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";position:absolute;right:28px;top:21px;font-family:var(--serif);font-size:34px;transition:.3s ease}
+details[open] summary:after{transform:rotate(45deg)}
+.faq-answer{padding:0 70px 28px 28px;color:rgba(20,59,52,.7);line-height:1.65}
+
+.related-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.related-links a{padding:12px 16px;border-radius:999px;background:rgba(255,255,255,.58);border:1px solid var(--line);font-size:13px;font-weight:700}
+.cta{padding-bottom:100px}
+.cta-box{
+  position:relative;overflow:hidden;padding:68px;border-radius:42px;background:var(--emerald);color:white;box-shadow:var(--shadow);
+}
+.cta-box:after{content:"welcome";position:absolute;right:3%;bottom:-20px;font-family:var(--script);font-size:110px;color:rgba(226,162,180,.24);transform:rotate(-7deg)}
+.cta-box h2{max-width:760px}.cta-box p{max-width:670px;font-size:18px;line-height:1.65;color:rgba(255,255,255,.75)}
+.cta-box .hero-actions{position:relative;z-index:2}.cta-box .btn{background:white;color:var(--emerald);border-color:white}
+.cta-box .btn.light{background:transparent;color:white;border-color:rgba(255,255,255,.35)}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+.reveal.visible{opacity:1;transform:none}
+.book .page,.tab{animation:paperIn .8s both cubic-bezier(.2,.7,.2,1)}
+.book .right{animation-delay:.12s}.tab.one{animation-delay:.22s}.tab.two{animation-delay:.3s}.tab.three{animation-delay:.38s}.tab.four{animation-delay:.46s}
+@keyframes paperIn{from{opacity:0;transform:translateY(22px) rotate(0)}to{opacity:1}}
+
+@media(max-width:980px){
+  .hero-grid,.intro-panel,.deliverable{grid-template-columns:1fr}
+  .hero{padding-top:36px}.hero-copy{text-align:center}.hero-copy h1,.hero-copy .lead{margin-left:auto;margin-right:auto}
+  .hero-copy .label,.hero-actions{justify-content:center}.book-stage{min-height:530px}
+  .grid-4{grid-template-columns:1fr 1fr}.grid-6{grid-template-columns:1fr 1fr}.formats{grid-template-columns:repeat(3,1fr)}
+  .steps{grid-template-columns:1fr 1fr}.step{min-height:auto;border-bottom:1px solid var(--line)}.step span{margin-bottom:20px}
+}
+@media(max-width:640px){
+  .container{width:min(100% - 28px,1180px)}.page-top{padding-top:16px}.back-btn{min-height:42px;padding:0 16px;font-size:13px}
+  .section{padding:72px 0}.hero{padding:50px 0 72px;min-height:0}.hero-grid{gap:34px}
+  h1{font-size:52px;line-height:.92}h2{font-size:42px}.lead{font-size:16px;line-height:1.6}
+  .hero-actions{display:grid;grid-template-columns:1fr}.btn{width:100%}
+  .book-stage{min-height:430px}.book{inset:54px 8px 54px;grid-template-columns:1fr}
+  .page{min-height:290px;padding:30px 25px}.page.left{display:none}.page.right{border-radius:26px;transform:none}
+  .book-title{font-size:38px}.tab{padding:11px 13px;font-size:10px}.tab.one{left:0}.tab.two{right:0}.tab.three{left:0;bottom:30px}.tab.four{right:0;bottom:12px}
+  .intro-panel,.compare-card,.check-sheet,.cta-box{padding:30px 24px}.intro-panel{gap:18px}
+  .compare{grid-template-columns:1fr;gap:12px}.compare-arrow{transform:rotate(90deg)}
+  .grid-4,.grid-6,.formats,.steps{grid-template-columns:1fr}.folder-card{min-height:0}
+  .format-card{text-align:left;display:grid;grid-template-columns:58px 1fr;gap:0 18px}.format-icon{grid-row:1/3;margin:0}.format-card h3{margin:2px 0 7px}
+  .step{padding:27px}.check-sheet ul{grid-template-columns:1fr}.faq-answer{padding-right:28px}
+  .cta-box:after{font-size:72px}.related-links{display:grid}.related-links a{text-align:center}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://hrneiroway.ru/welcome-book/#webpage",
+      "url": "https://hrneiroway.ru/welcome-book/",
+      "name": "Welcome Book для сотрудников — разработка и дизайн",
+      "description": "Разработка и оформление понятного гайда для адаптации новых сотрудников.",
+      "isPartOf": {"@id": "https://hrneiroway.ru/#website"},
+      "mainEntity": [
+        {"@id": "https://hrneiroway.ru/welcome-book/#service"},
+        {"@id": "https://hrneiroway.ru/welcome-book/#faq"}
+      ],
+      "inLanguage": "ru-RU"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://hrneiroway.ru/welcome-book/#service",
+      "name": "Разработка Welcome Book для сотрудников",
+      "url": "https://hrneiroway.ru/welcome-book/",
+      "description": "Создание структуры, текстов и дизайна welcome book для адаптации новых сотрудников.",
+      "serviceType": "Разработка и оформление Welcome Book",
+      "provider": {
+        "@type": "Organization",
+        "@id": "https://hrneiroway.ru/#organization",
+        "name": "NEIRO.WAY",
+        "url": "https://hrneiroway.ru/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://hrneiroway.ru/welcome-book/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Можно заказать Welcome Book, если пока есть только черновики?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Да. Можно начать с документов, ссылок и списка тем. Я помогу понять, что оставить, чего не хватает и как всё собрать."}
+        },
+        {
+          "@type": "Question",
+          "name": "Вы работаете только с готовым текстом?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Нет. Разработка Welcome Book может включать редактуру, новые формулировки и подготовку недостающих разделов на основе информации компании."}
+        },
+        {
+          "@type": "Question",
+          "name": "Какой формат лучше выбрать?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Если гайд редко меняется, подойдёт PDF. Для регулярных обновлений удобнее Canva, Notion, база знаний или страница на сайте."}
+        },
+        {
+          "@type": "Question",
+          "name": "Можно сделать версии для разных команд?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Да. Общая часть может быть одинаковой, а контакты, первые задачи и рабочие правила — разными."}
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько времени занимает работа?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Срок зависит от объёма и готовности исходной информации. После короткого обсуждения я предложу этапы и реалистичный срок."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=109410569', 'ym');
+    ym(109410569, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer:document.referrer, url:location.href, accurateTrackBounce:true, trackLinks:true});
+    document.addEventListener('click',function(event){
+      var target=event.target.closest('a,button');if(!target){return}
+      var href=target.getAttribute('href')||'';var text=(target.textContent||'').trim().toLowerCase();var goals=[];
+      if(text.indexOf('обсудить')!==-1){goals.push('discuss_task')}
+      if(/^(https?:\/\/)?(t\.me|telegram\.me)\//i.test(href)){goals.push('telegram_click')}
+      if(href==='#contacts'||/#contacts$/i.test(href)){goals.push('contacts_click')}
+      goals.forEach(function(goal){ym(109410569,'reachGoal',goal)});
+    });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109410569" style="position:absolute;left:-9999px" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+  <div class="page-top">
+    <div class="container back-row">
+      <a class="back-btn" href="/">← на главную</a>
+      <a class="back-btn" href="/hr-guides/">← к HR-материалам</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="label">гайд для нового сотрудника</div>
+          <h1>Welcome Book для сотрудников</h1>
+          <p class="lead">Собираю в одном месте всё, что нужно новичку: что делать в первые дни, где искать документы и к кому обращаться с вопросами.</p>
+          <div class="hero-actions">
+            <a class="btn" href="https://t.me/Marina_x6" target="_blank" rel="noopener">Обсудить welcome book</a>
+            <a class="btn light" href="#example">Посмотреть пример</a>
+          </div>
+        </div>
+
+        <div class="book-stage" aria-label="Макет Welcome Book с разделами">
+          <div class="book-shadow"></div>
+          <div class="book">
+            <div class="page left">
+              <span class="book-kicker">NEIRO.WAY / WELCOME</span>
+              <div class="book-title">Добро пожаловать<br>в команду</div>
+              <div class="paper-line mid"></div><div class="paper-line"></div><div class="paper-line short"></div>
+              <div class="book-note">Здесь начинается спокойное знакомство с компанией и работой.</div>
+              <span class="page-number">01</span>
+            </div>
+            <div class="page right">
+              <span class="book-kicker">первые шаги</span>
+              <div class="book-title">План первого<br>дня</div>
+              <div class="paper-line"></div><div class="paper-line mid"></div><div class="paper-line"></div><div class="paper-line short"></div>
+              <div class="book-note">Доступы, знакомства, важные ссылки и понятный следующий шаг.</div>
+              <span class="page-number">02</span>
+            </div>
+          </div>
+          <span class="tab one">Первый день</span><span class="tab two">Команда</span>
+          <span class="tab three">Правила</span><span class="tab four">Полезные ссылки</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container intro-panel reveal">
+        <div><div class="label">что это</div><h2>Понятный старт вместо десятка ссылок</h2></div>
+        <div>
+          <p>Welcome book — это гайд для нового сотрудника. В нём собрана главная информация о компании, работе и первых шагах.</p>
+          <p>Новичку не нужно искать ответы в старых письмах и чатах, а HR — каждый раз объяснять одно и то же.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="example">
+      <div class="container">
+        <div class="section-head reveal"><div class="label">до / после</div><h2>Когда всё важное собрано в одном месте</h2></div>
+        <div class="compare reveal">
+          <article class="compare-card"><small>Было</small><p>Инструкции лежали в разных папках, ссылки передавались в чатах, сотрудники задавали одинаковые вопросы.</p></article>
+          <div class="compare-arrow" aria-hidden="true">→</div>
+          <article class="compare-card after"><small>Стало</small><p>Один Welcome Book, где собраны первые шаги, контакты, полезные ссылки и ответы на частые вопросы.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal"><div class="label">когда нужен</div><h2>Welcome Book пригодится, если</h2></div>
+        <div class="grid-4">
+          <article class="card reveal"><h3>Новички теряются</h3><p>Информации много, но непонятно, с чего начать и где искать ответы.</p></article>
+          <article class="card reveal"><h3>HR повторяет одно и то же</h3><p>Правила, контакты и порядок действий приходится объяснять каждому отдельно.</p></article>
+          <article class="card reveal"><h3>Компания растёт</h3><p>Нужен единый понятный старт для сотрудников из разных команд.</p></article>
+          <article class="card reveal"><h3>Старый гайд неудобен</h3><p>Текст устарел, выглядит тяжело или не отвечает на реальные вопросы новичка.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal"><div class="label">что входит</div><h2>Шесть разделов, которые помогают освоиться</h2></div>
+        <div class="grid-6">
+          <article class="card folder-card reveal"><h3>О компании</h3><p>Чем занимается компания, как устроена работа и что важно знать в начале.</p></article>
+          <article class="card folder-card reveal"><h3>Первый день и неделя</h3><p>Доступы, знакомства, первые задачи и короткий план действий.</p></article>
+          <article class="card folder-card reveal"><h3>Правила и рабочий порядок</h3><p>График, встречи, согласования, отпуска, больничные и командировки.</p></article>
+          <article class="card folder-card reveal"><h3>Команда и контакты</h3><p>Кто за что отвечает и к кому обращаться с разными вопросами.</p></article>
+          <article class="card folder-card reveal"><h3>Сервисы и ссылки</h3><p>Документы, рабочие программы, обучение и внутренняя база знаний.</p></article>
+          <article class="card folder-card reveal"><h3>Частые вопросы</h3><p>Короткие ответы на то, о чём новички обычно спрашивают HR и руководителя.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal"><div class="label">форматы</div><h2>В том формате, которым удобно пользоваться</h2></div>
+        <div class="formats">
+          <article class="card format-card reveal"><span class="format-icon">PDF</span><h3>PDF</h3><p>Отправить, распечатать или сохранить на общем диске.</p></article>
+          <article class="card format-card reveal"><span class="format-icon">SLD</span><h3>Презентация</h3><p>Для welcome-встречи и знакомства с компанией.</p></article>
+          <article class="card format-card reveal"><span class="format-icon">C</span><h3>Canva</h3><p>Шаблон, который команда сможет обновлять сама.</p></article>
+          <article class="card format-card reveal"><span class="format-icon">N</span><h3>Notion</h3><p>Живая база знаний со ссылками и быстрым поиском.</p></article>
+          <article class="card format-card reveal"><span class="format-icon">WEB</span><h3>Страница</h3><p>Онлайн-гайд для телефона и компьютера.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal"><div class="label">как проходит работа</div><h2>От черновиков до готового гайда</h2></div>
+        <div class="steps reveal">
+          <article class="step"><span>01</span><h3>Обсуждаем</h3><p>Вы рассказываете, как проходит адаптация и что должен узнать новичок.</p></article>
+          <article class="step"><span>02</span><h3>Собираем</h3><p>Подойдут документы, ссылки, письма, заметки и ответы из чатов.</p></article>
+          <article class="step"><span>03</span><h3>Наводим порядок</h3><p>Я распределяю информацию по разделам, убираю повторы и отмечаю пробелы.</p></article>
+          <article class="step"><span>04</span><h3>Пишу и оформляю</h3><p>Делаю текст понятнее, добавляю навигацию и стиль компании.</p></article>
+          <article class="step"><span>05</span><h3>Передаю</h3><p>Вы получаете гайд, который можно сразу использовать и обновлять.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container deliverable">
+        <div class="reveal"><div class="label">результат</div><h2>Гайд, который помогает с первого дня</h2><p class="lead">Не просто красивый файл, а рабочая опора для новичка, HR и руководителя.</p></div>
+        <div class="check-sheet reveal">
+          <ul>
+            <li>готовый Welcome Book в выбранном формате;</li>
+            <li>понятный маршрут для новичка;</li>
+            <li>короткие ответы на частые вопросы;</li>
+            <li>контакты, документы и ссылки в одном месте;</li>
+            <li>аккуратное оформление в стиле компании;</li>
+            <li>редактируемый файл, если его нужно обновлять;</li>
+            <li>меньше повторяющихся вопросов в первые недели работы сотрудника.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal"><div class="label">частые вопросы</div><h2>Что важно знать до начала работы</h2></div>
+        <div class="faq-list reveal">
+          <details><summary>Можно заказать Welcome Book, если пока есть только черновики?</summary><div class="faq-answer">Да. Можно начать с документов, ссылок и списка тем. Я помогу понять, что оставить, чего не хватает и как всё собрать.</div></details>
+          <details><summary>Вы работаете только с готовым текстом?</summary><div class="faq-answer">Нет. Разработка Welcome Book может включать редактуру, новые формулировки и подготовку недостающих разделов на основе вашей информации.</div></details>
+          <details><summary>Какой формат лучше выбрать?</summary><div class="faq-answer">Если гайд редко меняется, подойдёт PDF. Для регулярных обновлений удобнее Canva, Notion, база знаний или страница на сайте.</div></details>
+          <details><summary>Можно сделать версии для разных команд?</summary><div class="faq-answer">Да. Общая часть может быть одинаковой, а контакты, первые задачи и рабочие правила — разными.</div></details>
+          <details><summary>Сколько времени занимает работа?</summary><div class="faq-answer">Срок зависит от объёма и готовности исходной информации. После короткого обсуждения я предложу этапы и реалистичный срок.</div></details>
+        </div>
+        <nav class="related-links reveal" aria-label="Связанные услуги">
+          <a href="/hr-guides/">HR-гайды и инструкции</a>
+          <a href="/communications/">Внутренние коммуникации</a>
+          <a href="/designs/">Оформление гайдов и PDF</a>
+          <a href="/automation/">Базы знаний и AI-помощники</a>
+          <a href="/#services">Другие решения NEIRO.WAY</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <section class="cta" id="contacts">
+    <div class="container">
+      <div class="cta-box reveal">
+        <div class="label">начнём с того, что уже есть</div>
+        <h2>Соберём понятный Welcome Book для вашей команды</h2>
+        <p>Расскажите, как сейчас встречаете новых сотрудников. Я помогу собрать информацию в гайд, где легко найти ответы и понять, что делать дальше.</p>
+        <div class="hero-actions">
+          <a class="btn" href="https://t.me/Marina_x6" target="_blank" rel="noopener">Обсудить задачу</a>
+          <a class="btn light" href="https://t.me/Marina_x6" target="_blank" rel="noopener">Написать в Telegram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<script>
+(function(){
+  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items=document.querySelectorAll('.reveal');
+  if(reduced||!('IntersectionObserver' in window)){items.forEach(function(item){item.classList.add('visible')})}
+  else{
+    var observer=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})
+    },{threshold:.12});
+    items.forEach(function(item){observer.observe(item)});
+  }
+  if(!reduced&&window.matchMedia('(min-width: 981px)').matches){
+    var stage=document.querySelector('.book-stage');
+    stage.addEventListener('pointermove',function(event){
+      var r=stage.getBoundingClientRect(),x=(event.clientX-r.left)/r.width-.5,y=(event.clientY-r.top)/r.height-.5;
+      stage.querySelector('.book').style.transform='rotate(-2deg) translate('+x*7+'px,'+y*5+'px)';
+    });
+    stage.addEventListener('pointerleave',function(){stage.querySelector('.book').style.transform='rotate(-2deg)'});
+  }
+})();
+</script>
+</body>
+</html>
