@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  <title>Инструкции для сотрудников — разработка и оформление | NEIRO.WAY</title>
+  <meta name="description" content="Разрабатываю понятные инструкции для сотрудников: собираю информацию, упрощаю сложные формулировки, добавляю навигацию и аккуратно оформляю." />
+  <link rel="canonical" href="https://hrneiroway.ru/instructions/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#e7eef1" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Инструкции для сотрудников — разработка и оформление | NEIRO.WAY" />
+  <meta property="og:description" content="Понятные рабочие инструкции, регламенты, памятки и чек-листы: порядок действий, навигация и аккуратное оформление." />
+  <meta property="og:url" content="https://hrneiroway.ru/instructions/" />
+  <meta property="og:image" content="https://hrneiroway.ru/preview.jpg" />
+  <meta property="og:image:alt" content="NEIRO.WAY — понятные материалы для бизнеса" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Инструкции для сотрудников | NEIRO.WAY" />
+  <meta name="twitter:description" content="Разработка и оформление инструкций, в которых сотрудникам легко разобраться." />
+  <meta name="twitter:image" content="https://hrneiroway.ru/preview.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Inter:wght@400;500;600;700;800&amp;family=Marck+Script&amp;display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ink:#143b34;
+      --muted:#5f7671;
+      --sky:#e5edf1;
+      --sky-deep:#d5e2e8;
+      --milk:#fbfaf5;
+      --cream:#f4ecdc;
+      --butter:#ebe2a8;
+      --rose:#e2a2b4;
+      --rose-pale:#f3dce3;
+      --white:#fff;
+      --line:rgba(20,59,52,.16);
+      --soft:0 18px 48px rgba(20,59,52,.10);
+      --paper:0 30px 70px rgba(20,59,52,.16);
+      --serif:"Cormorant Garamond",Georgia,serif;
+      --sans:"Inter",Arial,sans-serif;
+      --script:"Marck Script",cursive;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;overflow-x:hidden}
+    body{
+      margin:0;
+      overflow-x:hidden;
+      color:var(--ink);
+      font-family:var(--sans);
+      background:
+        radial-gradient(circle at 8% 4%,rgba(255,255,255,.86),transparent 24%),
+        linear-gradient(145deg,var(--sky),#edf3f5 46%,var(--sky));
+      -webkit-font-smoothing:antialiased;
+    }
+    body:before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-1;
+      pointer-events:none;
+      opacity:.22;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");
+    }
+    a{color:inherit;text-decoration:none}
+    svg{display:block}
+    .container{width:min(1200px,calc(100% - 52px));margin:0 auto}
+    .wide{width:min(1360px,calc(100% - 32px));margin:0 auto}
+    .page-top{padding:26px 0 0}
+    .back-row{display:flex;gap:12px;flex-wrap:wrap}
+    .back-btn,.btn{
+      display:inline-flex;
+      min-height:50px;
+      padding:0 24px;
+      align-items:center;
+      justify-content:center;
+      border:1px solid rgba(20,59,52,.13);
+      border-radius:999px;
+      background:rgba(255,255,255,.6);
+      box-shadow:0 12px 30px rgba(20,59,52,.07);
+      font:700 14px/1 var(--sans);
+      transition:transform .25s ease,box-shadow .25s ease,background .25s ease;
+    }
+    .btn{background:var(--ink);color:white;border-color:var(--ink)}
+    .btn.light{background:rgba(255,255,255,.72);color:var(--ink)}
+    .back-btn:hover,.btn:hover{transform:translateY(-3px);box-shadow:0 18px 36px rgba(20,59,52,.13)}
+    .label{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:20px;
+      color:rgba(20,59,52,.58);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.24em;
+      text-transform:uppercase;
+    }
+    .label:after{content:"";width:68px;height:1px;background:linear-gradient(90deg,var(--rose),transparent)}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,h3{font-family:var(--serif);font-weight:600}
+    h1{
+      max-width:760px;
+      margin-bottom:26px;
+      font-size:clamp(64px,6.4vw,102px);
+      line-height:.86;
+      letter-spacing:-.062em;
+      text-wrap:balance;
+    }
+    h2{
+      margin-bottom:22px;
+      font-size:clamp(48px,5.2vw,78px);
+      line-height:.92;
+      letter-spacing:-.052em;
+      text-wrap:balance;
+    }
+    h3{font-size:32px;line-height:1}
+    .lead{max-width:680px;font-size:clamp(17px,1.4vw,20px);line-height:1.65;color:rgba(20,59,52,.72)}
+    .section{padding:118px 0}
+    .hero{
+      position:relative;
+      min-height:800px;
+      padding:62px 0 126px;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+    }
+    .hero:after{
+      content:"04";
+      position:absolute;
+      right:-36px;
+      bottom:-92px;
+      font:600 270px/.8 var(--serif);
+      color:rgba(20,59,52,.04);
+      pointer-events:none;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:66px;align-items:center}
+    .hero-copy{position:relative;z-index:2}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+
+    .instruction-stage{position:relative;min-height:620px}
+    .paper-shadow{position:absolute;left:11%;right:2%;bottom:38px;height:100px;border-radius:50%;background:rgba(20,59,52,.16);filter:blur(34px)}
+    .paper-back{
+      position:absolute;
+      width:76%;
+      height:72%;
+      right:-10%;
+      top:15%;
+      border:1px solid rgba(20,59,52,.12);
+      background:var(--sky-deep);
+      transform:rotate(7deg);
+    }
+    .instruction-paper{
+      position:absolute;
+      inset:32px 10px 20px 7%;
+      padding:54px 54px 44px;
+      overflow:hidden;
+      border:1px solid rgba(20,59,52,.28);
+      border-radius:3px 28px 5px 5px;
+      background:
+        linear-gradient(90deg,transparent 0 10%,rgba(226,162,180,.13) 10% 10.3%,transparent 10.3%),
+        var(--cream);
+      box-shadow:var(--paper);
+      transform:rotate(-3.2deg);
+    }
+    .instruction-paper:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:linear-gradient(135deg,rgba(255,255,255,.48),transparent 36%);
+    }
+    .paperclip{
+      position:absolute;
+      z-index:4;
+      width:30px;
+      height:88px;
+      right:12%;
+      top:2px;
+      border:3px solid rgba(20,59,52,.42);
+      border-bottom:0;
+      border-radius:16px 16px 0 0;
+      transform:rotate(8deg);
+    }
+    .paperclip:after{
+      content:"";
+      position:absolute;
+      width:16px;
+      height:63px;
+      left:4px;
+      top:8px;
+      border:2px solid rgba(20,59,52,.28);
+      border-bottom:0;
+      border-radius:10px 10px 0 0;
+    }
+    .doc-meta{position:relative;z-index:2;display:flex;justify-content:space-between;gap:18px;font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:rgba(20,59,52,.5)}
+    .doc-title{position:relative;z-index:2;margin:24px 0 30px;font:600 42px/.92 var(--serif);letter-spacing:-.04em}
+    .doc-steps{position:relative;z-index:2;display:grid;gap:17px}
+    .doc-step{display:grid;grid-template-columns:58px 1fr 24px;gap:14px;align-items:center;padding-bottom:15px;border-bottom:1px solid rgba(20,59,52,.14)}
+    .doc-step strong{font:600 36px/.8 var(--serif);color:rgba(190,105,132,.78)}
+    .doc-step b{display:block;margin-bottom:4px;font-size:14px}
+    .doc-step small{font-size:11px;line-height:1.45;color:rgba(20,59,52,.58)}
+    .box{width:19px;height:19px;border:1.5px solid rgba(20,59,52,.45)}
+    .doc-checks{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin-top:28px;font-size:11px;color:rgba(20,59,52,.66)}
+    .doc-checks span{display:flex;gap:9px;align-items:center}
+    .doc-checks i{width:14px;height:14px;border:1px solid rgba(20,59,52,.42);font-style:normal}
+    .important-note{
+      position:absolute;
+      z-index:5;
+      right:-18px;
+      bottom:88px;
+      width:150px;
+      padding:20px 18px;
+      background:var(--rose-pale);
+      border:1px solid rgba(20,59,52,.14);
+      box-shadow:var(--soft);
+      transform:rotate(5deg);
+      font:26px/1 var(--script);
+    }
+    .important-note small{display:block;margin-top:8px;font:600 10px/1.45 var(--sans);color:rgba(20,59,52,.58)}
+
+    .intro{padding:105px 0;background:rgba(251,250,245,.54);border-top:1px solid rgba(255,255,255,.65);border-bottom:1px solid rgba(20,59,52,.08)}
+    .intro-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:90px;align-items:end}
+    .intro-copy{max-width:670px}
+    .intro-copy p{margin:0 0 18px;font-size:19px;line-height:1.72;color:rgba(20,59,52,.72)}
+
+    .compare-section{position:relative;padding:136px 0 148px;background:linear-gradient(90deg,var(--rose-pale) 0 49.8%,var(--sky-deep) 49.8% 100%);overflow:hidden}
+    .compare-section:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,.28),transparent 38% 66%,rgba(255,255,255,.2))}
+    .compare-head{position:relative;z-index:3;max-width:840px;margin:0 auto 78px;text-align:center}
+    .compare-head .label{justify-content:center}
+    .compare-stage{position:relative;z-index:2;display:grid;grid-template-columns:1fr 180px 1fr;align-items:center;min-height:640px}
+    .compare-caption{position:absolute;left:50%;top:48%;z-index:8;transform:translate(-50%,-50%) rotate(-7deg);font:44px/1.05 var(--script);color:rgba(20,59,52,.72);text-align:center}
+    .before-collage{position:relative;height:590px}
+    .fragment{
+      position:absolute;
+      padding:22px;
+      border:1px solid rgba(20,59,52,.18);
+      background:rgba(255,255,255,.72);
+      box-shadow:0 18px 42px rgba(20,59,52,.10);
+    }
+    .fragment .mini-icon{width:23px;height:23px;margin-bottom:14px;color:var(--ink)}
+    .fragment p{margin:0;font-size:13px;line-height:1.5;color:rgba(20,59,52,.65)}
+    .fragment strong{display:block;margin-bottom:9px;font-size:12px;text-transform:uppercase;letter-spacing:.12em}
+    .frag-chat{left:-8%;top:3%;width:48%;transform:rotate(-6deg)}
+    .frag-file{right:7%;top:14%;width:50%;height:250px;transform:rotate(5deg);background:var(--cream)}
+    .frag-link{left:8%;bottom:13%;width:48%;transform:rotate(4deg);background:var(--butter)}
+    .frag-question{right:-4%;bottom:2%;width:37%;height:190px;transform:rotate(-5deg);background:rgba(255,255,255,.62)}
+    .frag-question b{font:600 92px/.75 var(--serif);color:rgba(190,105,132,.58)}
+    .strike{height:6px;margin:12px 0;background:rgba(20,59,52,.1)}
+    .strike:nth-child(2){width:74%}.strike:nth-child(3){width:88%}.strike.crossed{position:relative}
+    .strike.crossed:after{content:"";position:absolute;left:-4px;right:-4px;top:2px;height:1px;background:var(--rose);transform:rotate(-5deg)}
+    .after-document{
+      position:relative;
+      grid-column:3;
+      width:91%;
+      min-height:570px;
+      margin-left:auto;
+      padding:48px 46px 42px 92px;
+      border:1px solid rgba(20,59,52,.24);
+      background:var(--milk);
+      box-shadow:var(--paper);
+      transform:rotate(1.5deg);
+    }
+    .after-document:before{content:"✓";position:absolute;right:34px;top:22px;font:600 58px/1 var(--serif);color:rgba(190,105,132,.78)}
+    .after-document h3{max-width:380px;margin:14px 0 34px;font-size:43px}
+    .clean-step{position:relative;display:grid;grid-template-columns:46px 1fr;gap:18px;padding:17px 0;border-bottom:1px solid var(--line)}
+    .clean-step strong{position:absolute;left:-76px;top:10px;font:600 54px/.8 var(--serif);color:rgba(20,59,52,.19)}
+    .clean-step b{font-size:14px}
+    .clean-step p{margin:4px 0 0;font-size:12px;color:rgba(20,59,52,.58)}
+    .after-footer{display:flex;gap:16px;flex-wrap:wrap;margin-top:28px;font-size:11px;font-weight:700;color:rgba(20,59,52,.62)}
+    .after-footer span{display:flex;align-items:center;gap:7px}
+
+    .example{padding:120px 0;background:var(--milk);overflow:hidden}
+    .example-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:72px;align-items:center}
+    .example-copy p{font-size:18px;line-height:1.72;color:rgba(20,59,52,.7)}
+    .example-doc{position:relative;min-height:460px;padding:52px 56px 44px 86px;border-left:6px solid var(--rose);background:var(--cream);box-shadow:var(--soft)}
+    .example-doc:after{content:"единый материал";position:absolute;right:-38px;top:38px;font:34px/1 var(--script);transform:rotate(8deg);color:rgba(137,72,88,.78)}
+    .example-row{display:grid;grid-template-columns:110px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}
+    .example-row small{font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(20,59,52,.48)}
+    .example-row b{font-size:15px}
+
+    .formats-section{position:relative;padding:130px 0 160px;overflow:hidden}
+    .formats-section:after{content:"ФОРМАТЫ";position:absolute;left:-22px;bottom:-35px;font:600 190px/.8 var(--serif);letter-spacing:-.07em;color:rgba(20,59,52,.035)}
+    .formats-head{display:grid;grid-template-columns:1fr .75fr;gap:80px;align-items:end;margin-bottom:92px}
+    .formats-head .lead{margin-left:auto}
+    .format-index{position:relative;min-height:980px}
+    .format-piece{position:absolute;border-top:1px solid rgba(20,59,52,.24);padding-top:18px}
+    .format-piece .format-icon{width:42px;height:42px;margin-bottom:28px;color:rgba(20,59,52,.72)}
+    .format-piece .num{position:absolute;font:600 118px/.7 var(--serif);color:rgba(20,59,52,.09)}
+    .format-piece h3{position:relative;margin-bottom:14px}
+    .format-piece p{position:relative;max-width:330px;margin:0;font-size:15px;line-height:1.6;color:rgba(20,59,52,.65)}
+    .format-piece:after{content:"";position:absolute;z-index:-1}
+    .format-work{left:0;top:0;width:47%;padding:58px 40px 50px 150px;background:var(--cream);transform:rotate(-1deg)}
+    .format-work .num{left:24px;top:60px}
+    .format-note{right:7%;top:20px;width:29%;padding:34px 30px;background:var(--rose-pale);transform:rotate(4deg)}
+    .format-note .num{right:18px;top:22px}
+    .format-check{left:11%;top:365px;width:27%;padding:42px 34px 54px;background:var(--milk);box-shadow:var(--soft);transform:rotate(3deg)}
+    .format-check .num{right:-24px;top:-36px}
+    .format-reg{right:-3%;top:310px;width:52%;padding:54px 160px 54px 46px;background:var(--sky-deep);transform:rotate(-2deg)}
+    .format-reg .num{right:22px;top:58px}
+    .format-service{left:-4%;bottom:30px;width:46%;padding:50px 42px 54px;background:var(--butter);transform:rotate(-2deg)}
+    .format-service .num{right:18px;top:44px}
+    .format-knowledge{right:5%;bottom:0;width:42%;padding:46px 40px 54px;background:rgba(255,255,255,.58);transform:rotate(2deg)}
+    .format-knowledge .num{right:14px;top:36px}
+
+    .scope{padding:118px 0;background:var(--cream)}
+    .scope-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:80px}
+    .scope-list{columns:2;column-gap:52px;margin:0;padding:0;list-style:none}
+    .scope-list li{break-inside:avoid;padding:15px 0 15px 30px;border-bottom:1px solid var(--line);position:relative;line-height:1.55}
+    .scope-list li:before{content:"+";position:absolute;left:0;font:600 24px/1 var(--serif);color:var(--rose)}
+
+    .process{position:relative;padding:150px 0 120px;background:var(--milk);overflow:hidden}
+    .process-head{max-width:720px;margin-bottom:95px}
+    .process-list{position:relative}
+    .process-list:before{content:"";position:absolute;left:50%;top:30px;bottom:30px;width:1px;background:linear-gradient(var(--rose),rgba(20,59,52,.16),var(--rose))}
+    .process-step{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:250px;align-items:center}
+    .process-step:nth-child(odd) .process-copy{grid-column:2;padding-left:120px}
+    .process-step:nth-child(even) .process-copy{grid-column:1;padding-right:120px;text-align:right}
+    .process-num{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font:600 170px/.72 var(--serif);color:rgba(20,59,52,.07)}
+    .process-dot{position:absolute;left:50%;top:50%;width:13px;height:13px;border:3px solid var(--milk);border-radius:50%;background:var(--rose);transform:translate(-50%,-50%);box-shadow:0 0 0 1px var(--rose)}
+    .process-copy h3{margin-bottom:12px;font-size:38px}
+    .process-copy p{max-width:420px;margin:0;font-size:15px;line-height:1.65;color:rgba(20,59,52,.64)}
+    .process-step:nth-child(even) p{margin-left:auto}
+
+    .result{position:relative;padding:138px 0 150px;overflow:hidden;background:var(--ink);color:var(--milk)}
+    .result:before{content:"ГОТОВО";position:absolute;left:-26px;bottom:-58px;font:600 230px/.8 var(--serif);color:rgba(255,255,255,.035);letter-spacing:-.06em}
+    .result-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:76px;align-items:center}
+    .result .label{color:rgba(255,255,255,.58)}
+    .result h2{font-size:clamp(54px,5.8vw,88px)}
+    .benefits{display:grid;gap:0;margin-top:44px}
+    .benefit{display:grid;grid-template-columns:34px 1fr;gap:14px;padding:17px 0;border-bottom:1px solid rgba(255,255,255,.15);font-size:15px;line-height:1.45;color:rgba(255,255,255,.76)}
+    .benefit svg{width:24px;height:24px;color:var(--rose)}
+    .finished-wrap{position:relative;min-height:620px}
+    .finished-paper{
+      position:absolute;
+      inset:40px -10% 10px 5%;
+      padding:58px 54px;
+      border:1px solid rgba(20,59,52,.2);
+      background:var(--cream);
+      color:var(--ink);
+      box-shadow:0 34px 82px rgba(0,0,0,.24);
+      transform:rotate(3deg);
+    }
+    .finished-paper .paperclip{right:12%;top:-36px}
+    .finished-kicker{font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:rgba(20,59,52,.5)}
+    .finished-paper h3{margin:24px 0 34px;font-size:49px}
+    .finished-line{display:grid;grid-template-columns:28px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.45}
+    .finished-line:before{content:"✓";font-weight:800;color:#ad6077}
+
+    .faq{padding:118px 0;background:var(--sky)}
+    .faq-grid{display:grid;grid-template-columns:.65fr 1.35fr;gap:80px;align-items:start}
+    .faq-list{border-top:1px solid var(--line)}
+    details{border-bottom:1px solid var(--line)}
+    summary{position:relative;padding:25px 60px 25px 0;cursor:pointer;list-style:none;font-size:17px;font-weight:700}
+    summary::-webkit-details-marker{display:none}
+    summary:after{content:"+";position:absolute;right:8px;top:17px;font:500 36px/1 var(--serif);transition:transform .25s ease}
+    details[open] summary:after{transform:rotate(45deg)}
+    .faq-answer{padding:0 54px 26px 0;font-size:15px;line-height:1.65;color:rgba(20,59,52,.68)}
+    .related{display:flex;flex-wrap:wrap;gap:10px;margin-top:38px}
+    .related a{padding:11px 15px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.4);font-size:12px;font-weight:700}
+
+    .cta{padding:0 0 100px;background:var(--sky)}
+    .cta-box{position:relative;padding:78px 7%;overflow:hidden;background:var(--rose-pale);border:1px solid rgba(20,59,52,.12);box-shadow:var(--soft)}
+    .cta-box:after{content:"ответ";position:absolute;right:2%;bottom:-34px;font:120px/1 var(--script);color:rgba(137,72,88,.14);transform:rotate(-8deg)}
+    .cta-box h2{max-width:850px}
+    .cta-box p{max-width:680px;font-size:18px;line-height:1.65;color:rgba(20,59,52,.68)}
+    .cta-box .hero-actions{position:relative;z-index:2}
+
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+    .reveal.visible{opacity:1;transform:none}
+    .instruction-paper{animation:paperIn .9s both cubic-bezier(.2,.7,.2,1)}
+    .paper-back{animation:backIn .9s .12s both cubic-bezier(.2,.7,.2,1)}
+    .important-note{animation:noteIn .8s .35s both cubic-bezier(.2,.7,.2,1)}
+    @keyframes paperIn{from{opacity:0;transform:translateY(28px) rotate(-6deg)}}
+    @keyframes backIn{from{opacity:0;transform:translate(25px,20px) rotate(11deg)}}
+    @keyframes noteIn{from{opacity:0;transform:translateY(18px) rotate(9deg)}}
+
+    @media(max-width:980px){
+      .hero-grid,.intro-grid,.example-grid,.scope-grid,.result-grid,.faq-grid{grid-template-columns:1fr}
+      .hero{padding-top:44px}.hero-copy{text-align:center}.hero-copy h1,.hero-copy .lead{margin-left:auto;margin-right:auto}.hero-copy .label,.hero-actions{justify-content:center}
+      .instruction-stage{min-height:650px}
+      .compare-stage{grid-template-columns:1fr;gap:80px}
+      .compare-caption{position:relative;left:auto;top:auto;transform:rotate(-5deg);margin:-18px auto;text-align:center}
+      .before-collage{height:540px}.after-document{grid-column:auto;width:min(680px,92%);margin:0 auto}
+      .formats-head{grid-template-columns:1fr}.formats-head .lead{margin-left:0}
+      .format-index{min-height:1240px}.format-work{width:58%}.format-note{width:36%}.format-check{top:390px;width:38%}.format-reg{top:390px;width:56%}.format-service{width:55%}.format-knowledge{width:43%}
+      .scope-list{columns:1}
+      .finished-wrap{min-height:610px}.finished-paper{inset:30px 5% 10px}
+    }
+
+    @media(max-width:640px){
+      .container{width:min(100% - 28px,1200px)}.wide{width:100%}
+      .page-top{padding-top:16px}.back-btn{min-height:42px;padding:0 15px;font-size:12px}
+      .section{padding:76px 0}
+      h1{font-size:52px;line-height:.89}h2{font-size:43px;line-height:.94}h3{font-size:29px}.lead{font-size:16px;line-height:1.6}
+      .hero{min-height:0;padding:46px 0 82px}.hero-grid{gap:38px}.hero-actions{display:grid;grid-template-columns:1fr}.btn{width:100%}
+      .instruction-stage{min-height:515px;margin:0 -4px}.paper-back{right:-12%;top:17%;width:74%}
+      .instruction-paper{inset:25px 4px 16px 4%;padding:38px 27px 32px 35px}
+      .doc-title{font-size:34px;margin:20px 0 23px}.doc-step{grid-template-columns:43px 1fr 19px;gap:10px}.doc-step strong{font-size:28px}.doc-step small{font-size:9px}.doc-checks{grid-template-columns:1fr;margin-top:20px}.important-note{right:-5px;bottom:42px;width:126px;padding:15px;font-size:23px}.paperclip{right:13%;height:70px}
+      .intro{padding:76px 0}.intro-grid{gap:24px}.intro-copy p{font-size:16px}
+      .compare-section{padding:88px 0 96px;background:linear-gradient(180deg,var(--rose-pale) 0 47%,var(--sky-deep) 47% 100%)}
+      .compare-head{padding:0 18px;margin-bottom:52px}.compare-stage{gap:52px;padding:0 14px}.before-collage{height:500px}
+      .frag-chat{left:-5%;width:57%}.frag-file{right:-3%;width:58%;height:220px}.frag-link{left:1%;bottom:13%;width:58%}.frag-question{right:-4%;width:41%;height:170px}.fragment{padding:17px}
+      .compare-caption{font-size:35px}
+      .after-document{width:96%;min-height:530px;padding:40px 25px 34px 70px}.after-document h3{font-size:35px}.clean-step strong{left:-55px;font-size:42px}
+      .example{padding:82px 0}.example-grid{gap:38px}.example-doc{min-height:0;padding:36px 24px 30px 35px}.example-doc:after{right:-6px;top:20px;font-size:27px}.example-row{grid-template-columns:1fr;gap:7px}
+      .formats-section{padding:88px 0 110px}.formats-head{gap:22px;margin-bottom:52px}.format-index{min-height:0;display:grid;gap:22px;padding:0 14px}
+      .format-piece{position:relative!important;inset:auto!important;width:auto!important;transform:none!important;padding:34px 26px 38px 78px!important}
+      .format-piece .num{left:20px!important;right:auto!important;top:36px!important;font-size:72px}.format-piece .format-icon{margin-bottom:18px}.format-piece h3{font-size:30px}
+      .scope{padding:80px 0}.scope-grid{gap:28px}
+      .process{padding:88px 0}.process-head{margin-bottom:54px}.process-list:before{left:34px}.process-step{display:block;min-height:210px;padding-left:82px}.process-step .process-copy{padding:0!important;text-align:left!important}.process-num{left:23px;top:20px;transform:none;font-size:92px}.process-dot{left:34px;top:88px}.process-copy h3{font-size:31px}.process-step:nth-child(even) p{margin-left:0}
+      .result{padding:92px 0 104px}.result-grid{gap:48px}.result h2{font-size:48px}.finished-wrap{min-height:555px;margin:0 -8px}.finished-paper{inset:20px -7% 0 1%;padding:44px 34px}.finished-paper h3{font-size:40px}
+      .faq{padding:82px 0}.faq-grid{gap:36px}.faq-answer{padding-right:20px}.related{display:grid}.related a{text-align:center}
+      .cta{padding-bottom:70px}.cta-box{padding:54px 24px}.cta-box p{font-size:16px}.cta-box:after{font-size:78px}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*:before,*:after{animation:none!important;transition:none!important}
+      .reveal{opacity:1;transform:none}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://hrneiroway.ru/instructions/#webpage",
+        "url": "https://hrneiroway.ru/instructions/",
+        "name": "Инструкции для сотрудников — разработка и оформление",
+        "description": "Разработка понятных рабочих инструкций, регламентов, памяток и чек-листов для сотрудников.",
+        "isPartOf": {"@id": "https://hrneiroway.ru/#website"},
+        "mainEntity": [
+          {"@id": "https://hrneiroway.ru/instructions/#service"},
+          {"@id": "https://hrneiroway.ru/instructions/#faq"}
+        ],
+        "inLanguage": "ru-RU"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://hrneiroway.ru/instructions/#service",
+        "name": "Разработка инструкций для сотрудников",
+        "url": "https://hrneiroway.ru/instructions/",
+        "description": "Создание структуры, текстов, навигации и дизайна инструкций для сотрудников.",
+        "serviceType": "Разработка и оформление инструкций для сотрудников",
+        "provider": {
+          "@type": "Organization",
+          "@id": "https://hrneiroway.ru/#organization",
+          "name": "NEIRO.WAY",
+          "url": "https://hrneiroway.ru/"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://hrneiroway.ru/instructions/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Можно начать, если информация пока только в чатах и заметках?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Да. Я помогу собрать информацию, восстановить порядок действий и определить, каких шагов не хватает."}
+          },
+          {
+            "@type": "Question",
+            "name": "Вы только оформляете готовый текст?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Нет. Работа может включать структуру, написание инструкции, редактуру и оформление."}
+          },
+          {
+            "@type": "Question",
+            "name": "Можно переработать старую инструкцию или регламент?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Да. Я сохраню важную информацию, уберу повторы и тяжёлые формулировки, а затем заново соберу документ."}
+          },
+          {
+            "@type": "Question",
+            "name": "Как проверить, что инструкция понятна?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Сотрудник может быстро найти нужный раздел, пройти все шаги и понять, каким должен быть результат."}
+          },
+          {
+            "@type": "Question",
+            "name": "Можно оформить несколько инструкций в одном стиле?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Да. Для серии документов можно подготовить общий шаблон со знакомой структурой и навигацией."}
+          },
+          {
+            "@type": "Question",
+            "name": "Какой формат выбрать?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Для стабильного процесса подойдёт PDF. Если информация часто меняется, удобнее Canva, база знаний или страница на сайте."}
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+      (function(m,e,t,r,i,k,a){
+          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();
+          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+      })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=109410569', 'ym');
+      ym(109410569, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer:document.referrer, url:location.href, accurateTrackBounce:true, trackLinks:true});
+      document.addEventListener('click',function(event){
+        var target=event.target.closest('a,button');if(!target){return}
+        var href=target.getAttribute('href')||'';var text=(target.textContent||'').trim().toLowerCase();var goals=[];
+        if(text.indexOf('обсудить')!==-1){goals.push('discuss_task')}
+        if(/^(https?:\/\/)?(t\.me|telegram\.me)\//i.test(href)){goals.push('telegram_click')}
+        if(href==='#contacts'||/#contacts$/i.test(href)){goals.push('contacts_click')}
+        goals.forEach(function(goal){ym(109410569,'reachGoal',goal)});
+      });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/109410569" style="position:absolute;left:-9999px" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body>
+  <div class="page-top">
+    <div class="container back-row">
+      <a class="back-btn" href="/">← на главную</a>
+      <a class="back-btn" href="/hr-guides/">← к HR-материалам</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="label">инструкции для сотрудников</div>
+          <h1>Инструкции для сотрудников, в которых легко разобраться</h1>
+          <p class="lead">Помогаю собрать правила и порядок работы в понятный документ: что делать, в какой последовательности и где искать ответы.</p>
+          <div class="hero-actions">
+            <a class="btn" href="https://t.me/Marina_x6" target="_blank" rel="noopener">Обсудить инструкцию</a>
+            <a class="btn light" href="#formats">Посмотреть форматы</a>
+          </div>
+        </div>
+
+        <div class="instruction-stage" aria-label="Пример понятной рабочей инструкции">
+          <div class="paper-shadow"></div>
+          <div class="paper-back"></div>
+          <div class="paperclip" aria-hidden="true"></div>
+          <article class="instruction-paper">
+            <div class="doc-meta"><span>Инструкция 04</span><span>для команды</span></div>
+            <div class="doc-title">Как оформить командировку</div>
+            <div class="doc-steps">
+              <div class="doc-step"><strong>01</strong><div><b>Подготовьте данные</b><small>Даты, город и цель поездки</small></div><i class="box"></i></div>
+              <div class="doc-step"><strong>02</strong><div><b>Заполните заявку</b><small>Используйте актуальную форму</small></div><i class="box"></i></div>
+              <div class="doc-step"><strong>03</strong><div><b>Согласуйте расходы</b><small>Отправьте заявку руководителю</small></div><i class="box"></i></div>
+              <div class="doc-step"><strong>04</strong><div><b>Проверьте документы</b><small>Билеты, бронь и подтверждение</small></div><i class="box"></i></div>
+            </div>
+            <div class="doc-checks"><span><i></i>Данные заполнены</span><span><i></i>Заявка согласована</span><span><i></i>Документы приложены</span></div>
+          </article>
+          <aside class="important-note">Важно<small>Сначала проверьте актуальность формы.</small></aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro">
+      <div class="container intro-grid reveal">
+        <div>
+          <div class="label">главное</div>
+          <h2>Не просто описать процесс, а помочь выполнить задачу</h2>
+        </div>
+        <div class="intro-copy">
+          <p>Сотруднику не нужно разбираться в длинном документе или спрашивать коллег. Он открывает инструкцию и понимает, что делать дальше.</p>
+          <p>Я собираю информацию в понятном порядке, убираю повторы и сложные обороты, добавляю шаги, подсказки и удобную навигацию.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="compare-section" id="example">
+      <div class="compare-head reveal">
+        <div class="label">до / после</div>
+        <h2>Когда порядок действий становится понятным</h2>
+      </div>
+      <div class="wide compare-stage">
+        <div class="before-collage reveal">
+          <article class="fragment frag-chat">
+            <svg class="mini-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h16v11H9l-5 4V5Z"/><path d="M8 9h8M8 12h5"/></svg>
+            <strong>Сообщение в чате</strong><p>Кажется, актуальная форма была в переписке за прошлый месяц.</p>
+          </article>
+          <article class="fragment frag-file">
+            <svg class="mini-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v5h5"/></svg>
+            <strong>Старая инструкция</strong>
+            <div class="strike"></div><div class="strike crossed"></div><div class="strike"></div><div class="strike crossed"></div><div class="strike"></div>
+          </article>
+          <article class="fragment frag-link">
+            <svg class="mini-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 13a5 5 0 0 0 7.5.5l2-2a5 5 0 0 0-7-7l-1.1 1.1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2a5 5 0 0 0 7 7l1.1-1.1"/></svg>
+            <strong>Ещё одна ссылка</strong><p>Непонятно, какой документ использовать и кто его обновлял.</p>
+          </article>
+          <article class="fragment frag-question"><b>?</b><p>Спросить коллегу или написать HR?</p></article>
+        </div>
+
+        <div class="compare-caption">собрать<br>проверить<br>упростить</div>
+
+        <article class="after-document reveal">
+          <div class="doc-meta"><span>Стало</span><span>один порядок</span></div>
+          <h3>Инструкция с понятным маршрутом</h3>
+          <div class="clean-step"><strong>01</strong><div><b>Что подготовить</b><p>Документы, данные и нужные ссылки</p></div></div>
+          <div class="clean-step"><strong>02</strong><div><b>Что сделать</b><p>Действия идут в правильной последовательности</p></div></div>
+          <div class="clean-step"><strong>03</strong><div><b>Кому отправить</b><p>Ответственные и контакты указаны рядом</p></div></div>
+          <div class="clean-step"><strong>04</strong><div><b>Как проверить</b><p>Короткий чек-лист помогает ничего не пропустить</p></div></div>
+          <div class="after-footer">
+            <span>✓ полезные ссылки</span><span>✓ частые вопросы</span><span>✓ самопроверка</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="example">
+      <div class="container example-grid">
+        <div class="example-copy reveal">
+          <div class="label">пример</div>
+          <h2>Когда инструкция заменяет десятки уточнений</h2>
+          <p>Компания хранила инструкции в нескольких документах и чатах. Для сотрудников подготовили единый материал с навигацией, ссылками и ответами на частые вопросы.</p>
+          <p>В итоге стало проще находить ответы самостоятельно, а HR не приходится каждый раз пересылать одни и те же материалы вручную.</p>
+        </div>
+        <article class="example-doc reveal">
+          <div class="example-row"><small>01 / содержание</small><b>Быстрый переход к нужному разделу</b></div>
+          <div class="example-row"><small>02 / действия</small><b>Шаги без пропусков и повторов</b></div>
+          <div class="example-row"><small>03 / ссылки</small><b>Актуальные формы и документы рядом</b></div>
+          <div class="example-row"><small>04 / вопросы</small><b>Короткие ответы на частые ситуации</b></div>
+          <div class="example-row"><small>результат</small><b>Сотрудник находит ответ самостоятельно</b></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="formats-section" id="formats">
+      <div class="container formats-head reveal">
+        <div><div class="label">виды инструкций</div><h2>Для регулярных задач и рабочих ситуаций</h2></div>
+        <p class="lead">Формат зависит от задачи: иногда нужен короткий список, иногда — подробный документ или связанная база знаний.</p>
+      </div>
+      <div class="container format-index">
+        <article class="format-piece format-work reveal">
+          <span class="num">01</span>
+          <svg class="format-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 12h25M13 24h25M13 36h25"/><circle cx="6" cy="12" r="2"/><circle cx="6" cy="24" r="2"/><circle cx="6" cy="36" r="2"/></svg>
+          <h3>Рабочая инструкция</h3><p>Порядок действий для задач, которые сотрудники выполняют регулярно.</p>
+        </article>
+        <article class="format-piece format-note reveal">
+          <span class="num">02</span>
+          <svg class="format-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 7h30v34H9z"/><path d="M15 16h18M15 23h18M15 30h11"/></svg>
+          <h3>Памятка</h3><p>Короткий материал с главными правилами, сроками и контактами.</p>
+        </article>
+        <article class="format-piece format-check reveal">
+          <span class="num">03</span>
+          <svg class="format-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m8 13 4 4 7-8M23 13h17M8 27l4 4 7-8M23 27h17M8 41l4 4 7-8M23 41h17"/></svg>
+          <h3>Чек-лист</h3><p>Список действий или условий, по которому удобно проверить себя.</p>
+        </article>
+        <article class="format-piece format-reg reveal">
+          <span class="num">04</span>
+          <svg class="format-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 5h32v38H8z"/><path d="M14 13h20M14 21h20M14 29h9M27 29h7M14 36h20"/></svg>
+          <h3>Регламент</h3><p>Подробное описание порядка работы, ролей и ответственности простым языком.</p>
+        </article>
+        <article class="format-piece format-service reveal">
+          <span class="num">05</span>
+          <svg class="format-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="7" width="38" height="30" rx="2"/><path d="M5 14h38M13 43h22M24 37v6"/><circle cx="10" cy="10.5" r="1"/></svg>
+          <h3>Инструкция по сервису</h3><p>Как войти, настроить, заполнить, отправить или проверить результат.</p>
+        </article>
+        <article class="format-piece format-knowledge reveal">
+          <span class="num">06</span>
+          <svg class="format-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="17" y="4" width="14" height="8"/><rect x="3" y="34" width="14" height="8"/><rect x="31" y="34" width="14" height="8"/><path d="M24 12v11M10 34v-7h28v7"/></svg>
+          <h3>База знаний</h3><p>Связанные инструкции и ответы, собранные в одном понятном месте.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="scope">
+      <div class="container scope-grid reveal">
+        <div><div class="label">что входит</div><h2>От разрозненных материалов до готового документа</h2></div>
+        <ul class="scope-list">
+          <li>изучение документов, писем, заметок и ссылок;</li>
+          <li>уточнение порядка действий;</li>
+          <li>разработка структуры;</li>
+          <li>редактура сложных и официальных формулировок;</li>
+          <li>пошаговое описание действий;</li>
+          <li>примеры, подсказки и частые вопросы;</li>
+          <li>навигация по разделам;</li>
+          <li>оформление в стиле компании.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="process">
+      <div class="container">
+        <div class="process-head reveal"><div class="label">этапы</div><h2>Сначала разбираемся, потом пишем</h2></div>
+        <div class="process-list">
+          <article class="process-step reveal"><span class="process-num">01</span><span class="process-dot"></span><div class="process-copy"><h3>Обсуждаем задачу</h3><p>Определяем, кто будет пользоваться инструкцией и что должен сделать сотрудник.</p></div></article>
+          <article class="process-step reveal"><span class="process-num">02</span><span class="process-dot"></span><div class="process-copy"><h3>Собираем информацию</h3><p>Подойдут документы, ссылки, заметки и ответы из рабочих чатов.</p></div></article>
+          <article class="process-step reveal"><span class="process-num">03</span><span class="process-dot"></span><div class="process-copy"><h3>Проверяем порядок действий</h3><p>Нахожу повторы, пропущенные шаги и места, которые можно понять по-разному.</p></div></article>
+          <article class="process-step reveal"><span class="process-num">04</span><span class="process-dot"></span><div class="process-copy"><h3>Пишу и оформляю</h3><p>Добавляю шаги, подсказки, примеры и навигацию.</p></div></article>
+          <article class="process-step reveal"><span class="process-num">05</span><span class="process-dot"></span><div class="process-copy"><h3>Проверяем результат</h3><p>Смотрим, сможет ли сотрудник выполнить задачу без дополнительных объяснений.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="result">
+      <div class="container result-grid">
+        <div class="reveal">
+          <div class="label">результат</div>
+          <h2>Инструкция, которую можно сразу передать сотрудникам</h2>
+          <div class="benefits">
+            <div class="benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><span>понятный порядок действий и быстрый поиск нужной информации;</span></div>
+            <div class="benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h16v11H9l-5 4V5Z"/></svg><span>меньше повторяющихся вопросов и разных трактовок;</span></div>
+            <div class="benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 6h14M5 12h14M5 18h14"/></svg><span>меньше времени на объяснение одинаковых процессов новым сотрудникам;</span></div>
+            <div class="benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12a8 8 0 0 1 14-5l2 2M20 12a8 8 0 0 1-14 5l-2-2"/><path d="M20 4v5h-5M4 20v-5h5"/></svg><span>редактируемая версия, которую можно обновлять;</span></div>
+          </div>
+        </div>
+        <div class="finished-wrap reveal">
+          <article class="finished-paper">
+            <div class="paperclip" aria-hidden="true"></div>
+            <div class="finished-kicker">готово для команды</div>
+            <h3>Материал можно использовать</h3>
+            <div class="finished-line">сотрудник быстрее находит ответ</div>
+            <div class="finished-line">меньше повторяющихся вопросов</div>
+            <div class="finished-line">шаги идут в правильном порядке</div>
+            <div class="finished-line">документ легко обновлять</div>
+            <div class="finished-line">материал можно сразу использовать</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="container faq-grid">
+        <div class="reveal"><div class="label">частые вопросы</div><h2>Что важно знать до начала работы</h2></div>
+        <div class="reveal">
+          <div class="faq-list">
+            <details><summary>Можно начать, если информация пока только в чатах и заметках?</summary><div class="faq-answer">Да. Я помогу собрать её, восстановить порядок действий и определить, каких шагов не хватает.</div></details>
+            <details><summary>Вы только оформляете готовый текст?</summary><div class="faq-answer">Нет. Работа может включать структуру, написание инструкции, редактуру и оформление.</div></details>
+            <details><summary>Можно переработать старую инструкцию или регламент?</summary><div class="faq-answer">Да. Я сохраню важную информацию, уберу повторы и тяжёлые формулировки, а затем заново соберу документ.</div></details>
+            <details><summary>Как проверить, что инструкция понятна?</summary><div class="faq-answer">Сотрудник может быстро найти нужный раздел, пройти все шаги и понять, каким должен быть результат.</div></details>
+            <details><summary>Можно оформить несколько инструкций в одном стиле?</summary><div class="faq-answer">Да. Для серии документов можно подготовить общий шаблон со знакомой структурой и навигацией.</div></details>
+            <details><summary>Какой формат выбрать?</summary><div class="faq-answer">Для стабильного процесса подойдёт PDF. Если информация часто меняется, удобнее Canva, база знаний или страница на сайте.</div></details>
+          </div>
+          <nav class="related" aria-label="Связанные услуги">
+            <a href="/hr-guides/">HR-гайды и материалы</a>
+            <a href="/welcome-book/">Welcome Book</a>
+            <a href="/communications/">Внутренние коммуникации</a>
+            <a href="/designs/">Оформление PDF</a>
+            <a href="/automation/">Базы знаний</a>
+            <a href="/#services">Другие услуги</a>
+          </nav>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="cta" id="contacts">
+    <div class="container">
+      <div class="cta-box reveal">
+        <div class="label">начнём с того, что уже есть</div>
+        <h2>Соберём инструкцию, в которой легко найти ответ</h2>
+        <p>Пришлите документы, заметки или описание задачи. Я помогу превратить их в понятный порядок действий для сотрудников.</p>
+        <div class="hero-actions">
+          <a class="btn" href="https://t.me/Marina_x6" target="_blank" rel="noopener">Обсудить задачу</a>
+          <a class="btn light" href="https://t.me/Marina_x6" target="_blank" rel="noopener">Написать в Telegram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const reveals=document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      const observer=new IntersectionObserver((entries)=>{
+        entries.forEach((entry)=>{
+          if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },{threshold:.12});
+      reveals.forEach((item)=>observer.observe(item));
+    }else{
+      reveals.forEach((item)=>item.classList.add('visible'));
+    }
+  </script>
+</body>
+</html>
