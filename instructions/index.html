@@ -429,6 +429,16 @@
       *,*:before,*:after{animation:none!important;transition:none!important}
       .reveal{opacity:1;transform:none}
     }
+    /* Even-line heading rhythm for headings measured at 3 lines. */
+    @media(min-width:641px){
+      .example-copy .rhythm-example{width:620px;font-size:58px}
+      .result .rhythm-result{max-width:560px}
+    }
+    @media(max-width:640px){
+      .rhythm-intro{max-width:285px}
+      .rhythm-compare,.example-copy .rhythm-example{font-size:36px}
+      .result .rhythm-result{max-width:300px}
+    }
   </style>
 
   <script type="application/ld+json">
@@ -568,7 +578,7 @@
       <div class="container intro-grid reveal">
         <div>
           <div class="label">главное</div>
-          <h2>Не просто описать процесс, а помочь выполнить задачу</h2>
+          <h2 class="rhythm-intro">Не просто описать процесс, а помочь выполнить задачу</h2>
         </div>
         <div class="intro-copy">
           <p>Сотруднику не нужно разбираться в длинном документе или спрашивать коллег. Он открывает инструкцию и понимает, что делать дальше.</p>
@@ -580,7 +590,7 @@
     <section class="compare-section" id="example">
       <div class="compare-head reveal">
         <div class="label">до / после</div>
-        <h2>Когда порядок действий становится понятным</h2>
+        <h2 class="rhythm-compare">Когда порядок действий становится понятным</h2>
       </div>
       <div class="wide compare-stage">
         <div class="before-collage reveal">
@@ -620,7 +630,7 @@
       <div class="container example-grid">
         <div class="example-copy reveal">
           <div class="label">пример</div>
-          <h2>Когда инструкция заменяет десятки уточнений</h2>
+          <h2 class="rhythm-example">Когда инструкция заменяет десятки уточнений</h2>
           <p>Компания хранила инструкции в нескольких документах и чатах. Для сотрудников подготовили единый материал с навигацией, ссылками и ответами на частые вопросы.</p>
           <p>В итоге стало проще находить ответы самостоятельно, а HR не приходится каждый раз пересылать одни и те же материалы вручную.</p>
         </div>
@@ -706,7 +716,7 @@
       <div class="container result-grid">
         <div class="reveal">
           <div class="label">результат</div>
-          <h2>Инструкция, которую можно сразу передать сотрудникам</h2>
+          <h2 class="rhythm-result">Инструкция, которую можно сразу передать сотрудникам</h2>
           <div class="benefits">
             <div class="benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><span>понятный порядок действий и быстрый поиск нужной информации;</span></div>
             <div class="benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h16v11H9l-5 4V5Z"/></svg><span>меньше повторяющихся вопросов и разных трактовок;</span></div>

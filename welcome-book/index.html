@@ -209,6 +209,17 @@ details[open] summary:after{transform:rotate(45deg)}
   html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none}
 }
+/* Even-line heading rhythm for headings measured at 3 lines. */
+@media(min-width:641px){
+  .rhythm-intro{font-size:48px}
+  .rhythm-result{font-size:50px}
+}
+@media(max-width:640px){
+  .rhythm-intro{font-size:36px}
+  .rhythm-sections{font-size:36px}
+  .rhythm-result{font-size:38px}
+  .rhythm-cta{font-size:28px}
+}
 </style>
 
 <script type="application/ld+json">
@@ -345,7 +356,7 @@ details[open] summary:after{transform:rotate(45deg)}
 
     <section class="section">
       <div class="container intro-panel reveal">
-        <div><div class="label">что это</div><h2>Понятный старт вместо десятка ссылок</h2></div>
+        <div><div class="label">что это</div><h2 class="rhythm-intro">Понятный старт вместо десятка ссылок</h2></div>
         <div>
           <p>Welcome book — это гайд для нового сотрудника. В нём собрана главная информация о компании, работе и первых шагах.</p>
           <p>Новичку не нужно искать ответы в старых письмах и чатах, а HR — каждый раз объяснять одно и то же.</p>
@@ -378,7 +389,7 @@ details[open] summary:after{transform:rotate(45deg)}
 
     <section class="section">
       <div class="container">
-        <div class="section-head reveal"><div class="label">что входит</div><h2>Шесть разделов, которые помогают освоиться</h2></div>
+        <div class="section-head reveal"><div class="label">что входит</div><h2 class="rhythm-sections">Шесть разделов, которые помогают освоиться</h2></div>
         <div class="grid-6">
           <article class="card folder-card reveal"><h3>О компании</h3><p>Чем занимается компания, как устроена работа и что важно знать в начале.</p></article>
           <article class="card folder-card reveal"><h3>Первый день и неделя</h3><p>Доступы, знакомства, первые задачи и короткий план действий.</p></article>
@@ -392,7 +403,7 @@ details[open] summary:after{transform:rotate(45deg)}
 
     <section class="section">
       <div class="container">
-        <div class="section-head reveal"><div class="label">форматы</div><h2>В том формате, которым удобно пользоваться</h2></div>
+        <div class="section-head reveal"><div class="label">форматы</div><h2 class="rhythm-sections">В том формате, которым удобно пользоваться</h2></div>
         <div class="formats">
           <article class="card format-card reveal"><span class="format-icon">PDF</span><h3>PDF</h3><p>Отправить, распечатать или сохранить на общем диске.</p></article>
           <article class="card format-card reveal"><span class="format-icon">SLD</span><h3>Презентация</h3><p>Для welcome-встречи и знакомства с компанией.</p></article>
@@ -418,7 +429,7 @@ details[open] summary:after{transform:rotate(45deg)}
 
     <section class="section">
       <div class="container deliverable">
-        <div class="reveal"><div class="label">результат</div><h2>Гайд, который помогает с первого дня</h2><p class="lead">Не просто красивый файл, а рабочая опора для новичка, HR и руководителя.</p></div>
+        <div class="reveal"><div class="label">результат</div><h2 class="rhythm-result">Гайд, который помогает с первого дня</h2><p class="lead">Не просто красивый файл, а рабочая опора для новичка, HR и руководителя.</p></div>
         <div class="check-sheet reveal">
           <ul>
             <li>готовый Welcome Book в выбранном формате;</li>
@@ -458,7 +469,7 @@ details[open] summary:after{transform:rotate(45deg)}
     <div class="container">
       <div class="cta-box reveal">
         <div class="label">начнём с того, что уже есть</div>
-        <h2>Соберём понятный Welcome Book для вашей команды</h2>
+        <h2 class="rhythm-cta">Соберём понятный Welcome Book для вашей команды</h2>
         <p>Расскажите, как сейчас встречаете новых сотрудников. Я помогу собрать информацию в гайд, где легко найти ответы и понять, что делать дальше.</p>
         <div class="hero-actions">
           <a class="btn" href="https://t.me/Marina_x6" target="_blank" rel="noopener">Обсудить задачу</a>
