@@ -1440,7 +1440,7 @@
       max-width:900px;
     }
 
-    .section-label{
+    .home-section-label{
       display:inline-flex;
       align-items:center;
       gap:18px;
@@ -1454,10 +1454,11 @@
       color:rgba(20,59,52,.58);
     }
 
-    .section-label::after{
+    .home-section-label::after{
       content:"";
       width:78px;
       height:1px;
+      flex:0 0 78px;
       background:linear-gradient(90deg,rgba(197,138,150,.72),transparent);
     }
 
@@ -1484,12 +1485,14 @@
 
     .reviews-visual{
       position:relative;
+      display:block;
       margin:0;
       padding:14px;
       border-radius:34px;
       background:rgba(255,255,255,.56);
       border:1px solid rgba(255,255,255,.78);
       box-shadow:0 28px 76px rgba(20,59,52,.12);
+      text-decoration:none;
     }
 
     .reviews-visual img{
@@ -3957,6 +3960,10 @@
       color: #3d5254;
     }
 
+    .contact-left p + p {
+      margin-top: 18px;
+    }
+
     .contact-right {
       position: relative;
       z-index: 3;
@@ -5556,8 +5563,8 @@ section{scroll-margin-top:96px}
 /* Final heading-rhythm override, isolated from the legacy style stack. */
 .contact-left .rhythm-contact{max-width:450px!important}
 .about-copy .rhythm-about{max-width:300px}
-.services-head .rhythm-services{max-width:520px}
-.nw-workdeck__head .rhythm-workdeck{max-width:300px}
+.services-head .rhythm-services{max-width:860px}
+.nw-workdeck__head .rhythm-workdeck{max-width:560px}
 @media(max-width:768px){
   .contact-left .rhythm-contact{max-width:320px!important}
   .about-copy .rhythm-about{max-width:180px}
@@ -5789,11 +5796,10 @@ section{scroll-margin-top:96px}
         </div>
 
         <p class="hero__text">
-  <span>Помогаю компаниям превращать</span>
-  <span>сложные HR&#8209;процессы в понятные</span>
-  <span>материалы для сотрудников:</span>
-  <span>welcome&nbsp;book, инструкции, внутренние посты,</span>
-  <span class="hero__text-last">гайды и <em>AI&#8209;помощники.</em></span>
+  <span>Превращаю сложные HR&#8209;процессы,</span>
+  <span>инструкции и внутренние коммуникации</span>
+  <span>в понятные материалы, которыми</span>
+  <span class="hero__text-last">удобно пользоваться.</span>
 </p>
 
         <div class="hero__buttons">
@@ -5889,14 +5895,14 @@ section{scroll-margin-top:96px}
   <section class="reviews-section" id="reviews">
     <div class="container reviews-inner">
       <div class="reviews-head">
-        <div class="section-label">отзывы</div>
+        <div class="home-section-label">отзывы</div>
         <h2>Что говорят клиенты</h2>
         <p>Мне важно не просто красиво оформить материал, а сделать его понятным, удобным и полезным в работе. Поэтому в проектах я помогаю не только с визуалом, но и со структурой, логикой и подачей.</p>
       </div>
 
-      <figure class="reviews-visual">
+      <a class="reviews-visual" href="#contacts" aria-label="Перейти к контактам, чтобы обсудить проект">
         <img src="reviews-banner.png" alt="Отзывы клиентов о проектах NEIRO.WAY" width="1672" height="941" loading="lazy">
-      </figure>
+      </a>
     </div>
   </section>
 
@@ -6152,7 +6158,7 @@ section{scroll-margin-top:96px}
   <section class="useful-hub" id="free">
     <div class="container">
       <div class="useful-hub__head">
-        <div class="section-label">полезное</div>
+        <div class="home-section-label">полезное</div>
         <h2>Полезное по HR&#8209;материалам и коммуникациям</h2>
         <p>Собрала темы, которые помогают быстрее понять, какие материалы нужны команде и как сделать их удобными для сотрудников.</p>
       </div>
@@ -6184,7 +6190,7 @@ section{scroll-margin-top:96px}
   <section class="process-section" id="process">
     <div class="container">
       <div class="process-head">
-        <div class="section-label">процесс</div>
+        <div class="home-section-label">процесс</div>
         <h2>Как проходит работа</h2>
       </div>
 
@@ -6247,8 +6253,9 @@ section{scroll-margin-top:96px}
   
       <p>
         Открыта к сотрудничеству и интересным предложениям.
-        Напишите мне — обсудим сайт, гайд, презентацию, шаблоны
-        или внутренние коммуникации для вашей команды.
+      </p>
+      <p>
+        Расскажите, какой материал нужно оформить: гайд, презентацию, инструкцию, сайт, регламент или внутреннюю коммуникацию. Я посмотрю задачу и подскажу, в каком формате её лучше собрать.
       </p>
     </div>
   
