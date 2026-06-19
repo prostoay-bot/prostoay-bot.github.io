@@ -1211,6 +1211,10 @@
       margin-top:1.55em;
     }
 
+    .about-mobile-facts{
+      display:none;
+    }
+
     .about-fly-photo{
       position:fixed;
       left:0;
@@ -4568,6 +4572,40 @@ section{scroll-margin-top:96px}
   .about-copy{position:relative!important;z-index:20!important;margin-top:6px!important;text-align:left!important;opacity:1!important;filter:none!important;transform:none!important}
   .about-copy h2{font-size:44px!important;line-height:.95!important}
   .about-copy p{font-size:16px!important;line-height:1.58!important}
+  .about-mobile-facts{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:10px!important;
+    margin:18px 0 24px!important;
+  }
+  .about-mobile-fact{
+    display:grid!important;
+    grid-template-columns:58px 1fr!important;
+    align-items:center!important;
+    gap:14px!important;
+    padding:14px 16px!important;
+    border-radius:22px!important;
+    border:1px solid rgba(255,255,255,.72)!important;
+    background:rgba(255,255,255,.54)!important;
+    box-shadow:0 14px 34px rgba(20,59,52,.07)!important;
+    color:rgba(20,59,52,.72)!important;
+  }
+  .about-mobile-fact strong{
+    font-family:"Cormorant Garamond",serif!important;
+    font-size:42px!important;
+    line-height:.86!important;
+    font-weight:600!important;
+    letter-spacing:-.05em!important;
+    color:rgba(20,59,52,.64)!important;
+  }
+  .about-mobile-fact span{
+    font-family:"Inter",Arial,sans-serif!important;
+    font-size:13px!important;
+    line-height:1.35!important;
+    font-weight:650!important;
+    letter-spacing:.01em!important;
+    color:rgba(20,59,52,.68)!important;
+  }
   .footer-legal{margin-top:34px!important}
   .footer-legal__top{display:block!important}
   .footer-legal__top span{display:block;margin-top:10px;white-space:normal!important}
@@ -5874,6 +5912,21 @@ section{scroll-margin-top:96px}
           <div class="about-card__media">
             <img src="about-white.png" alt="Марина" width="848" height="1264" loading="lazy">
           </div>
+        </div>
+      </div>
+
+      <div class="about-mobile-facts" aria-label="Ключевые факты">
+        <div class="about-mobile-fact">
+          <strong>15+</strong>
+          <span>лет в HR</span>
+        </div>
+        <div class="about-mobile-fact">
+          <strong>3</strong>
+          <span>опоры: HR / Дизайн / AI</span>
+        </div>
+        <div class="about-mobile-fact">
+          <strong>1</strong>
+          <span>подход: понятно, красиво, современно</span>
         </div>
       </div>
 
