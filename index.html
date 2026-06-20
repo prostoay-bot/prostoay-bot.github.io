@@ -2350,6 +2350,403 @@
         display:none;
       }
     }
+
+    /* =========================
+       ADAPTATION DIAGNOSTIC PROMO
+    ========================= */
+
+    .diagnostic-promo{
+      position:relative;
+      padding:clamp(70px, 7vw, 108px) 0;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(255,255,255,.82), transparent 30%),
+        radial-gradient(circle at 88% 22%, rgba(197,138,150,.13), transparent 28%),
+        linear-gradient(180deg, #f8f3ea 0%, #eef6f4 100%);
+      color:var(--emerald);
+    }
+
+    .diagnostic-promo::before{
+      content:"";
+      position:absolute;
+      inset:24px;
+      border:1px solid rgba(255,255,255,.78);
+      border-radius:48px;
+      pointer-events:none;
+    }
+
+    .diagnostic-promo::after{
+      content:"";
+      position:absolute;
+      right:-84px;
+      top:42px;
+      width:280px;
+      height:280px;
+      border-radius:50%;
+      border:1px solid rgba(20,59,52,.08);
+      pointer-events:none;
+    }
+
+    .diagnostic-promo__card{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:minmax(0, 1.05fr) minmax(360px, .78fr);
+      gap:clamp(32px, 5vw, 72px);
+      align-items:center;
+      padding:clamp(30px, 5vw, 58px);
+      border:1px solid rgba(20,59,52,.10);
+      border-radius:42px;
+      background:linear-gradient(135deg, rgba(255,255,255,.84), rgba(250,246,238,.90));
+      box-shadow:0 30px 86px rgba(20,59,52,.12);
+      overflow:hidden;
+    }
+
+    .diagnostic-promo__content{
+      max-width:760px;
+    }
+
+    .diagnostic-promo__content h2{
+      max-width:760px;
+      margin:0;
+      font-family:"Cormorant Garamond", serif;
+      font-size:clamp(48px, 5vw, 78px);
+      line-height:.94;
+      font-weight:600;
+      letter-spacing:-.048em;
+      color:var(--emerald);
+      text-wrap:balance;
+    }
+
+    .diagnostic-promo__lead{
+      max-width:660px;
+      margin:24px 0 0;
+      font-size:clamp(16px, 1.25vw, 19px);
+      line-height:1.68;
+      color:#5F7671;
+    }
+
+    .diagnostic-promo__list{
+      display:grid;
+      gap:12px;
+      max-width:660px;
+      margin:28px 0 0;
+      padding:0;
+      list-style:none;
+    }
+
+    .diagnostic-promo__list li{
+      position:relative;
+      padding-left:34px;
+      font-size:16px;
+      line-height:1.55;
+      color:rgba(20,59,52,.82);
+    }
+
+    .diagnostic-promo__list li::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:.25em;
+      width:20px;
+      height:20px;
+      border-radius:50%;
+      background:rgba(197,138,150,.16);
+      border:1px solid rgba(197,138,150,.34);
+    }
+
+    .diagnostic-promo__list li::after{
+      content:"";
+      position:absolute;
+      left:7px;
+      top:.68em;
+      width:7px;
+      height:4px;
+      border-left:2px solid var(--emerald);
+      border-bottom:2px solid var(--emerald);
+      transform:rotate(-45deg);
+    }
+
+    .diagnostic-promo__button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:54px;
+      margin-top:34px;
+      padding:0 28px;
+      border-radius:999px;
+      background:var(--emerald);
+      color:#fffaf0;
+      font-family:"Inter", sans-serif;
+      font-size:15px;
+      font-weight:750;
+      letter-spacing:.01em;
+      text-decoration:none;
+      box-shadow:0 18px 42px rgba(20,59,52,.22);
+      transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+    }
+
+    .diagnostic-promo__button:hover,
+    .diagnostic-promo__button:focus-visible{
+      transform:translateY(-2px);
+      background:#0f302b;
+      box-shadow:0 22px 54px rgba(20,59,52,.26);
+    }
+
+    .diagnostic-promo__visual{
+      position:relative;
+      min-height:430px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .diagnostic-meter{
+      position:relative;
+      width:min(100%, 390px);
+      padding:30px;
+      border-radius:34px;
+      background:linear-gradient(155deg, rgba(255,255,255,.92), rgba(244,238,228,.92));
+      border:1px solid rgba(20,59,52,.11);
+      box-shadow:0 26px 62px rgba(20,59,52,.13);
+    }
+
+    .diagnostic-meter::before{
+      content:"";
+      position:absolute;
+      left:-26px;
+      top:42px;
+      width:82px;
+      height:82px;
+      border-radius:28px;
+      background:#e8eef2;
+      border:1px solid rgba(20,59,52,.08);
+      transform:rotate(-9deg);
+      z-index:-1;
+    }
+
+    .diagnostic-meter::after{
+      content:"";
+      position:absolute;
+      right:-24px;
+      bottom:40px;
+      width:96px;
+      height:70px;
+      border-radius:24px;
+      background:#f1d9d7;
+      border:1px solid rgba(197,138,150,.16);
+      transform:rotate(8deg);
+      z-index:-1;
+    }
+
+    .diagnostic-meter__top{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      align-items:flex-start;
+      margin-bottom:26px;
+    }
+
+    .diagnostic-meter__label{
+      font-family:"Inter", sans-serif;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:rgba(20,59,52,.52);
+    }
+
+    .diagnostic-meter__score{
+      font-family:"Cormorant Garamond", serif;
+      font-size:70px;
+      line-height:.82;
+      font-weight:600;
+      letter-spacing:-.06em;
+      color:var(--emerald);
+    }
+
+    .diagnostic-meter__score small{
+      font-family:"Inter", sans-serif;
+      font-size:15px;
+      font-weight:800;
+      letter-spacing:0;
+      color:rgba(20,59,52,.48);
+    }
+
+    .diagnostic-meter__bar{
+      position:relative;
+      height:12px;
+      border-radius:999px;
+      background:rgba(20,59,52,.10);
+      overflow:hidden;
+    }
+
+    .diagnostic-meter__bar span{
+      display:block;
+      width:72%;
+      height:100%;
+      border-radius:inherit;
+      background:linear-gradient(90deg, #c58a96, #143B34);
+    }
+
+    .diagnostic-meter__scale{
+      display:flex;
+      justify-content:space-between;
+      margin-top:10px;
+      font-family:"Inter", sans-serif;
+      font-size:12px;
+      font-weight:700;
+      color:rgba(20,59,52,.46);
+    }
+
+    .diagnostic-risk-map{
+      display:grid;
+      gap:10px;
+      margin-top:28px;
+    }
+
+    .diagnostic-risk-map__item{
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:12px;
+      align-items:center;
+      padding:12px 14px;
+      border-radius:18px;
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(20,59,52,.075);
+      font-family:"Inter", sans-serif;
+      font-size:13px;
+      line-height:1.35;
+      color:rgba(20,59,52,.72);
+    }
+
+    .diagnostic-risk-map__dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:#c58a96;
+    }
+
+    .diagnostic-risk-map__item:nth-child(2) .diagnostic-risk-map__dot{
+      background:#dfb37f;
+    }
+
+    .diagnostic-risk-map__item:nth-child(3) .diagnostic-risk-map__dot{
+      background:#8ba8ac;
+    }
+
+    .diagnostic-risk-map__item:nth-child(4) .diagnostic-risk-map__dot{
+      background:#143B34;
+    }
+
+    .diagnostic-note{
+      position:absolute;
+      right:12px;
+      top:22px;
+      padding:12px 14px;
+      border-radius:18px;
+      background:#fffaf0;
+      border:1px solid rgba(20,59,52,.10);
+      box-shadow:0 14px 34px rgba(20,59,52,.12);
+      transform:rotate(5deg);
+      font-family:"Inter", sans-serif;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:#c58a96;
+    }
+
+    @media (max-width:900px){
+      .diagnostic-promo__card{
+        grid-template-columns:1fr;
+      }
+
+      .diagnostic-promo__content,
+      .diagnostic-promo__content h2,
+      .diagnostic-promo__lead,
+      .diagnostic-promo__list{
+        max-width:none;
+      }
+
+      .diagnostic-promo__visual{
+        min-height:360px;
+      }
+    }
+
+    @media (max-width:560px){
+      .diagnostic-promo{
+        padding:58px 0 66px;
+      }
+
+      .diagnostic-promo::before{
+        inset:12px;
+        border-radius:30px;
+      }
+
+      .diagnostic-promo__card{
+        width:min(100% - 28px, 1180px);
+        margin:0 auto;
+        padding:24px 20px 22px;
+        border-radius:30px;
+      }
+
+      .diagnostic-promo__content h2{
+        font-size:40px;
+        line-height:.98;
+      }
+
+      .diagnostic-promo__lead{
+        margin-top:18px;
+        font-size:15.5px;
+        line-height:1.58;
+      }
+
+      .diagnostic-promo__list{
+        gap:10px;
+        margin-top:20px;
+      }
+
+      .diagnostic-promo__list li{
+        padding-left:30px;
+        font-size:14.5px;
+      }
+
+      .diagnostic-promo__button{
+        width:100%;
+        margin-top:24px;
+      }
+
+      .diagnostic-promo__visual{
+        min-height:auto;
+        padding-top:8px;
+      }
+
+      .diagnostic-meter{
+        padding:22px;
+        border-radius:26px;
+      }
+
+      .diagnostic-meter::before,
+      .diagnostic-meter::after,
+      .diagnostic-note{
+        display:none;
+      }
+
+      .diagnostic-meter__score{
+        font-size:58px;
+      }
+
+      .diagnostic-risk-map{
+        gap:8px;
+        margin-top:20px;
+      }
+
+      .diagnostic-risk-map__item{
+        padding:10px 12px;
+        font-size:12.5px;
+      }
+    }
   
     /* =========================
        PROJECTS SECTION — добавлено после утверждённых блоков
@@ -3598,10 +3995,10 @@
     .useful-hub::before{
       content:"полезное";
       position:absolute;
-      right:-22px;
-      bottom:-40px;
+      right:clamp(24px, 5vw, 82px);
+      bottom:18px;
       font-family:"Cormorant Garamond", serif;
-      font-size:clamp(110px,15vw,210px);
+      font-size:clamp(92px,13vw,180px);
       line-height:.8;
       font-weight:600;
       letter-spacing:-.08em;
@@ -3636,12 +4033,47 @@
       color:rgba(20,59,52,.68);
     }
 
-    .useful-hub__grid{
+    .useful-hub__groups{
       position:relative;
       z-index:1;
       display:grid;
-      grid-template-columns:repeat(4,1fr);
+      gap:28px;
+    }
+
+    .useful-hub__group{
+      display:grid;
+      gap:16px;
+    }
+
+    .useful-hub__group-title{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      margin:0;
+      font-family:"Inter", sans-serif;
+      font-size:12px;
+      line-height:1;
+      font-weight:800;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:rgba(20,59,52,.58);
+    }
+
+    .useful-hub__group-title::after{
+      content:"";
+      width:68px;
+      height:1px;
+      background:linear-gradient(90deg, rgba(197,138,150,.58), transparent);
+    }
+
+    .useful-hub__grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
       gap:18px;
+    }
+
+    .useful-hub__grid--read{
+      grid-template-columns:repeat(4,1fr);
     }
 
     .useful-hub__card{
@@ -3654,18 +4086,19 @@
       box-shadow:0 22px 52px rgba(20,59,52,.09);
       color:var(--emerald);
       overflow:hidden;
+      text-decoration:none;
       transition:transform .24s ease, box-shadow .24s ease, background .24s ease;
     }
 
-    .useful-hub__card:nth-child(2){
+    .useful-hub__grid .useful-hub__card:nth-child(2){
       background:rgba(246,239,226,.74);
     }
 
-    .useful-hub__card:nth-child(3){
+    .useful-hub__grid .useful-hub__card:nth-child(3){
       background:rgba(245,220,228,.58);
     }
 
-    .useful-hub__card:nth-child(4){
+    .useful-hub__grid .useful-hub__card:nth-child(4){
       background:rgba(228,237,242,.74);
     }
 
@@ -3692,7 +4125,37 @@
       color:var(--emerald);
     }
 
-    .useful-hub__card span{
+    .useful-hub__card p{
+      position:relative;
+      max-width:310px;
+      margin:0;
+      font-size:14.5px;
+      line-height:1.55;
+      color:rgba(20,59,52,.62);
+    }
+
+    .useful-hub__tags{
+      position:relative;
+      display:flex;
+      flex-wrap:wrap;
+      gap:7px;
+      margin-top:18px;
+      padding-right:20px;
+    }
+
+    .useful-hub__tags em{
+      display:inline-flex;
+      padding:6px 9px;
+      border-radius:999px;
+      background:rgba(255,255,255,.62);
+      border:1px solid rgba(20,59,52,.07);
+      font-style:normal;
+      font-size:11px;
+      font-weight:750;
+      color:rgba(20,59,52,.58);
+    }
+
+    .useful-hub__action{
       position:absolute;
       left:24px;
       bottom:22px;
@@ -3705,11 +4168,22 @@
       color:rgba(20,59,52,.62);
     }
 
-    .useful-hub__card span::after{
+    .useful-hub__action::after{
       content:"→";
       font-size:18px;
       line-height:1;
       color:var(--rose);
+    }
+
+    .useful-hub__card--free{
+      min-height:250px;
+      padding-bottom:68px;
+      background:rgba(255,250,240,.78);
+    }
+
+    .useful-hub__card--read{
+      min-height:210px;
+      padding-bottom:62px;
     }
 
     .useful-hub__card:hover{
@@ -3730,10 +4204,10 @@
     .process-section::after{
       content:"этапы";
       position:absolute;
-      right:-12px;
+      right:clamp(24px, 5vw, 72px);
       top:42px;
       font-family:"Marck Script", cursive;
-      font-size:clamp(78px,10vw,150px);
+      font-size:clamp(68px,8vw,128px);
       line-height:1;
       color:rgba(197,138,150,.13);
       transform:rotate(-7deg);
@@ -3801,6 +4275,10 @@
       .useful-hub__grid{
         grid-template-columns:repeat(2,1fr);
       }
+
+      .useful-hub__grid--free{
+        grid-template-columns:1fr;
+      }
     }
 
     @media (max-width: 720px){
@@ -3822,6 +4300,16 @@
         line-height:1.64;
       }
 
+      .useful-hub::before{
+        right:18px;
+        bottom:20px;
+        font-size:76px;
+      }
+
+      .useful-hub__groups{
+        gap:24px;
+      }
+
       .useful-hub__grid{
         grid-template-columns:1fr;
         gap:14px;
@@ -3833,15 +4321,25 @@
         border-radius:26px;
       }
 
+      .useful-hub__card--free{
+        min-height:220px;
+        padding-bottom:66px;
+      }
+
       .useful-hub__card h3{
         max-width:300px;
         font-size:31px;
       }
 
+      .useful-hub__card p{
+        font-size:14px;
+      }
+
       .process-section::after{
         top:auto;
-        bottom:22px;
-        font-size:82px;
+        right:18px;
+        bottom:24px;
+        font-size:72px;
       }
 
       .process-head{
@@ -6189,6 +6687,47 @@ section{scroll-margin-top:96px}
   </section>
 
 
+  <section class="diagnostic-promo" id="adaptation-diagnostic">
+    <div class="container">
+      <div class="diagnostic-promo__card">
+        <div class="diagnostic-promo__content">
+          <div class="home-section-label">Бесплатная HR-диагностика</div>
+          <h2>Найдите слабое место в адаптации сотрудников за 2 минуты</h2>
+          <p class="diagnostic-promo__lead">Ответьте на 8 вопросов и получите оценку системы адаптации: баллы, риски и рекомендации по улучшению внутренних материалов.</p>
+          <ul class="diagnostic-promo__list">
+            <li>покажет, где сотрудники теряют время;</li>
+            <li>выявит повторяющиеся вопросы и пробелы в инструкциях;</li>
+            <li>подскажет, что поможет: welcome book, база знаний или HR-гайды.</li>
+          </ul>
+          <a class="diagnostic-promo__button js-apple-btn" href="/adaptation-quiz/">Пройти диагностику</a>
+        </div>
+
+        <div class="diagnostic-promo__visual" aria-hidden="true">
+          <div class="diagnostic-note">8 вопросов</div>
+          <div class="diagnostic-meter">
+            <div class="diagnostic-meter__top">
+              <span class="diagnostic-meter__label">оценка системы</span>
+              <span class="diagnostic-meter__score">72<small>/100</small></span>
+            </div>
+            <div class="diagnostic-meter__bar"><span></span></div>
+            <div class="diagnostic-meter__scale">
+              <span>0</span>
+              <span>50</span>
+              <span>100</span>
+            </div>
+            <div class="diagnostic-risk-map">
+              <div class="diagnostic-risk-map__item"><span class="diagnostic-risk-map__dot"></span><span>нет единого маршрута адаптации</span></div>
+              <div class="diagnostic-risk-map__item"><span class="diagnostic-risk-map__dot"></span><span>много вопросов повторяется</span></div>
+              <div class="diagnostic-risk-map__item"><span class="diagnostic-risk-map__dot"></span><span>инструкции сложно найти</span></div>
+              <div class="diagnostic-risk-map__item"><span class="diagnostic-risk-map__dot"></span><span>понятно, что улучшать первым</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
 
   <section class="nw-workdeck" id="projects">
   <div class="nw-workdeck__wrap">
@@ -6215,29 +6754,60 @@ section{scroll-margin-top:96px}
       <div class="useful-hub__head">
         <div class="home-section-label">полезное</div>
         <h2>Полезное по HR&#8209;материалам и коммуникациям</h2>
-        <p>Собрала темы, которые помогают быстрее понять, какие материалы нужны команде и как сделать их удобными для сотрудников.</p>
+        <p>Собрала бесплатные материалы и статьи, которые помогут быстрее понять, какие документы нужны команде и как сделать их удобными для сотрудников.</p>
       </div>
 
-      <div class="useful-hub__grid" aria-label="Полезные материалы">
-        <a class="useful-hub__card" href="/hr-guides/" data-num="01">
-          <h3>Как понять, что HR&#8209;гайд нужен компании</h3>
-          <span>Перейти</span>
-        </a>
+      <div class="useful-hub__groups" aria-label="Полезные материалы">
+        <div class="useful-hub__group">
+          <h3 class="useful-hub__group-title">Бесплатно забрать</h3>
+          <div class="useful-hub__grid useful-hub__grid--free">
+            <a class="useful-hub__card useful-hub__card--free" href="hr-prompts.pdf" data-num="01" download>
+              <h3>HR&#8209;промты</h3>
+              <p>Готовые формулировки для рассылок, инструкций и внутренних коммуникаций.</p>
+              <div class="useful-hub__tags"><em>HR</em><em>промты</em><em>PDF</em></div>
+              <span class="useful-hub__action">Скачать</span>
+            </a>
 
-        <a class="useful-hub__card" href="/hr-guides/" data-num="02">
-          <h3>Что должно быть в welcome book</h3>
-          <span>Перейти</span>
-        </a>
+            <a class="useful-hub__card useful-hub__card--free" href="https://canva.link/qrfjbz38egi6h25" data-num="02" target="_blank" rel="noopener">
+              <h3>Шаблоны гайда в Canva</h3>
+              <p>Основа для чек-листов, мини-гайдов и аккуратных PDF-материалов.</p>
+              <div class="useful-hub__tags"><em>Canva</em><em>шаблоны</em><em>гайды</em></div>
+              <span class="useful-hub__action">Открыть</span>
+            </a>
 
-        <a class="useful-hub__card" href="/communications/" data-num="03">
-          <h3>Как сделать внутренние коммуникации понятнее</h3>
-          <span>Перейти</span>
-        </a>
+            <a class="useful-hub__card useful-hub__card--free" href="https://t.me/addstickers/hr_ne_v_resurse" data-num="03" target="_blank" rel="noopener">
+              <h3>Офисные стикеры</h3>
+              <p>Набор удобных стикеров для рабочих материалов и внутренних заметок.</p>
+              <div class="useful-hub__tags"><em>стикеры</em><em>офис</em><em>дизайн</em></div>
+              <span class="useful-hub__action">Открыть</span>
+            </a>
+          </div>
+        </div>
 
-        <a class="useful-hub__card" href="/automation/" data-num="04">
-          <h3>Где нейросети помогают HR без лишней сложности</h3>
-          <span>Перейти</span>
-        </a>
+        <div class="useful-hub__group">
+          <h3 class="useful-hub__group-title">Почитать</h3>
+          <div class="useful-hub__grid useful-hub__grid--read">
+            <a class="useful-hub__card useful-hub__card--read" href="/hr-guides/" data-num="01">
+              <h3>Как понять, что HR&#8209;гайд нужен компании</h3>
+              <span class="useful-hub__action">Перейти</span>
+            </a>
+
+            <a class="useful-hub__card useful-hub__card--read" href="/hr-guides/" data-num="02">
+              <h3>Что должно быть в welcome book</h3>
+              <span class="useful-hub__action">Перейти</span>
+            </a>
+
+            <a class="useful-hub__card useful-hub__card--read" href="/communications/" data-num="03">
+              <h3>Как сделать внутренние коммуникации понятнее</h3>
+              <span class="useful-hub__action">Перейти</span>
+            </a>
+
+            <a class="useful-hub__card useful-hub__card--read" href="/automation/" data-num="04">
+              <h3>Где нейросети помогают HR без лишней сложности</h3>
+              <span class="useful-hub__action">Перейти</span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>

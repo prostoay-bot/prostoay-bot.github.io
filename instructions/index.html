@@ -289,7 +289,7 @@
     .example-row b{font-size:15px}
 
     .formats-section{position:relative;padding:130px 0 160px;overflow:hidden}
-    .formats-section:after{content:"ФОРМАТЫ";position:absolute;left:-22px;bottom:-35px;font:600 190px/.8 var(--serif);letter-spacing:-.07em;color:rgba(20,59,52,.035)}
+    .formats-section:after{content:"ФОРМАТЫ";position:absolute;left:clamp(18px,5vw,72px);bottom:24px;font:600 clamp(104px,12vw,168px)/.8 var(--serif);letter-spacing:-.07em;color:rgba(20,59,52,.032);pointer-events:none}
     .formats-head{display:grid;grid-template-columns:1fr .75fr;gap:80px;align-items:end;margin-bottom:92px}
     .formats-head .lead{margin-left:auto}
     .format-index{position:relative;min-height:980px}
@@ -414,7 +414,7 @@
       .compare-caption{font-size:35px}
       .after-document{width:100%;min-height:530px;padding:40px 20px 34px 60px}.after-document h3{max-width:none;font-size:29px}.clean-step strong{left:-47px;font-size:42px}
       .example{padding:82px 0}.example-grid{gap:38px}.example-copy h2{font-size:43px}.example-copy p{font-size:16px;line-height:1.65}.example-doc{min-height:0;padding:36px 24px 30px 35px}.example-doc:after{right:-6px;top:20px;font-size:27px}.example-row{grid-template-columns:1fr;gap:7px}
-      .formats-section{padding:88px 0 110px}.formats-head{gap:22px;margin-bottom:52px}.format-index{min-height:0;display:grid;gap:22px;padding:0 14px}
+      .formats-section{padding:88px 0 110px}.formats-section:after{left:18px;bottom:20px;font-size:64px;color:rgba(20,59,52,.026)}.formats-head{gap:22px;margin-bottom:52px}.format-index{min-height:0;display:grid;gap:22px;padding:0 14px}
       .format-piece{position:relative!important;inset:auto!important;width:auto!important;transform:none!important;padding:32px 20px 36px 68px!important}
       .format-piece .num{left:16px!important;right:auto!important;top:34px!important;font-size:68px}.format-piece .format-icon{margin-bottom:18px}.format-piece h3{font-size:29px}.format-piece p{max-width:none}
       .scope{padding:80px 0}.scope-grid{gap:28px}.scope h2{font-size:43px}
