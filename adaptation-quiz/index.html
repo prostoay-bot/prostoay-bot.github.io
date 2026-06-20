@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  <title>HR-диагностика адаптации сотрудников | NEIRO.WAY</title>
+  <meta name="description" content="Проверьте за 2 минуты, где компания теряет время в адаптации сотрудников. Получите оценку, риски и рекомендации." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#e4edf2" />
+  <link rel="canonical" href="https://hrneiroway.ru/adaptation-quiz/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="HR-диагностика адаптации сотрудников | NEIRO.WAY" />
+  <meta property="og:description" content="Проверьте за 2 минуты, где компания теряет время в адаптации сотрудников. Получите оценку, риски и рекомендации." />
+  <meta property="og:url" content="https://hrneiroway.ru/adaptation-quiz/" />
+  <meta property="og:image" content="https://hrneiroway.ru/preview.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=Marck+Script&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Arial', 'sans-serif'],
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            script: ['Marck Script', 'cursive']
+          },
+          colors: {
+            emerald: '#143B34',
+            muted: '#5F7671',
+            rose: '#E2A2B4',
+            roseSoft: '#F5DCE4',
+            butter: '#EBE2A8',
+            milk: '#FBFAF5',
+            cream: '#F6EFE2',
+            blueSoft: '#E4EDF2'
+          },
+          boxShadow: {
+            soft: '0 18px 46px rgba(20, 59, 52, .08)',
+            card: '0 28px 80px rgba(20, 59, 52, .12)'
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:"Inter",Arial,sans-serif;
+      color:#143B34;
+      background:
+        radial-gradient(circle at 12% 9%, rgba(255,255,255,.86), transparent 28%),
+        radial-gradient(circle at 86% 14%, rgba(226,162,180,.18), transparent 24%),
+        radial-gradient(circle at 18% 82%, rgba(235,226,168,.22), transparent 28%),
+        linear-gradient(135deg,#e4edf2,#eef4f7 54%,#f7f2e9);
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+    }
+    button,input{font:inherit}
+    .quiz-shell:before{
+      content:"";
+      position:absolute;
+      inset:18px;
+      border:1px solid rgba(255,255,255,.64);
+      border-radius:38px;
+      pointer-events:none;
+    }
+    .glass{
+      background:rgba(255,255,255,.62);
+      border:1px solid rgba(255,255,255,.78);
+      box-shadow:0 24px 70px rgba(20,59,52,.09);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+    }
+    .answer-card{
+      background:rgba(255,255,255,.68);
+      border:1px solid rgba(255,255,255,.86);
+      box-shadow:0 14px 34px rgba(20,59,52,.06);
+    }
+    .answer-card:hover{
+      border-color:rgba(226,162,180,.62);
+      box-shadow:0 20px 44px rgba(20,59,52,.10);
+    }
+    .paper-grid{
+      background-image:
+        linear-gradient(rgba(20,59,52,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(20,59,52,.045) 1px, transparent 1px);
+      background-size:34px 34px;
+    }
+    @media (prefers-reduced-motion: reduce){
+      *,*::before,*::after{
+        animation-duration:.01ms!important;
+        animation-iteration-count:1!important;
+        scroll-behavior:auto!important;
+        transition-duration:.01ms!important;
+      }
+    }
+  </style>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@18.3.1",
+        "react/jsx-runtime": "https://esm.sh/react@18.3.1/jsx-runtime",
+        "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+        "framer-motion": "https://esm.sh/framer-motion@11.18.2?external=react,react-dom"
+      }
+    }
+  </script>
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+      (function(m,e,t,r,i,k,a){
+          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();
+          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+      })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=109410569', 'ym');
+
+      ym(109410569, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/109410569" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body>
+  <main id="root"></main>
+
+  <script type="module">
+    import React, { useMemo, useState } from 'react';
+    import { createRoot } from 'react-dom/client';
+    import { AnimatePresence, motion } from 'framer-motion';
+
+    const h = React.createElement;
+    const MAX_SCORE = 24;
+
+    const questions = [
+      {
+        kicker: 'старт новичка',
+        title: 'Есть ли у нового сотрудника понятный план первой недели?',
+        text: 'План помогает не держать всё в голове и снижает тревогу в первые дни.',
+        answers: [
+          { label: 'Да, есть маршрут по дням и задачам', score: 3 },
+          { label: 'Есть общий список, но без чёткой последовательности', score: 2 },
+          { label: 'План зависит от руководителя или HR', score: 1 },
+          { label: 'Нет, новичок разбирается по ходу', score: 0 }
+        ]
+      },
+      {
+        kicker: 'первый день',
+        title: 'Понимает ли новичок, что делать в первый рабочий день?',
+        text: 'Хороший старт складывается из простых вещей: доступы, люди, задачи, правила.',
+        answers: [
+          { label: 'Да, всё собрано в одном понятном материале', score: 3 },
+          { label: 'Часть информации есть, часть объясняем устно', score: 2 },
+          { label: 'Обычно приходится много уточнять в чатах', score: 1 },
+          { label: 'Единого сценария первого дня нет', score: 0 }
+        ]
+      },
+      {
+        kicker: 'роль руководителя',
+        title: 'У руководителя есть понятная роль в адаптации?',
+        text: 'Адаптация работает лучше, когда руководитель знает, где подключиться и что проверить.',
+        answers: [
+          { label: 'Да, есть чек-лист встреч, задач и обратной связи', score: 3 },
+          { label: 'Есть ожидания, но не всегда зафиксированы', score: 2 },
+          { label: 'Руководители действуют по-разному', score: 1 },
+          { label: 'Ответственность почти полностью на HR', score: 0 }
+        ]
+      },
+      {
+        kicker: 'материалы',
+        title: 'Где хранятся инструкции, ссылки и правила для новичка?',
+        text: 'Если информация разбросана, сотрудник тратит силы не на работу, а на поиски.',
+        answers: [
+          { label: 'В одном гайде, базе знаний или welcome book', score: 3 },
+          { label: 'В нескольких местах, но с навигацией', score: 2 },
+          { label: 'В папках, чатах и старых сообщениях', score: 1 },
+          { label: 'Каждый раз пересылаем вручную', score: 0 }
+        ]
+      },
+      {
+        kicker: 'коммуникации',
+        title: 'Новичок знает, к кому обращаться с вопросами?',
+        text: 'Контакты, роли и правила коммуникации помогают быстрее войти в команду.',
+        answers: [
+          { label: 'Да, есть список людей, ролей и каналов связи', score: 3 },
+          { label: 'Есть основные контакты, но не по всем темам', score: 2 },
+          { label: 'Чаще всего приходится спрашивать коллег', score: 1 },
+          { label: 'Нет понятной карты контактов', score: 0 }
+        ]
+      },
+      {
+        kicker: 'поддержка',
+        title: 'Есть ли регулярные точки проверки в первые недели?',
+        text: 'Короткие чек-пойнты помогают заметить проблемы раньше, чем сотрудник выгорит или уйдёт.',
+        answers: [
+          { label: 'Да, есть встречи и вопросы для проверки прогресса', score: 3 },
+          { label: 'Проверяем, но без единого сценария', score: 2 },
+          { label: 'Общаемся только если сотрудник сам пишет', score: 1 },
+          { label: 'Нет регулярных точек контроля', score: 0 }
+        ]
+      },
+      {
+        kicker: 'понятность',
+        title: 'Материалы для адаптации легко читать и использовать?',
+        text: 'Даже полезный документ не работает, если он длинный, тяжёлый и без навигации.',
+        answers: [
+          { label: 'Да, коротко, структурно, с шагами и акцентами', score: 3 },
+          { label: 'Информация есть, но её стоит упростить', score: 2 },
+          { label: 'Документы длинные, новичкам тяжело ориентироваться', score: 1 },
+          { label: 'Материалы почти не оформлены', score: 0 }
+        ]
+      },
+      {
+        kicker: 'измеримость',
+        title: 'Вы понимаете, где адаптация проседает?',
+        text: 'Диагностика помогает отличить случайные вопросы от системной проблемы.',
+        answers: [
+          { label: 'Да, смотрим обратную связь, вопросы и результаты', score: 3 },
+          { label: 'Есть отдельные сигналы, но без общей картины', score: 2 },
+          { label: 'Проблемы видны только постфактум', score: 1 },
+          { label: 'Нет понятных критериев и данных', score: 0 }
+        ]
+      }
+    ];
+
+    const results = [
+      {
+        min: 0,
+        max: 39,
+        type: 'Зона риска',
+        title: 'Адаптация держится на ручных объяснениях',
+        text: 'Новичку сложно быстро понять, что делать, где искать информацию и к кому обращаться. Сейчас система зависит от людей, памяти и чатов.',
+        advice: ['Собрать первые шаги в один материал', 'Зафиксировать роли HR и руководителя', 'Сделать короткий чек-лист первой недели'],
+        accent: 'from-roseSoft to-white'
+      },
+      {
+        min: 40,
+        max: 59,
+        type: 'Неровная система',
+        title: 'База есть, но путь новичка пока рваный',
+        text: 'Часть адаптации уже работает, но сотруднику всё ещё приходится уточнять много простых вещей. Главный резерв — структура и единая навигация.',
+        advice: ['Убрать разрозненные ссылки', 'Добавить карту контактов и сервисов', 'Описать первый день и первую неделю'],
+        accent: 'from-cream to-white'
+      },
+      {
+        min: 60,
+        max: 79,
+        type: 'Рабочий уровень',
+        title: 'Адаптация понятна, но её можно усилить',
+        text: 'У новичка уже есть опора, а у команды — базовый порядок. Следующий шаг: сделать материалы удобнее, короче и визуально яснее.',
+        advice: ['Освежить инструкции и welcome book', 'Добавить чек-пойнты обратной связи', 'Собрать частые вопросы в один блок'],
+        accent: 'from-butter to-white'
+      },
+      {
+        min: 80,
+        max: 100,
+        type: 'Сильная адаптация',
+        title: 'У новичка есть понятный маршрут',
+        text: 'Система выглядит зрелой: есть порядок, материалы, роли и точки проверки. Теперь важно поддерживать актуальность и не перегружать сотрудников лишними документами.',
+        advice: ['Регулярно обновлять материалы', 'Собирать обратную связь новичков', 'Использовать AI для быстрых ответов и базы знаний'],
+        accent: 'from-blueSoft to-white'
+      }
+    ];
+
+    function cn(...items) {
+      return items.filter(Boolean).join(' ');
+    }
+
+    function getResult(score) {
+      return results.find((result) => score >= result.min && score <= result.max) || results[0];
+    }
+
+    function loadSavedQuiz() {
+      try {
+        const saved = JSON.parse(localStorage.getItem('neiroway-adaptation-quiz') || 'null');
+        if (!saved || !Array.isArray(saved.answers)) return null;
+        return saved;
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function App() {
+      const savedQuiz = useMemo(loadSavedQuiz, []);
+      const [step, setStep] = useState(savedQuiz ? questions.length - 1 : 0);
+      const [answers, setAnswers] = useState(savedQuiz?.answers || []);
+      const [selected, setSelected] = useState(null);
+      const [phase, setPhase] = useState(savedQuiz ? 'result' : 'quiz');
+      const [lead, setLead] = useState(savedQuiz?.lead || { name: '', company: '', contact: '' });
+      const [formError, setFormError] = useState('');
+
+      const rawScore = answers.reduce((sum, answer) => sum + answer.score, 0);
+      const score = Math.round((rawScore / MAX_SCORE) * 100);
+      const result = getResult(score);
+      const progress = phase === 'quiz'
+        ? Math.round(((step + 1) / questions.length) * 100)
+        : 100;
+
+      const current = questions[step];
+
+      function getAnswerSummary(items = answers) {
+        return items.map((answer, index) => ({
+          question: questions[index]?.title || `Вопрос ${index + 1}`,
+          answer: answer.label,
+          score: answer.score
+        }));
+      }
+
+      function buildTelegramUrl(payloadLead = lead, items = answers, payloadScore = score, payloadResult = result) {
+        const summary = getAnswerSummary(items)
+          .map((item, index) => `${index + 1}. ${item.question} — ${item.answer} (${item.score} балл.)`)
+          .join('\n');
+        const message = [
+          'Здравствуйте, Марина!',
+          'Прошла HR-диагностику адаптации сотрудников.',
+          `Имя: ${payloadLead.name || 'не указано'}`,
+          payloadLead.company ? `Компания: ${payloadLead.company}` : '',
+          `Контакт: ${payloadLead.contact || 'не указан'}`,
+          `Результат: ${payloadScore}/100 — ${payloadResult.type}`,
+          '',
+          'Выбранные ответы:',
+          summary,
+          '',
+          'Хочу обсудить, как улучшить адаптацию.'
+        ].filter(Boolean).join('\n');
+        return `https://t.me/Marina_x6?text=${encodeURIComponent(message)}`;
+      }
+
+      const telegramUrl = buildTelegramUrl();
+
+      function chooseAnswer(answer, index) {
+        if (selected !== null) return;
+        setSelected(index);
+        const nextAnswers = [...answers, {
+          question: current.title,
+          label: answer.label,
+          score: answer.score
+        }];
+        window.ym && window.ym(109410569, 'reachGoal', 'quiz_answer');
+
+        window.setTimeout(() => {
+          setAnswers(nextAnswers);
+          setSelected(null);
+          if (step === questions.length - 1) {
+            setPhase('lead');
+            window.ym && window.ym(109410569, 'reachGoal', 'quiz_completed');
+          } else {
+            setStep((value) => value + 1);
+          }
+        }, 430);
+      }
+
+      function goBack() {
+        if (phase !== 'quiz' || step === 0 || selected !== null) return;
+        setAnswers((items) => items.slice(0, -1));
+        setStep((value) => value - 1);
+      }
+
+      function submitLead(event) {
+        event.preventDefault();
+        const cleanLead = {
+          name: lead.name.trim(),
+          company: lead.company.trim(),
+          contact: lead.contact.trim()
+        };
+
+        if (!cleanLead.name || !cleanLead.contact) {
+          setFormError('Оставьте имя и контакт, чтобы показать результат.');
+          return;
+        }
+
+        setFormError('');
+        const payload = {
+          lead: cleanLead,
+          score,
+          result: result.type,
+          resultTitle: result.title,
+          answers: getAnswerSummary(),
+          createdAt: new Date().toISOString()
+        };
+
+        localStorage.setItem('neiroway-adaptation-quiz', JSON.stringify(payload));
+        window.ym && window.ym(109410569, 'reachGoal', 'quiz_lead');
+        window.open(buildTelegramUrl(cleanLead, answers, score, result), '_blank', 'noopener');
+        setLead(cleanLead);
+        setPhase('result');
+      }
+
+      return h('div', { className: 'min-h-screen px-4 py-5 sm:px-6 sm:py-8 lg:px-8' },
+        h('section', { className: 'quiz-shell paper-grid relative mx-auto flex min-h-[calc(100vh-40px)] w-full max-w-7xl flex-col overflow-hidden rounded-[34px] border border-white/70 bg-white/20 p-4 shadow-card sm:rounded-[44px] sm:p-6 lg:p-8' },
+          h(Header, null),
+          h('div', { className: 'grid flex-1 gap-6 py-8 lg:grid-cols-[.86fr_1.14fr] lg:items-center lg:gap-10 lg:py-10' },
+            h(HeroPanel, { score, phase, progress }),
+            h('div', { className: 'relative z-10 order-1 lg:order-2' },
+              h(ProgressBar, { progress, step, total: questions.length, phase }),
+              h(AnimatePresence, { mode: 'wait' },
+                phase === 'quiz' && h(QuestionCard, {
+                  key: `question-${step}`,
+                  question: current,
+                  step,
+                  total: questions.length,
+                  selected,
+                  chooseAnswer,
+                  goBack
+                }),
+                phase === 'lead' && h(LeadForm, {
+                  key: 'lead',
+                  lead,
+                  setLead,
+                  submitLead,
+                  formError,
+                  score
+                }),
+                phase === 'result' && h(ResultCard, {
+                  key: 'result',
+                  score,
+                  result,
+                  telegramUrl,
+                  restart: () => {
+                    localStorage.removeItem('neiroway-adaptation-quiz');
+                    setStep(0);
+                    setAnswers([]);
+                    setSelected(null);
+                    setPhase('quiz');
+                    setLead({ name: '', company: '', contact: '' });
+                  }
+                })
+              )
+            )
+          )
+        )
+      );
+    }
+
+    function Header() {
+      return h('header', { className: 'relative z-10 flex items-center justify-between gap-4' },
+        h('a', { href: '/', className: 'group inline-flex items-center gap-3 rounded-full bg-white/55 px-4 py-3 text-sm font-bold text-emerald shadow-soft ring-1 ring-white/70 transition hover:bg-white/80' },
+          h('span', { className: 'grid h-8 w-8 place-items-center rounded-full bg-roseSoft text-lg transition group-hover:rotate-[-8deg]' }, '↖'),
+          h('span', null, 'NEIRO.WAY')
+        ),
+        h('a', { href: 'https://t.me/Marina_x6', target: '_blank', rel: 'noopener', className: 'hidden rounded-full bg-emerald px-5 py-3 text-sm font-bold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-emerald/95 sm:inline-flex' }, 'Обсудить адаптацию')
+      );
+    }
+
+    function HeroPanel({ score, phase, progress }) {
+      return h(motion.div, {
+        initial: { opacity: 0, y: 18 },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration: .55, ease: [0.22, 1, 0.36, 1] },
+        className: 'relative z-10 order-2 lg:order-1'
+      },
+        h('div', { className: 'mb-5 flex items-center gap-4 text-xs font-extrabold uppercase tracking-[.28em] text-muted' },
+          h('span', null, 'HR-квиз'),
+          h('span', { className: 'h-px w-16 bg-rose/70' })
+        ),
+        h('h1', { className: 'max-w-2xl font-serif text-[46px] font-semibold leading-[.98] tracking-[-.055em] text-emerald sm:text-[64px] lg:text-[82px]' },
+          'Диагностика адаптации сотрудников'
+        ),
+        h('p', { className: 'mt-6 max-w-xl text-[17px] leading-8 text-muted sm:text-xl' },
+          'Ответьте на 8 коротких вопросов и получите оценку от 0 до 100: насколько новичку понятно, что делать, где искать информацию и к кому обращаться.'
+        ),
+        h('div', { className: 'mt-8 grid gap-3 sm:grid-cols-3' },
+          h(StatPill, { value: '8', label: 'вопросов' }),
+          h(StatPill, { value: '4', label: 'типа результата' }),
+          h(StatPill, { value: phase === 'result' ? score : progress + '%', label: phase === 'result' ? 'оценка' : 'прогресс' })
+        ),
+        h('div', { className: 'mt-9 hidden max-w-lg rounded-[32px] border border-white/80 bg-white/48 p-5 shadow-soft lg:block' },
+          h('div', { className: 'mb-4 flex items-center justify-between text-sm font-bold text-emerald' },
+            h('span', null, 'Карта адаптации'),
+            h('span', { className: 'rounded-full bg-roseSoft px-3 py-1 text-xs text-emerald/75' }, 'live')
+          ),
+          h('div', { className: 'grid gap-3' },
+            ['Первые шаги', 'Материалы', 'Роль руководителя', 'Обратная связь'].map((item, index) =>
+              h('div', { key: item, className: 'flex items-center gap-3 rounded-2xl bg-white/60 p-3' },
+                h('span', { className: cn('h-3 w-3 rounded-full', index < Math.ceil(progress / 25) ? 'bg-emerald' : 'bg-emerald/15') }),
+                h('span', { className: 'text-sm font-semibold text-muted' }, item)
+              )
+            )
+          )
+        )
+      );
+    }
+
+    function StatPill({ value, label }) {
+      return h('div', { className: 'rounded-[24px] border border-white/75 bg-white/50 px-5 py-4 shadow-soft' },
+        h('strong', { className: 'block font-serif text-4xl font-semibold leading-none tracking-[-.05em] text-emerald' }, value),
+        h('span', { className: 'mt-1 block text-xs font-bold uppercase tracking-[.16em] text-muted' }, label)
+      );
+    }
+
+    function ProgressBar({ progress, step, total, phase }) {
+      return h('div', { className: 'mb-4 rounded-[24px] border border-white/75 bg-white/46 p-4 shadow-soft' },
+        h('div', { className: 'mb-3 flex items-center justify-between text-xs font-extrabold uppercase tracking-[.18em] text-muted' },
+          h('span', null, phase === 'quiz' ? `Вопрос ${step + 1} из ${total}` : phase === 'lead' ? 'Почти готово' : 'Результат'),
+          h('span', null, `${progress}%`)
+        ),
+        h('div', { className: 'h-3 overflow-hidden rounded-full bg-emerald/10' },
+          h(motion.div, {
+            className: 'h-full rounded-full bg-gradient-to-r from-emerald via-muted to-rose',
+            initial: false,
+            animate: { width: `${progress}%` },
+            transition: { duration: .45, ease: 'easeOut' }
+          })
+        )
+      );
+    }
+
+    function QuestionCard({ question, step, total, selected, chooseAnswer, goBack }) {
+      return h(motion.article, {
+        initial: { opacity: 0, y: 24, scale: .98 },
+        animate: { opacity: 1, y: 0, scale: 1 },
+        exit: { opacity: 0, y: -18, scale: .98 },
+        transition: { duration: .42, ease: [0.22, 1, 0.36, 1] },
+        className: 'glass overflow-hidden rounded-[34px] p-5 sm:p-7 lg:rounded-[42px] lg:p-9'
+      },
+        h('div', { className: 'mb-6 flex items-start justify-between gap-4' },
+          h('div', null,
+            h('p', { className: 'mb-3 text-xs font-extrabold uppercase tracking-[.26em] text-rose' }, question.kicker),
+            h('h2', { className: 'max-w-3xl font-serif text-[36px] font-semibold leading-[1.02] tracking-[-.045em] text-emerald sm:text-[48px] lg:text-[56px]' }, question.title),
+            h('p', { className: 'mt-4 max-w-2xl text-base leading-7 text-muted sm:text-lg' }, question.text)
+          ),
+          h('span', { className: 'hidden rounded-full bg-cream px-4 py-2 text-sm font-bold text-emerald/70 sm:inline-flex' }, `${step + 1}/${total}`)
+        ),
+        h('div', { className: 'grid gap-3' },
+          question.answers.map((answer, index) =>
+            h(motion.button, {
+              key: answer.label,
+              type: 'button',
+              disabled: selected !== null,
+              onClick: () => chooseAnswer(answer, index),
+              whileTap: { scale: .985 },
+              className: cn(
+                'answer-card group flex min-h-[72px] w-full items-center justify-between gap-4 rounded-[24px] p-4 text-left transition sm:p-5',
+                selected === index && 'border-emerald bg-emerald text-white shadow-card'
+              )
+            },
+              h('span', { className: 'text-[15px] font-semibold leading-6 sm:text-base' }, answer.label),
+              h(motion.span, {
+                animate: selected === index ? { scale: [1, 1.2, 1], rotate: [0, 8, 0] } : { scale: 1 },
+                className: cn(
+                  'grid h-9 w-9 shrink-0 place-items-center rounded-full border text-sm font-black transition',
+                  selected === index ? 'border-white/60 bg-white text-emerald' : 'border-emerald/12 bg-white/62 text-emerald group-hover:bg-roseSoft'
+                )
+              }, selected === index ? '✓' : '→')
+            )
+          )
+        ),
+        h('div', { className: 'mt-6 flex items-center justify-between gap-4 text-sm text-muted' },
+          h('button', { type: 'button', onClick: goBack, disabled: step === 0 || selected !== null, className: 'font-bold transition disabled:opacity-30' }, '← назад'),
+          h('span', null, 'После выбора вопрос сменится автоматически')
+        )
+      );
+    }
+
+    function LeadForm({ lead, setLead, submitLead, formError, score }) {
+      return h(motion.article, {
+        initial: { opacity: 0, y: 24, scale: .98 },
+        animate: { opacity: 1, y: 0, scale: 1 },
+        exit: { opacity: 0, y: -18, scale: .98 },
+        transition: { duration: .42, ease: [0.22, 1, 0.36, 1] },
+        className: 'glass rounded-[34px] p-5 sm:p-7 lg:rounded-[42px] lg:p-9'
+      },
+        h('p', { className: 'mb-3 text-xs font-extrabold uppercase tracking-[.26em] text-rose' }, 'результат готов'),
+        h('h2', { className: 'font-serif text-[38px] font-semibold leading-[1.02] tracking-[-.045em] text-emerald sm:text-[54px]' }, 'Отправьте результат в Telegram'),
+        h('p', { className: 'mt-4 max-w-2xl text-base leading-7 text-muted sm:text-lg' },
+          `Предварительная оценка уже посчитана: ${score}/100. Заполните контакт — после нажатия откроется Telegram с готовым сообщением.`
+        ),
+        h('form', { onSubmit: submitLead, className: 'mt-7 grid gap-4' },
+          h(Field, { label: 'Имя', value: lead.name, placeholder: 'Например, Марина', onChange: (value) => setLead({ ...lead, name: value }) }),
+          h(Field, { label: 'Компания / команда', value: lead.company, placeholder: 'Можно оставить пустым', onChange: (value) => setLead({ ...lead, company: value }) }),
+          h(Field, { label: 'Telegram, email или телефон', value: lead.contact, placeholder: '@username или почта', onChange: (value) => setLead({ ...lead, contact: value }) }),
+          formError && h('p', { className: 'rounded-2xl bg-roseSoft px-4 py-3 text-sm font-semibold text-emerald' }, formError),
+          h('p', { className: 'rounded-[22px] bg-white/48 px-4 py-3 text-sm font-semibold leading-6 text-muted' },
+            'Данные не сохраняются на сайте. После нажатия откроется Telegram с готовым сообщением — вам останется только отправить его.'
+          ),
+          h('button', { type: 'submit', className: 'mt-2 min-h-[62px] rounded-full bg-emerald px-7 text-base font-bold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-emerald/95' }, 'Отправить результат в Telegram')
+        )
+      );
+    }
+
+    function Field({ label, value, placeholder, onChange }) {
+      return h('label', { className: 'block' },
+        h('span', { className: 'mb-2 block text-sm font-bold text-muted' }, label),
+        h('input', {
+          value,
+          placeholder,
+          onChange: (event) => onChange(event.target.value),
+          className: 'min-h-[56px] w-full rounded-2xl border border-white/80 bg-white/66 px-4 text-emerald outline-none shadow-soft transition placeholder:text-muted/45 focus:border-rose focus:bg-white'
+        })
+      );
+    }
+
+    function ResultCard({ score, result, telegramUrl, restart }) {
+      return h(motion.article, {
+        initial: { opacity: 0, y: 24, scale: .98 },
+        animate: { opacity: 1, y: 0, scale: 1 },
+        exit: { opacity: 0, y: -18, scale: .98 },
+        transition: { duration: .46, ease: [0.22, 1, 0.36, 1] },
+        className: cn('overflow-hidden rounded-[34px] border border-white/80 bg-gradient-to-br p-5 shadow-card sm:p-7 lg:rounded-[42px] lg:p-9', result.accent)
+      },
+        h('div', { className: 'grid gap-6 lg:grid-cols-[220px_1fr] lg:items-center' },
+          h('div', { className: 'relative grid aspect-square place-items-center rounded-full border border-white/80 bg-white/64 shadow-soft' },
+            h('div', { className: 'absolute inset-5 rounded-full border border-emerald/10' }),
+            h('div', { className: 'text-center' },
+              h(motion.strong, {
+                initial: { scale: .8, opacity: 0 },
+                animate: { scale: 1, opacity: 1 },
+                transition: { delay: .15, duration: .45 },
+                className: 'block font-serif text-7xl font-semibold leading-none tracking-[-.06em] text-emerald'
+              }, score),
+              h('span', { className: 'mt-2 block text-xs font-extrabold uppercase tracking-[.24em] text-muted' }, 'из 100')
+            )
+          ),
+          h('div', null,
+            h('p', { className: 'mb-3 text-xs font-extrabold uppercase tracking-[.26em] text-rose' }, result.type),
+            h('h2', { className: 'font-serif text-[38px] font-semibold leading-[1.02] tracking-[-.045em] text-emerald sm:text-[54px]' }, result.title),
+            h('p', { className: 'mt-4 max-w-2xl text-base leading-7 text-muted sm:text-lg' }, result.text)
+          )
+        ),
+        h('div', { className: 'mt-7 flex flex-col gap-3 sm:flex-row' },
+          h('a', { href: telegramUrl, target: '_blank', rel: 'noopener', className: 'inline-flex min-h-[58px] flex-1 items-center justify-center rounded-full bg-emerald px-7 text-center text-base font-bold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-emerald/95' }, 'Обсудить результат в Telegram'),
+          h('button', { type: 'button', onClick: restart, className: 'inline-flex min-h-[58px] items-center justify-center rounded-full border border-white/80 bg-white/62 px-7 text-base font-bold text-emerald shadow-soft transition hover:-translate-y-0.5 hover:bg-white' }, 'Пройти заново')
+        ),
+        h('div', { className: 'mt-7 rounded-[28px] bg-white/58 p-5 shadow-soft' },
+          h('h3', { className: 'mb-4 font-serif text-3xl font-semibold tracking-[-.035em] text-emerald' }, 'Что стоит сделать дальше'),
+          h('ul', { className: 'grid gap-3' },
+            result.advice.map((item) =>
+              h('li', { key: item, className: 'flex gap-3 text-[15px] font-semibold leading-6 text-muted' },
+                h('span', { className: 'mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-emerald text-xs text-white' }, '✓'),
+                h('span', null, item)
+              )
+            )
+          )
+        )
+      );
+    }
+
+    createRoot(document.getElementById('root')).render(h(App));
+  </script>
+</body>
+</html>
