@@ -3984,38 +3984,39 @@
 
     .useful-hub{
       position:relative;
-      padding:112px 0 124px;
+      padding:clamp(98px, 9vw, 148px) 0 clamp(104px, 9vw, 138px);
       background:
-        radial-gradient(circle at 18% 16%, rgba(255,255,255,.84), transparent 30%),
-        radial-gradient(circle at 86% 20%, rgba(226,162,180,.12), transparent 24%),
-        linear-gradient(135deg,#edf6f7,#f7faf7);
+        radial-gradient(circle at 16% 18%, rgba(255,255,255,.90), transparent 27%),
+        radial-gradient(circle at 82% 13%, rgba(226,162,180,.16), transparent 25%),
+        radial-gradient(circle at 74% 66%, rgba(180,205,211,.28), transparent 28%),
+        linear-gradient(135deg,#edf6f7 0%,#f7faf7 48%,#f4eee3 100%);
       overflow:hidden;
     }
 
     .useful-hub::before{
       content:"полезное";
       position:absolute;
-      right:clamp(24px, 5vw, 82px);
-      bottom:18px;
+      right:clamp(34px, 7vw, 116px);
+      bottom:clamp(26px, 4vw, 54px);
       font-family:"Cormorant Garamond", serif;
-      font-size:clamp(92px,13vw,180px);
+      font-size:clamp(82px,12vw,166px);
       line-height:.8;
       font-weight:600;
       letter-spacing:-.08em;
-      color:rgba(20,59,52,.035);
+      color:rgba(20,59,52,.032);
       pointer-events:none;
     }
 
     .useful-hub__head{
       position:relative;
       z-index:1;
-      max-width:920px;
-      margin-bottom:44px;
+      max-width:760px;
+      margin-bottom:0;
     }
 
     .useful-hub__head h2{
       margin:0;
-      max-width:850px;
+      max-width:760px;
       font-family:"Cormorant Garamond", serif;
       font-size:clamp(44px,5vw,72px);
       line-height:.96;
@@ -4037,12 +4038,22 @@
       position:relative;
       z-index:1;
       display:grid;
-      gap:28px;
+      gap:clamp(46px, 6vw, 78px);
     }
 
     .useful-hub__group{
       display:grid;
       gap:16px;
+    }
+
+    .useful-hub__group--free{
+      position:relative;
+      min-height:500px;
+      display:block;
+    }
+
+    .useful-hub__group--free .useful-hub__group-title{
+      margin:42px 0 0;
     }
 
     .useful-hub__group-title{
@@ -4072,6 +4083,13 @@
       gap:18px;
     }
 
+    .useful-hub__grid--free{
+      position:absolute;
+      inset:0;
+      display:block;
+      pointer-events:none;
+    }
+
     .useful-hub__grid--read{
       grid-template-columns:repeat(4,1fr);
     }
@@ -4087,7 +4105,7 @@
       color:var(--emerald);
       overflow:hidden;
       text-decoration:none;
-      transition:transform .24s ease, box-shadow .24s ease, background .24s ease;
+      transition:transform .28s ease, box-shadow .28s ease, background .28s ease;
     }
 
     .useful-hub__grid .useful-hub__card:nth-child(2){
@@ -4176,20 +4194,64 @@
     }
 
     .useful-hub__card--free{
+      position:absolute;
+      z-index:2;
+      width:min(360px, 30vw);
       min-height:250px;
       padding-bottom:68px;
-      background:rgba(255,250,240,.78);
+      background:rgba(255,250,240,.86);
+      border-color:rgba(255,255,255,.96);
+      box-shadow:0 32px 76px rgba(20,59,52,.13);
+      pointer-events:auto;
+      backdrop-filter:blur(14px);
+    }
+
+    .useful-hub__card--free:nth-child(1){
+      left:min(56vw, 690px);
+      top:-86px;
+      transform:rotate(4deg);
+      min-height:292px;
+    }
+
+    .useful-hub__card--free:nth-child(2){
+      left:min(36vw, 440px);
+      top:166px;
+      width:min(392px, 33vw);
+      transform:rotate(-5deg);
+      background:rgba(246,239,226,.88);
+    }
+
+    .useful-hub__card--free:nth-child(3){
+      right:0;
+      top:142px;
+      width:min(340px, 29vw);
+      transform:rotate(5deg);
+      background:rgba(245,220,228,.72);
     }
 
     .useful-hub__card--read{
       min-height:210px;
       padding-bottom:62px;
+      background:rgba(255,255,255,.58);
+      box-shadow:0 18px 44px rgba(20,59,52,.075);
     }
 
     .useful-hub__card:hover{
       transform:translateY(-5px);
       box-shadow:0 28px 64px rgba(20,59,52,.13);
       background:rgba(255,255,255,.82);
+    }
+
+    .useful-hub__card--free:nth-child(1):hover{
+      transform:translateY(-8px) rotate(2deg);
+    }
+
+    .useful-hub__card--free:nth-child(2):hover{
+      transform:translateY(-8px) rotate(-3deg);
+    }
+
+    .useful-hub__card--free:nth-child(3):hover{
+      transform:translateY(-8px) rotate(3deg);
     }
 
     .process-section{
@@ -4272,12 +4334,35 @@
     }
 
     @media (max-width: 980px){
+      .useful-hub__group--free{
+        min-height:auto;
+        display:grid;
+        gap:16px;
+      }
+
+      .useful-hub__group--free .useful-hub__group-title{
+        margin:0;
+      }
+
       .useful-hub__grid{
         grid-template-columns:repeat(2,1fr);
       }
 
       .useful-hub__grid--free{
+        position:relative;
+        inset:auto;
+        display:grid;
         grid-template-columns:1fr;
+      }
+
+      .useful-hub__card--free,
+      .useful-hub__card--free:nth-child(1),
+      .useful-hub__card--free:nth-child(2),
+      .useful-hub__card--free:nth-child(3){
+        position:relative;
+        inset:auto;
+        width:100%;
+        transform:none;
       }
     }
 
@@ -4302,8 +4387,9 @@
 
       .useful-hub::before{
         right:18px;
-        bottom:20px;
-        font-size:76px;
+        bottom:28px;
+        font-size:68px;
+        color:rgba(20,59,52,.026);
       }
 
       .useful-hub__groups{
@@ -6758,7 +6844,7 @@ section{scroll-margin-top:96px}
       </div>
 
       <div class="useful-hub__groups" aria-label="Полезные материалы">
-        <div class="useful-hub__group">
+        <div class="useful-hub__group useful-hub__group--free">
           <h3 class="useful-hub__group-title">Бесплатно забрать</h3>
           <div class="useful-hub__grid useful-hub__grid--free">
             <a class="useful-hub__card useful-hub__card--free" href="hr-prompts.pdf" data-num="01" download>
@@ -6784,7 +6870,7 @@ section{scroll-margin-top:96px}
           </div>
         </div>
 
-        <div class="useful-hub__group">
+        <div class="useful-hub__group useful-hub__group--read">
           <h3 class="useful-hub__group-title">Почитать</h3>
           <div class="useful-hub__grid useful-hub__grid--read">
             <a class="useful-hub__card useful-hub__card--read" href="/hr-guides/" data-num="01">
