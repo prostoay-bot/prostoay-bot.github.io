@@ -100,6 +100,28 @@
         linear-gradient(90deg, rgba(20,59,52,.045) 1px, transparent 1px);
       background-size:34px 34px;
     }
+    .quiz-bottom-nav{
+      width:min(1120px,calc(100% - 32px));
+      margin:0 auto 48px;
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .quiz-bottom-nav a{
+      display:inline-flex;
+      min-height:48px;
+      align-items:center;
+      justify-content:center;
+      padding:0 22px;
+      border-radius:999px;
+      background:rgba(255,255,255,.68);
+      border:1px solid rgba(255,255,255,.82);
+      box-shadow:0 14px 34px rgba(20,59,52,.07);
+      color:#143B34;
+      font-weight:700;
+      text-decoration:none;
+    }
     @media (prefers-reduced-motion: reduce){
       *,*::before,*::after{
         animation-duration:.01ms!important;
@@ -137,6 +159,10 @@
 </head>
 <body>
   <main id="root"></main>
+  <nav class="quiz-bottom-nav" aria-label="Навигация по сайту">
+    <a href="/">← На главную</a>
+    <a href="/articles/">Полезные материалы</a>
+  </nav>
 
   <script type="module">
     import React, { useMemo, useState } from 'react';
