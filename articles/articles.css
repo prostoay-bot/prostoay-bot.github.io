@@ -276,6 +276,23 @@ h3 {
   font-weight: 800;
 }
 
+.article-cover.article-cover--image {
+  min-height: 0;
+  background: rgba(251, 250, 244, .78);
+}
+
+.article-cover--image::before,
+.article-cover--image::after {
+  display: none;
+}
+
+.article-cover--image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: inherit;
+}
+
 .hero-actions {
   position: relative;
   z-index: 1;
